@@ -8,14 +8,14 @@
 (Theorem \ref{C4T1B}) MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, $Q'$.\label{C4T1}
 \end{theorem}
 \begin{theorem}
-(Theorem \ref{C4T3B}) MGSs of an ME-ful acyclic quiver $Q$ are exactly the $Q$-ME-free MGSs of its ME-free version, $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ if there exists any negative $c$-vector with support containing $i$ no mutation is done on any negative $c$-vector with support containing $j$.\label{C4T3}
+(Theorem \ref{C4T3B}) Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.\label{C4T3}
 \end{theorem}
 \indent In other words to understand MGSs of an acyclic quiver $Q$ we only need to understand the MGSs of its ME-free version which makes multiple edges largely irrelevant in understanding MGSs of acyclic quivers.
 \indent We can obtain the following crucial corollaries in the acyclic case:
 \begin{corollary}\label{C4C}
 (Corollary \ref{C4CB})The following statements are true:
 \begin{enumerate}
-\item The amount of maximal green sequences of a quiver $Q$ is no greater than that of its ME-free version.
+\item The number of maximal green sequences of a quiver $Q$ is no greater than that of its ME-free version.
 \item All quivers with an MGS-finite ME-free version must themselves be MGS-finite.
 \item No minimally MGS-infinite quiver can contain multiple edges.
 \item Any two ME-equivalent quivers are MGS-equivalent to each other.
@@ -49,7 +49,7 @@ If $Q$ is a quiver that isn't connected, $Q^1$, $Q^2$, $\cdots$ $Q^n$ are its co
 \indent Since we can obtain all MGSs of $Q^i$ by deleting all $c$-vectors not supported on $Q^i_0$ from all MGSs of $Q$ it is easy to see that if $Q$ is MGS-finite so is $Q^i$ for any $i$.\\
 \indent On the other hand if all $Q^i$s are MGS-finite it is easy to see that so is $Q$ because the set of admissible $c$-vectors of $Q$ is the union of admissible $c$-vectors in MGSs of $Q^i$ all of which are finite.\\
 \end{proof}
-\indent Using quiver folding it is easy to show that we only need to consider the simply-laced case.\\
+%\indent Using quiver folding it is easy to show that we only need to consider the simply-laced case.\\
 \indent There is also an unrelated result about MGS-finiteness I proved which I will include here.
 \begin{definition}
 A valued quiver is of \textit{finite green mutation type} if there are finitely many exchange matrices along its maximal green sequences.
@@ -66,6 +66,10 @@ For a valued quiver $Q$ with $|Q_0|=n$, let $Q'=\breve{Q}$ be its coframed quive
 If all valued quivers are of finite green mutation type, all valued quivers have finitely many maximal green sequences.\\
 \end{corollary}
 \section{The acyclic case}
+\indent Now we need some basic definitions in order to describe and prove the results.
+\begin{definition}
+A quiver with at least one multiple edge is \textit{ME-ful}. Otherwise it is \textit{ME-free}.
+\end{definition}
 \begin{definition}
 A \textit{multiple edges-free (ME-free)} version of a quiver $Q$ is produced by removing all multiple edges from $Q$ while retaining single edges and vertices.
 \end{definition}
@@ -77,7 +81,7 @@ Let $Q$ be an ME-ful quiver, $Q'$ be its ME-free version. A path in the semi-inv
 \begin{definition}
 Let $Q$ be an ME-ful quiver.
 \begin{enumerate}
-\item A $c$-vector in $Q$ is \textit{ME-free} if for it is ME-free if considered as a dimensioHowevern vector of $Q$. Any $c$-vector in $Q$ that isn't ME-free is \textit{ME-ful}.
+\item A $c$-vector in $Q$ is \textit{ME-free} if it is ME-free if considered as a dimensioHowevern vector of $Q$. Any $c$-vector in $Q$ that isn't ME-free is \textit{ME-ful}.
 \item An MGS in $Q$ is \textit{ME-free} if all its $c$-vectors are ME-free. An MGS of $Q$ that isn't ME-free is \textit{ME-ful}.
 \item A generic green path in the semi-invariant picture of $Q$ is \textit{ME-free} if it crosses no wall corresponding to an ME-ful $c$-vector. A generic green path in the semi-invariant picture of $Q$ that isn't ME-free is \textit{ME-ful}.
 \item A module of $kQ$ is \textit{ME-free/ME-ful} if its $c$-vector is ME-free/ME-ful.
@@ -88,7 +92,7 @@ Let $Q$ be an ME-ful quiver.
 \begin{definition}
 Let $Q$ be an ME-ful quiver and let $Q'$ be its ME-free version.
 \begin{enumerate}
-\item A $c$-vector in $Q'$ is \textit{Q-ME-free} if for it is ME-free if considered as a dimension vector of $Q$. Any $c$-vector in $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.
+\item A $c$-vector in $Q'$ is \textit{Q-ME-free} if it is ME-free if considered as a dimension vector of $Q$. Any $c$-vector in $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.
 \item An MGS in $Q'$ is \textit{Q-ME-free} if all its $c$-vectors are $Q$-ME-free. An MGS of $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.
 \item A generic green path in the semi-invariant picture of $Q'$ is \textit{Q-ME-free} if it crosses no wall corresponding to a $Q$-ME-ful $c$-vector. A generic green path in the semi-invariant picture of $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.
 \item A strongly generic green path in the semi-invariant picture of $Q'$ is \textit{strongly $Q$-ME-free} if it is $Q$-ME-free and does not cross any wall corresponding to a $Q$-ME-ful $c$-vector in the semi-invariant picture of $Q$. A generic green path in the semi-invariant picture of $Q'$ that isn't strongly $Q$-ME-free is \textit{weakly Q-ME-ful}.
@@ -128,7 +132,7 @@ If every MGS of $Q$ corresponds to some MGS of $Q'$ and vice versa then $Q$ and 
 \indent (3) is a consequence of (2) since $\langle M,M\rangle_{kQ}$ and $\langle M,M\rangle_{kQ'} $ can not both be 1.
 \end{proof}
 \begin{lemma}
-Let $Q$ be an ME-ful quiver. Any MGS of a ME-ful quiver $Q$ must not contain any $Q$-ME-ful $c$-vector of $Q'$ or any vector $c$ such that the indecomposable module $M$ with $dim(M) = c$ aren't real Schur.
+Let $Q$ be an ME-ful quiver. Any MGS of an ME-ful quiver $Q$ must not contain any $Q$-ME-ful $c$-vector of $Q'$ or any vector $c$ which is an imaginary root of $Q'$.
 \end{lemma}
 \begin{proof}
 \indent Due to \ref{L2}(3) we only need to prove the second part. In that case $\langle c,c\rangle_{kQ} \leq \langle c,c\rangle_{kQ'} < 1$. Hence $c$ is not a $c$-vector of $Q$.
@@ -140,13 +144,6 @@ Let $Q$ be an ME-ful quiver. Any MGS of a ME-ful quiver $Q$ must not contain any
 %\begin{lemma}
 %Let $Q$ be an ME-ful quiver and let $Q'$ be its ME-free version. Then any MGS of $Q$ must be a $Q$-ME-free MGS of $Q'$.
 %\end{lemma}
-\indent In order to prove \ref{C4T1} we need to first prove a lemma.
-\begin{lemma}\label{C4L}
-\indent If $-c_1, -c_2$ are negative $c$-vectors in $C$-matrix $C'$ in an MGS, $c_1$ and $c_2$ are dimension vectors of indecomposable modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
-\end{lemma}
-\begin{proof}
-Assume that $-c_1$ is the $i$-th column and $-c_2$ is the $j$-th colu,n. According to \cite{KY12} using the definition of left mutations of simple-minded collections if $dim Ext^1(M_1, M_2) > 1$ then the mutation on $-c_2$ would cause $-c_1$ to be transformed into $-c_1-kc_2$ with $k>1$ because which could only happen if there are multiple edges from $i$ to $j$. Due to \cite{BHIT15} this was impossible.\\
-\end{proof}
 \indent Now we can easily establish the following theorem.
 \begin{theorem}
 MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, $Q'$.\label{C4T1B}
@@ -159,7 +156,7 @@ MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its
 \end{proof}
 \indent Now we can prove a stronger result.\\
 \begin{theorem}\label{C4T3B}
-MGSs of an ME-ful acyclic quiver $Q$ are exactly the $Q$-ME-free MGSs of its ME-free version, $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ if there exists any negative $c$-vector with support containing $i$ no mutation is done on any negative $c$-vector with support containing $j$.
+Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
 \end{theorem}
 \begin{proof}
 Let's compare $\langle M, N \rangle_{kQ}$ and $\langle M, N \rangle_{kQ'}$. They differ if and only if there exists some multiple edge from $i$ to $j$ such that $i$ is in the support of $M$ and $j$ is in the support of $N$. In this case since $Hom_{kQ}(M,N) = Hom_{kQ'}(M,N)  = Ext_{kQ'}(M,N) = 0$ $dim Ext_{kQ}(M,N) > 0$. Repeating the argument in \ref{C4T3B} we can show that this is the only possible scenario for a $Q$-ME-free MGSs of $Q'$ to not be identical to an MGS in $Q$.
@@ -167,14 +164,14 @@ Let's compare $\langle M, N \rangle_{kQ}$ and $\langle M, N \rangle_{kQ'}$. They
 \begin{corollary}\label{C4CB}
 The following statements are true:
 \begin{enumerate}
-\item The amount of maximal green sequences of a quiver $Q$ is no greater than that of its ME-free version.
+\item The number of maximal green sequences of a quiver $Q$ is no greater than that of its ME-free version.
 \item All quivers with an MGS-finite ME-free version must themselves be MGS-finite.
 \item No minimally MGS-infinite quiver can contain multiple edges.
 \item Any two ME-equivalent quivers are MGS-equivalent to each other.
 \end{enumerate}
 \end{corollary}
 \begin{proof}
-\indent Only (4) needs to be proven even though it is still obvious. For ME-equivalent quivers $Q$ and $Q'$ the conditions of \ref{C4T3B} are identical which is why the amount of MGS are identical.
+\indent Only (4) needs to be proven even though it is still obvious. For ME-equivalent quivers $Q$ and $Q'$ the conditions of \ref{C4T3B} are identical which is why the number of MGS are identical.
 \end{proof}
 \begin{example}
 The maximal green sequences of $Q: \begin{tikzcd}
@@ -205,49 +202,49 @@ $\begin{bmatrix}
 0 &1 & -2\\
 -1 & 0 & 1\\
 2 & -1 & 0\\
-1 & 0 & 0\\
-0 & 1 & 0\\
-0 & 0 & 1\\
+-1 & 0 & 0\\
+0 & -1 & 0\\
+0 & 0 & -1\\
 \end{bmatrix}\overset{\mu_2}{\to}\begin{bmatrix} 
 0 &-1 & -1\\
 1 & 0 & -1\\
 1 & 1 & 0\\
-1 & 0 & 0\\
+-1 & 0 & 0\\
+-1 & 1 & 0\\
+0 & 0 & -1\\
+\end{bmatrix}\overset{\mu_1}{\to}\begin{bmatrix} 
+0 &1 & 1\\
+-1 & 0 & -1\\
+-1 & 1 & 0\\
+1 & -1 & -1\\
+1 & 0 & -1\\
+0 & 0 & -1\\
+\end{bmatrix}\overset{\mu_3}{\to}\begin{bmatrix} 
+0 &2 & -1\\
+-2 & 0 & 1\\
+1 & -1 & 0\\
 0 & -1 & 1\\
 0 & 0 & 1\\
-\end{bmatrix}\overset{\mu_3}{\to}\begin{bmatrix} 
-0 &-1 & 1\\
-1 & 0 & 1\\
--1 & -1 & 0\\
-1 & 0 & 0\\
-1 & 0 & -1\\
-1 & 1 & -1\\
-\end{bmatrix}\overset{\mu_1}{\to}\begin{bmatrix} 
-0 &1 & -1\\
--1 & 0 & 2\\
-1 & -2 & 0\\
 -1 & 0 & 1\\
--1 & 0 & 0\\
+\end{bmatrix}\overset{\mu_1}{\to}\begin{bmatrix} 
+0 &-2 & 1\\
+2 & 0 & -1\\
 -1 & 1 & 0\\
-\end{bmatrix}\overset{\mu_3}{\to}\begin{bmatrix} 
-0 &-1 & 1\\
-1 & 0 & -2\\
--1 & 2 & 0\\
-0 & 0 & -1\\
--1 & 0 & 0\\
--1 & 1 & 0\\
+0 & -1 & 1\\
+0 & 0 & 1\\
+1 & 0 & 0\\
 \end{bmatrix}\overset{\mu_2}{\to}\begin{bmatrix} 
-0 &1 & -1\\
--1 & 0 & 2\\
-1 & -2 & 0\\
-0 & 0 & -1\\
--1 & 0 & 0\\
-0 & -1 & 0\\
+0 &2 & -1\\
+-2 & 0 & 1\\
+1 & -1 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\\
+1 & 0 & 0\\
 \end{bmatrix}$\\
 \indent Here we have a maximal green sequence with at least one ME-full $c$-vector. Moreover it is easy to see that if we replace the double edge by triple edge and obtain $Q': \begin{tikzcd}
 1\arrow[rd] &  & 3\lefttwicetriplearrow\\
  & 2\arrow[ur]
-\end{tikzcd}$\ (2,3,1,3,2) is not a $c$-vector of the quiver $Q'$.\\
+\end{tikzcd}$\ (2,1,3,1,2) is not a $c$-vector of the quiver $Q'$ nor is it an MGS of the ME-free version or skeleton of $Q$.\\
 \indent However we can still perform quiver cutting in more limited situations. Let's first introduce a concept.
 \begin{definition}
 A $k$\textit{-edge} is a tuple $(i,j)$ where $i,j\in [n]$ and $k|b_{ij}, k|b_{ji}$.
