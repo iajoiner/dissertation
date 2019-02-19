@@ -1,0 +1,119 @@
+\documentclass{brandeis-dissertation}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{xca}[theorem]{Exercise}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\cata}{\mathcal{A}}
+\newcommand{\catc}{\mathcal{C}}
+\newcommand{\catt}{\mathcal{T}}
+\newcommand{\catf}{\mathcal{F}}
+\newcommand{\cattf}{(\mathcal{T},\mathcal{F})}
+\newcommand{\fz}{\tilde{\mathbb{Z}}}
+\newcommand{\sig}{\sigma}
+\newcommand{\tsig}{\tilde{\sigma}}
+\newcommand{\siginv}{{\sigma}^{-1}}
+\newcommand{\psig}{P_{\sigma}}
+\newcommand{\psiginv}{{P_{\sigma}}^{-1}}
+\newcommand{\eem}[2]{\begin{bmatrix}#1\\#2\end{bmatrix}}
+\newcommand{\abovearrow}[1]{\overset{#1}{\longrightarrow}}
+\newcommand{\hos}{$Hom^{\leq 0}$-orthogonal sequence}
+%Triangulated categories
+\newcommand{\triang}[4]{#1\to #2\to #3\to #4}%triangle, math mode required
+\newcommand{\tmtriang}[4]{$#1\to #2\to #3\to #4$}%triangle, text mode required
+\newcommand{\triangwm}[7]{#1\overset{#2}{\to} #3\overset{#4}{\to} #5\overset{#6}{\to} #7}%triangle with morphisms, math mode required, some morphisms can be omitted
+\newcommand{\tmtriangwm}[7]{$#1\overset{#2}{\to} #3\overset{#4}{\to} #5\overset{#6}{\to} #7$}%triangle with morphisms, text mode required, some morphisms can be omitted
+\newcommand{\rightdoublearrow}{\arrow[r, shift right=0.6ex]\arrow[r, shift left=0.6ex]}
+\newcommand{\leftquadruplearrow}{\arrow[l, shift right=1.2ex]\arrow[l, shift left=0.4ex]\arrow[l, shift right=0.4ex]\arrow[l, shift left=1.2ex]}
+\newcommand{\righttwicedoublearrow}{\arrow[rr, shift right=0.6ex]\arrow[rr, shift left=0.6ex]}
+\newcommand{\lefttwicedoublearrow}{\arrow[ll, shift right=0.6ex]\arrow[ll, shift left=0.6ex]}
+\newcommand{\lefttwicetriplearrow}{\arrow[ll, shift right=0.8ex]\arrow[ll]\arrow[ll, shift left=0.8ex]}
+%    Absolute value notation
+\newcommand{\abs}[1]{\lvert#1\rvert}
+% a_ig_j element
+\newcommand{\ag}[2]{a_{#1}g_{#2}}
+
+%    Blank box placeholder for figures (to avoid requiring any
+%    particular graphics capabilities for printing this document).
+\newcommand{\blankbox}[2]{%
+  \parbox{\columnwidth}{\centering
+%    Set fboxsep to 0 so that the actual size of the box will match the
+%    given measurements more closely.
+    \setlength{\fboxsep}{0pt}%
+    \fbox{\raisebox{0pt}[#2]{\hspace{#1}}}%
+  }%
+}
+%\numberwithin{equation}{section}
+\title{Four problems related to maximal green sequences}
+\author{Ying Zhou}
+\department{Department of Mathematics}
+\advisor{Kiyoshi Igusa, Department of Mathematics}
+\reader{Olivier Bernardi, Department of Mathematics}
+\reader{Gordana Todorov, Department of Mathematics, Northeastern University}
+\dean{Eric Chasalow}
+\graduationyear{2019}
+\graduationmonth{May}
+\thesisabstract{Maximal green sequences were invented by Bernhard Keller and have a lot of applications in math and physics. In this dissertation I will discuss four separate topics related to maximal green sequences. First of all I will discuss the problem of associated permutations of mutation sequences and establish a formula for the associated permutation in the case of $A_n$ straight orientation. Secondly I will introduce the concept of $m$-maximal green sequences and discuss the problem of $m$-maximal green sequence-finiteness of tame hereditary algebras. Then I will introduce two alternative definitions of green mutation sequences and show that they are both equivalent to the known ones. Finally I will discuss the problem of maximal green sequences in quivers with multiple edges and show that in the acyclic case any maximal green sequence of such quivers must also be maximal green sequences of their multiple edges-free versions.}
+\begin{document}
+\thesisfront
+%\input{chapter_intro}
+\input{chapter_background}
+\input{chapter_permutation}
+\input{chapter_tame}
+\input{chapter_alternative_definitions}
+\input{chapter_multiple_edges}
+%\begin{}
+\bibliographystyle{amsplain}
+\begin{thebibliography}{10}
+\bibitem{AI10} Takuma Aihara and Osamu Iyama, \textit{Silting mutation in triangulated categories}, J London Math Soc (2012) 85 (3): 633-668.
+\bibitem{ARS} Maurice Auslander, Idun Reiten and Sverre O. Smalo, \textit{Representation Theory of Artin Algebras}, Cambridge University Press, Aug 21, 1997.
+\bibitem{ASS06} Ibrahim Assem, Daniel Simson and Andrzej Skowronski, \textit{Elements of the Representation Theory of Associative Algebras, Volume 1, Techniques of Representation Theory}, London Mathematical Society Student Texts, 2006.
+\bibitem{BBD} A.A. Beilinson, J. Bernstein, Pierre Deligne, \textit{Analyse et topologie sur les espaces singuliers}, Ast\'erisque 100, 1983. (in French)
+\bibitem{BDP13} Thomas Br\"ustle, Gr\'{e}goire Dupont and Matthieu P\'{e}rotin, \textit{On Maximal Green Sequences},  Int Math Res Notices (2014), 4547-4586.
+\bibitem{BHIT15} Thomas Br\"ustle, Stephen Hermes, Kiyoshi Igusa and Gordana Todorov, \textit{Semi-invariant pictures and two conjectures on maximal green sequences}, J Algebra {\bf 473} (2017): 80-109.
+\bibitem{BST17} Thomas Br\"ustle, David Smith and Hipolito Treffinger, \textit{Stability conditions, $\tau$-tilting Theory and Maximal Green Sequences}, \href{https://arxiv.org/abs/1705.08227}{arXiv:1705.08227 [math.RT]}, 2017.
+\bibitem{BY13} Thomas Br\"ustle and Dong Yang, \textit{Ordered Exchange Graphs}, Advances in Representation Theory of Algebras, 135--193, EMS Ser. Congr. Rep., Eur. Math. Soc., Zürich, 2013.
+\bibitem{DR76} Vlastimil Dlab and Claus Michael Ringel, \textit{Indecomposable representations of graphs and algebras}, Memoirs of AMS, Vol. 173, 1976. 
+\bibitem{FST11} Anna Felikson, Michael Shapiro, Pavel Tumarkin, \textit{Cluster algebras and triangulated orbifolds}, Advances in Mathematics, Volume 231, Issue 5, (2012) 2953-3002.
+\bibitem{FZ01} Sergey Fomin and Andrei Zelevinsky, \textit{Cluster algebras I: Foundations}, J. Amer. Math. Soc. 15 (2002), 497-529.
+\bibitem{FZ06} Sergey Fomin and Andrei Zelevinsky, \textit{Cluster algebras IV: Coefficients}, Compositio Math. 143 (2007) 112-164.
+%\bibitem{Gab72} Peter Gabriel, \textit{Unzerlegbare Darstellungen. I}, Manuscripta Mathematica 6: 71ï¿½103, 1972. (in German)
+\bibitem{GHKK14} Mark Gross, Paul Hacking, Sean Keel and Maxim Kontsevich, \textit{
+Canonical bases for cluster algebras}, J. Amer. Math. Soc. 31 (2018), 497-608.
+\bibitem{GM14} Alexander Garver and Gregg Musiker, \textit{On Maximal Green Sequences For Type $A$ Quivers}, G. J Algebr Comb (2017) 45: 553-599.
+\bibitem{H88} Dieter Happel, \textit{Triangulated Categories in the Representation of Finite Dimensional Algebras}, London Mathematical Society Lecture Note Series, Cambridge: Cambridge University Press, 1988.
+.%\bibitem{Igu14} Kiyoshi Igusa, \textit{Notes on picture groups and maximal green sequences}, 2014
+\bibitem{IOTW15} Kiyoshi Igusa, Kent Orr, Gordana Todorov and Jerzy Weyman, \textit{Modulated semi-invariants},  \href{http://arxiv.org/abs/1507.03051}{arXiv:1507.03051 [math.RT]}.
+\bibitem{IOTW4} Kiyoshi Igusa, Kent Orr, Gordana Todorov and Jerzy Weyman, \textit{Picture groups of finite type and cohomology in type $A_n$}, unpublished preprint, 2014.
+%\bibitem{IT14} Kiyoshi Igusa and Gordana Todorov, \textit{Picture groups and maximal green sequences}, unpublished preprint 2014.
+\bibitem{I17} Kiyoshi Igusa, \textit{Linearity of stability conditions}, \href{https://arxiv.org/abs/1706.06986}{arXiv:1706.06986}.
+\bibitem{IT17} Kiyoshi Igusa and Gordana Todorov, \textit{Picture groups and maximal green sequences}, unpublished preprint 2014.
+\bibitem{IY06} Osamu Iyama and Yuji Yoshino, \textit{Mutation in triangulated categories and rigid Cohen-Macaulay modules}, Y. Invent. math. (2008) 172: 117-168.
+\bibitem{IZ17} Kiyoshi Igusa and Ying Zhou, \textit{Tame Hereditary Algebras have finitely many m-Maximal Green Sequences}, \href{https://arxiv.org/abs/1706.09118}{arXiv:1706.09118}.
+\bibitem{Kel11} Bernhard Keller, \textit{Quiver mutation and quantum dilogarithm identities}, Representations of Algebras and Related Topics, Editors A. Skowronski and K. Yamagata, EMS Series of Congress Reports, European Mathematical Society (2011): 85-116.
+\bibitem{KQ15} Alastair King, Yu Qiu, \textit{Exchange graphs and Ext quivers}, Advances in Mathematics, Volume 285, 1106-1154, 2015.
+\bibitem{KY12} Steffen Koenig and Dong Yang, \textit{Silting objects, simple-minded collections, t-structures and co-t-structures for finite-dimensional algebras}, Doc. Math. 19 (2014), 403-438. 
+\bibitem{Mul15} Gregory Muller, \textit{The existence of a maximal green sequence is not invariant under quiver mutation}, Combinatorics, Volume 23, Issue 2 (2016) :P2.47. 
+\bibitem{MurD1} Daniel Murfet, \href{http://therisingsea.org/notes/DerivedCategories.pdf}{Derived Categories Part I}.
+\bibitem{MurD2} Daniel Murfet, \href{http://therisingsea.org/notes/DerivedCategoriesPart2.pdf}{Derived Categories Part II}.
+\bibitem{MurT1} Daniel Murfet, \href{http://therisingsea.org/notes/TriangulatedCategories.pdf}{Triangulated Categories Part I}.
+%\bibitem{NR15} Tomoki Nakanishi and Dylan Rupel, \textit{Companion cluster algebras to a generalized cluster algebra}, \href{http://arxiv.org/abs/1504.06758}{arXiv:1504.06758 [math.RA]}, 2015.
+\bibitem{NZ11} Tomoki Nakanishi and Andrei Zelevinsky, \textit{On tropical dualities in cluster algebras}, Contemporary Mathematics 565, 217-226.
+\bibitem{R84} Claus Michael Ringel, \textit{Tame Algebras and Integral Quadratic Forms}, Volume 1099 of \textit{Lecture Notes in Mathematics}, Springer-Verlag, 1984
+\bibitem{Sal14} Ibrahim Saleh, \textit{Exchange Maps of Cluster Algebras}, \href{http://arxiv.org/abs/1011.0894v3}{arXiv:1011.0894 [math.RT]}, 2014.
+\bibitem{SS06} Daniel Simson and Andrzej Skowronski, \textit{Elements of the Representation Theory of Associative Algebras, Volume 2, Tubes and Concealed Algebras of Euclidean Type}, London Mathematical Society Student Texts, 2006.
+\bibitem{ST12} David Speyer, Hugh Thomas, \textit{Acyclic cluster algebras revisited}, In: Buan A., Reiten I., Solberg Ø. (eds) \textit{Algebras, Quivers and Representations. Abel Symposia}, vol 8. Springer, Berlin, Heidelberg.
+\end{thebibliography}
+
+\end{document}
