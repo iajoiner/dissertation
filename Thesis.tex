@@ -1,0 +1,606 @@
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+\newcommand{\nrt}[1]{$\mathbb{T}_{#1}$} %n-regular tree of size #1
+\newcommand{\catc}{\mathcal{C}}
+\newcommand{\catcm}{\mathcal{C}_m}
+\newcommand{\fz}{\tilde{\mathbb{Z}}}
+\documentclass{beamer}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\newcommand{\rightdoublearrow}{\arrow[r, shift right=0.6ex]\arrow[r, shift left=0.6ex]}
+\newcommand{\leftdoublearrow}{\arrow[l, shift right=0.6ex]\arrow[l, shift left=0.6ex]}
+\newcommand{\leftquadruplearrow}{\arrow[l, shift right=1.2ex]\arrow[l, shift left=0.4ex]\arrow[l, shift right=0.4ex]\arrow[l, shift left=1.2ex]}
+\newcommand{\righttwicedoublearrow}{\arrow[rr, shift right=0.6ex]\arrow[rr, shift left=0.6ex]}
+\newcommand{\lefttwicedoublearrow}{\arrow[ll, shift right=0.6ex]\arrow[ll, shift left=0.6ex]}
+\newcommand{\lefttwicetriplearrow}{\arrow[ll, shift right=0.8ex]\arrow[ll]\arrow[ll, shift left=0.8ex]}
+
+% There are many different themes available for Beamer. A comprehensive
+% list with examples is given here:
+% http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+% You can uncomment the themes below if you would like to use a different
+% one:
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{boxes}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{default}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+\usetheme{Warsaw}
+%\newtheorem{conjecture}{Conjecture}
+%\newenvironment<>{conjecture}[1][]{
+%\setbeamercolor{block title example}{fg=white, bg=red!75!black}
+%\begin{conjecture}#2[#1]}{\end{conjecture}}
+\definecolor{Branblue}{rgb}{0, 0.18, 0.42}
+\usecolortheme[named=Branblue]{structure}
+%\definecolor{mypurple} {rgb} {30,0,140}%From http://latex-community.org/forum/viewtopic.php?f=4&t=6069
+%\setbeamercolor{palette primary} {use=structure,fg=white,bg=green}
+\title{Maximal green sequences of quivers with multiple edges}
+
+% A subtitle is optional and this may be deleted
+%\subtitle{Optional Subtitle}
+
+\author{Ying Zhou\inst{1}}
+% - Give the names in the same order as the appear in the paper.
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[Brandeis University] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Department of Mathematics\\
+  Brandeis University \and}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+%\date{}
+% - Either use conference name or its abbreviation.
+% - Not really informative to the audience, more for people (including
+%   yourself) who are reading the slides online
+
+\subject{Cluster Algebra}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\begin{frame}{Abbreviations}
+\indent In this talk GS refers to green sequence, MGS refers to maximal green sequence, ME refers to multiple edges.
+\end{frame}
+
+\section{Motivation: Kronecker quiver}
+\begin{frame}[fragile]{Motivation: Kronecker quiver}
+\indent Let's explain this phenomenon using the example of Kronecker quiver,  $Q:\,\begin{tikzcd}1\arrow[r, shift right=0.6ex]\arrow[r, shift left=0.6ex] & 2\end{tikzcd}$. It has one maximal green sequence.\\\pause
+\indent If we cut the double edge we obtain $Q':\ 1\quad 2$ which we say is the \textit{multiple edge-free (ME-free) version} of $Q$. There are two maximal green sequences.\\
+\end{frame}
+
+\begin{frame}{Comparison of MGS}
+$\begin{bmatrix} 0 & 2 \\ -2 & 0 \\ -1 & 0 \\ 0 & -1\\ \end{bmatrix}
+\overset{\mu_1}{\to}\begin{bmatrix} 0 & -2 \\ 2 & 0 \\ 1 & 0 \\ 0 & -1\\ \end{bmatrix}
+\overset{\mu_2}{\to}\begin{bmatrix} 0 & 2 \\ -2 & 0 \\ 1 & 0 \\ 0 & 1\\ \end{bmatrix}$\\\pause
+$\begin{bmatrix} 0 & 0 \\ 0 & 0 \\ -1 & 0 \\ 0 & -1\\ \end{bmatrix}
+\overset{\mu_1}{\to}\begin{bmatrix} 0 & 0 \\ 0 & 0 \\ 1 & 0 \\ 0 & -1\\ \end{bmatrix}
+\overset{\mu_2}{\to}\begin{bmatrix} 0 & 0 \\ 0 & 0 \\ 1 & 0 \\ 0 & 1\\ \end{bmatrix}$\\\pause
+\vskip 0.2in
+They have the same mutations and the same $c$-matrices.\\
+\end{frame}
+
+\begin{frame}[fragile]{Comparison of MGS}
+$\begin{tikzcd}
+1 \rightdoublearrow\arrow[d] & 2\arrow [d]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\leftdoublearrow\arrow[d]\arrow[r,"\mu_2", shift right=3.5ex]&1\rightdoublearrow & 2\\
+1' & 2'&1'\arrow[u]& 2'&1'\arrow[u] & 2'\arrow[u]\end{tikzcd}$\\\pause
+$\begin{tikzcd} 1\arrow[d]&2\arrow[d]\arrow[r,"\mu_1", shift right=3.5ex]&1&2\arrow[d]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\\
+ 1'&2'&1'\arrow[u]&2'&1'\arrow[u]&2'\arrow[u]
+\end{tikzcd}$\\\pause
+\vskip 0.2in
+They have the same mutations and the same $c$-matrices.\\
+\end{frame}
+
+\begin{frame}{Question}
+\begin{itemize}
+\item Let $Q$ be a quiver which has multiple edges. Let $Q'$ be its ME-free version, what can we say about MGSs of $Q$ and $Q'$?
+\end{itemize}
+\end{frame}
+
+\section{Background}
+
+\subsection{Simple-minded collections}
+%SMC-SMC
+\begin{frame}{Simple-minded collections}{Simple-minded collections}
+\begin{definition}
+Let $\Lambda$ be an algebra with $n$ primitive idempotents. A \textit{simple-minded collection} $\{S_i\}_{i\in [n]}$ of $D^b(\Lambda)$ is an $n$-element set such that $(S_i[\geq 0],S_j)=0$ for all $i\neq j$, $(S_i[>0], S_i) = 0$ for all $i$, $(S_i,S_i)$ is a division algebra and that $\{S_i\}_{i\in [n]}$ generates $D^b(\Lambda)$.\\
+\end{definition}
+\end{frame}
+
+%SMC-Examples
+\begin{frame}[fragile]{Simple-minded collections}{Ex: $D^b(A_3)$}
+\begin{tikzcd}[cramped,sep=small]
+I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & I_1[1]\\
+& P_2\arrow[ru]\arrow[rd]& &I_2\arrow[rd]\arrow[ru] & &P_2[1]\arrow[rd]\arrow[ru] & &I_2[1]\arrow[rd]\arrow[ru]\\
+ P_3\arrow[ru]& &S_2\arrow[ru]& &I_1\arrow[ru] & &P_1[1]\arrow[ru] & &P_3[2]\\
+\end{tikzcd}\\\pause
+\indent $\{I_1, S_2, P_3\}$ is a simple-minded collection. $\{P_3[1], P_2, I_1\}$ is also a simple-minded collection.
+\end{frame}
+
+%SMC-Approximations
+\begin{frame}[fragile]{Simple-minded collections}{Approximations}
+\begin{definition}
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. If $M\in Ob\catc, N\in Ob\mathcal{X}$, a morphism $f\in Hom_{\catc}(M,N)$ is a \textit{minimal left-$\mathcal{X}$ approximation} if for any $g\in End_{\catc} N$ such that $g\circ f = f$ $g$ is an isomorphism and for any $N'\in Ob\mathcal{X}$ for any $q\in Hom_{\catc}(M,N')$ we have $q$ factors through $f$.\\\pause
+\end{definition}
+\begin{tikzcd}
+M\arrow[r,"f"]\arrow[rd,"q"] & N\arrow[dashed,d,"l"]\\
+ & N'\\
+\end{tikzcd}
+\end{frame}
+
+%SMC-Approximations
+\begin{frame}[fragile]{Simple-minded collections}{Approximations}
+\begin{definition}
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. If $N\in Ob\catc, M\in Ob\mathcal{X}$, A morphism $f\in Hom_{\catc}(M,N)$ is a \textit{minimal right-$\mathcal{X}$ approximation} if for any $g\in End_{\catc} M$ such that $f\circ g = f$ $g$ is an isomorphism and for any $M'\in Ob\mathcal{X}$ for any $q\in Hom_{\catc}(M',N)$ we have $q$ factors through $f$.\\\pause
+\end{definition}
+\begin{tikzcd}
+M\arrow[r,"f"]& N\\
+M'\arrow[ru,"q"]\arrow[u,dashed,"l"]& \\
+\end{tikzcd}
+\end{frame}
+
+%SMC-Mutations
+\begin{frame}{Simple-minded collections}{Mutations}
+\begin{definition}
+A \textit{forward mutation} on the element $S_i$ of the simple-minded collection $\{S_j\}$ is $\{S'_j\}$ where $S'_i = S_i[1]$ and $S'_j$ ($j\neq i$) is the cone/homotopy cokernel of the minimal left-$add(S_i)$ approximation of $S_j[-1]$.\\\pause
+A \textit{backward mutation} on the element $S_i$ of the simple-minded collection $\{S_j\}$ is $\{S'_j\}$ where $S'_i = S_i[-1]$ and $S'_j$ ($j\neq i$) is the cone/homotopy cokernel of the minimal left-$add(S_i[-1])$ approximation of $S_j$.\\\pause
+\end{definition}
+\end{frame}
+
+%SMC-Mutations-Examples
+\begin{frame}[fragile]{Simple-minded collections}{Ex: $D^b(A_3)$}
+\begin{tikzcd}[cramped,sep=small]
+I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & I_1[1]\\
+& P_2\arrow[ru]\arrow[rd]& &I_2\arrow[rd]\arrow[ru] & &P_2[1]\arrow[rd]\arrow[ru] & &I_2[1]\arrow[rd]\arrow[ru]\\
+ P_3\arrow[ru]& &S_2\arrow[ru]& &I_1\arrow[ru] & &P_1[1]\arrow[ru] & &P_3[2]\\
+\end{tikzcd}\\\pause
+\indent $\{I_1, S_2, P_3\}$ is a simple-minded collection. When we do a forward mutation at $P_3$ we get $\{P_3[1], P_2, I_1\}$. When we do a forward mutation at $P_2$ now we get $\{S_2, P_2[1], P_1\}$. When we then do a forward mutation at $P_1$ we get $\{S_2, I_1, P_1[1]\}$.
+\end{frame}
+
+\subsection{Two results about $c$-vectors}
+
+\begin{frame}{$c$-vectors}
+\indent Positive $c$-vectors are dimension vectors of elements of simple-minded collections. Such elements are all bricks. That is, all $c$-vectors are Schur. However we can indeed prove more. They are in fact real as well.\\\pause
+\begin{lemma}
+Let $k$ be an algebraically closed field. Let $\Lambda$ be a hereditary algebra over $k$. Then any $c$-vector $c$ that appears in any MGS is a real Schur root.\pause
+\end{lemma}
+\indent The crucial fact we need to use is that for any $c$-vector in an MGS $\langle c,c\rangle = 1$.
+\end{frame}
+
+\begin{frame}{$c$-vectors}
+\begin{lemma}
+\indent If $-c_1, -c_2$ are negative $c$-vectors in $C$-matrix $C'$ in an MGS, $c_1$ and $c_2$ are dimension vectors of exceptional modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
+\end{lemma}
+\end{frame}
+
+\subsection{MGS-finiteness}
+\begin{frame}{Definition: MGS-finiteness}
+\begin{definition}
+A quiver $Q$ is \textit{MGS-finite} if $Q$ has finitely many maximal green sequences. Any quiver that isn't MGS-finite is \textit{MGS-infinite}.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Which quivers are MGS-finite?}
+\begin{itemize}
+\item Acyclic quivers of finite or tame type. (Brustle-Dupont-Perotin) \cite{BDP13}\pause
+\item Acyclic quivers with at most 3 vertices. (Brustle-Dupont-Perotin) \cite{BDP13}\pause
+\item Quivers mutation equivalent to acyclic quivers of tame type. (Brustle-Hermes-Igusa-Todorov) \cite{BHIT15}\pause
+\item Quivers with a full subquiver with no MGS. (Muller)\cite{Mul15}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Are all quivers MGS-finite}
+\begin{block}{Conjecture}
+All acyclic quivers are MGS-finite.
+\end{block}
+\end{frame}
+
+\begin{frame}{Roadmap to the proof}
+\begin{itemize}
+\item Tackle multiple edges.\pause
+\item Tackle cycles.\pause
+\item Tackle subquivers of type $\tilde{D_n}$.\pause
+\item Tackle subquivers of type $\tilde{E_n}$.\pause
+\end{itemize}
+\indent We will finish the first step.
+\end{frame}
+
+\section{The acyclic case}
+\subsection{Definitions}
+
+\begin{frame}{ME-ful quivers}
+\begin{definition}
+A quiver with at least one multiple edge is \textit{ME-ful}. Otherwise it is \textit{ME-free}.\pause
+\end{definition}
+\indent For example the $m$-Kronecker quiver for any $m > 1$ is ME-ful. On the other hand $A_2$ is ME-free.\\
+\end{frame}
+
+\begin{frame}{ME-free versions}
+\begin{definition}
+A \textit{multiple edges-free (ME-free)} version of a quiver $Q$ is produced by removing all multiple edges from $Q$ while retaining single edges and vertices.\pause
+\end{definition}
+\indent For example the ME-free version of the $m$-Kronecker quiver for any $m > 1$ is the quiver $A_1\times A_1$, namely the quiver with two vertices and no arrows.\\
+\end{frame}
+
+\begin{frame}{ME-ful/ME-free}
+\begin{definition}
+Let $Q$ be an ME-ful quiver.
+\begin{enumerate}
+\item A $c$-vector in $Q$ is \textit{ME-free} if its support is ME-free. Any $c$-vector in $Q$ that isn't ME-free is \textit{ME-ful}.
+\item An MGS in $Q$ is \textit{ME-free} if all its $c$-vectors are ME-free. An MGS of $Q$ that isn't ME-free is \textit{ME-ful}.
+%\item A generic green path in the semi-invariant picture of $Q$ is \textit{ME-free} if it crosses no wall corresponding to an ME-ful $c$-vector. A generic green path in the semi-invariant picture of $Q$ that isn't ME-free is \textit{ME-ful}.
+\item A module of $kQ$ is \textit{ME-free/ME-ful} if its $c$-vector is ME-free/ME-ful.
+\end{enumerate}
+\end{definition}
+\end{frame}
+
+\begin{frame}{$Q$-ME-ful/$Q$-ME-free}
+\begin{definition}
+Let $Q$ be an ME-ful quiver and let $Q'$ be its ME-free version.
+\begin{enumerate}
+\item A $c$-vector in $Q'$ is \textit{Q-ME-free} if it is ME-free when considered as a dimension vector of $Q$. Any $c$-vector in $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.\pause
+\item An MGS in $Q'$ is \textit{Q-ME-free} if all its $c$-vectors are $Q$-ME-free. An MGS of $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.\pause
+%\item A generic green path in the semi-invariant picture of $Q'$ is \textit{Q-ME-free} if it crosses no wall corresponding to a $Q$-ME-ful $c$-vector. A generic green path in the semi-invariant picture of $Q'$ that isn't $Q$-ME-free is \textit{Q-ME-ful}.
+%\item A strongly generic green path in the semi-invariant picture of $Q'$ is \textit{strongly $Q$-ME-free} if it is $Q$-ME-free and does not cross any wall corresponding to a $Q$-ME-ful $c$-vector in the semi-invariant picture of $Q$. A generic green path in the semi-invariant picture of $Q'$ that isn't strongly $Q$-ME-free is \textit{weakly Q-ME-ful}.
+\item A module of $kQ'$ is \textit{Q-ME-free/Q-ME-ful} if its $c$-vector is $Q$-ME-free/$Q$-ME-ful.
+\end{enumerate}
+\end{definition}
+\end{frame}
+
+\begin{frame}{Equivalence of GSs}
+\begin{definition}
+If $Q$ and $Q'$ have the same number of vertices, a GS $w$ of $kQ$ \textit{is equivalent to} a GS $w'$ of $kQ'$ if $w$ and $w'$ mutates on the same sequence of $c$-vectors and start from the same $c$-matrix up to permutations. 
+\end{definition}
+\end{frame}
+
+\begin{frame}{Skeletons}
+\begin{definition}
+The \textit{skeleton} of a quiver $Q$ is produced by replacing all multiple edges from $Q$ by single edges with the sources and targets unchanged.
+\end{definition}
+\indent For example the ME-free version of the $m$-Kronecker quiver for any $m$ is the quiver $A_2$.
+\end{frame}
+
+\begin{frame}{ME-equivalence and MGS-equivalence}
+\begin{definition}
+$Q$ and $Q'$ are quivers. If they have the same ME-free version and the same skeleton then they are \textit{ME-equivalent}.\pause
+\end{definition}
+\begin{definition}
+If every MGS of $Q$ corresponds to some MGS of $Q'$ and vice versa then $Q$ and $Q'$ are MGS-equivalent. 
+\end{definition}
+\end{frame}
+
+\subsection{Results}
+
+\begin{frame}{Lemmas}
+\begin{lemma}
+\indent Let $Q$ be a quiver and $Q'$ be its ME-free version. The following holds:\label{L2}
+\begin{enumerate}
+\item The set of $Q$-ME-free $c$-vectors of $Q$ and $Q'$ coincide.
+\item If $Q$ is an ME-ful quiver then for any positive $Q$-ME-ful vector $c\in\mathbb{R}^n$ $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.
+\item If $Q$ is an ME-ful quiver. Then any of the $Q$-ME-ful $c$-vectors can not be a dimension vector of an exceptional module for $Q'$. Any of the $Q$-ME-ful $c$-vectors of $Q'$ can not be a dimension vector of an exceptional module for $Q$.
+\end{enumerate}
+\end{lemma}
+\end{frame}
+
+\begin{frame}{Lemmas}
+\begin{lemma}
+Let $Q$ be an ME-ful quiver. Any MGS of an ME-ful quiver $Q$ must not contain any $Q$-ME-ful $c$-vector of $Q'$ or any vector $c$ which is an imaginary root of $Q'$.
+\end{lemma}
+\end{frame}
+
+%Theorem-Theorem
+\begin{frame}{Theorems in the acyclic case}
+\begin{theorem}
+MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, $Q'$.\label{T1B}
+\end{theorem}
+\begin{theorem}\label{T3B}
+Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
+\end{theorem}
+\end{frame}
+
+\begin{frame}{Corollaries}
+\begin{corollary}\label{CB}
+The following statements are true:
+\begin{enumerate}
+\item The number of maximal green sequences of a quiver $Q$ is no greater than that of its ME-free version.\pause
+\item All quivers with an MGS-finite ME-free version must themselves be MGS-finite.\pause
+\item No minimally MGS-infinite quiver can contain multiple edges.\pause
+\item Any two ME-equivalent quivers are MGS-equivalent to each other.
+\end{enumerate}
+\end{corollary}
+\end{frame}
+
+\subsection{Examples}
+\begin{frame}[fragile]{Examples}
+\begin{example}
+The maximal green sequences of $Q: \begin{tikzcd}
+1\righttwicedoublearrow\arrow[rd] &  & 3\\
+ & 2\arrow[ur]
+\end{tikzcd}$ are maximal green sequences of its ME-free version $Q': 1\to 2\to 3$ that has no $c$-vector with support containing $\{1,3\}$ and satisfies the conditions in the second theorem above with respect to the arrow $\begin{tikzcd} 1\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite. In fact it has 3 MGSs.
+\end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Examples}
+\begin{example}
+The maximal green sequences of $Q: \begin{tikzcd}
+1\arrow[r] & 2 \rightdoublearrow&  3 \arrow[r] & 4\\
+\end{tikzcd}$ are some maximal green sequences of its ME-free version $Q': \begin{tikzcd}
+1\arrow[r] & 2&  3 \arrow[r] & 4\\
+\end{tikzcd}$ that has no $c$-vector with support containing $\{2,3\}$ and satisfies the conditions in the second theorem above with respect to the arrow $\begin{tikzcd} 2\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite because $A_2$ is.
+\end{example}
+\end{frame}
+
+\section{The general case}
+\subsection{Limitation of the theorems in the acyclic case}
+\begin{frame}[fragile]{A counterexample}
+\indent In the general case the theorems above aren't true. We can show that using the following counterexample. The quiver $Q$ here is $\begin{tikzcd}
+1\arrow[rd] &  & 3\lefttwicedoublearrow\\
+ & 2\arrow[ur]
+\end{tikzcd}$.
+\end{frame}
+
+\begin{frame}{A counterexample}
+$\begin{bmatrix}
+0 &1 & -2\\
+-1 & 0 & 1\\
+2 & -1 & 0\\
+-1 & 0 & 0\\
+0 & -1 & 0\\
+0 & 0 & -1\\
+\end{bmatrix}\overset{\mu_2}{\to}\begin{bmatrix} 
+0 &-1 & -1\\
+1 & 0 & -1\\
+1 & 1 & 0\\
+-1 & 0 & 0\\
+-1 & 1 & 0\\
+0 & 0 & -1\\
+\end{bmatrix}\overset{\mu_1}{\to}\begin{bmatrix} 
+0 &1 & 1\\
+-1 & 0 & -1\\
+-1 & 1 & 0\\
+1 & -1 & -1\\
+1 & 0 & -1\\
+0 & 0 & -1\\
+\end{bmatrix}\overset{\mu_3}{\to}\begin{bmatrix} 
+0 &2 & -1\\
+-2 & 0 & 1\\
+1 & -1 & 0\\
+0 & -1 & 1\\
+0 & 0 & 1\\
+-1 & 0 & 1\\
+\end{bmatrix}\overset{\mu_1}{\to}\begin{bmatrix} 
+0 &-2 & 1\\
+2 & 0 & -1\\
+-1 & 1 & 0\\
+0 & -1 & 1\\
+0 & 0 & 1\\
+1 & 0 & 0\\
+\end{bmatrix}\overset{\mu_2}{\to}\begin{bmatrix} 
+0 &2 & -1\\
+-2 & 0 & 1\\
+1 & -1 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1\\
+1 & 0 & 0\\
+\end{bmatrix}$
+\end{frame}
+
+\begin{frame}[fragile]{A counterexample}
+\indent Here we have a maximal green sequence with at least one ME-full $c$-vector. Moreover it is easy to see that if we replace the double edge by triple edge and obtain $Q': \begin{tikzcd}
+1\arrow[rd] &  & 3\lefttwicetriplearrow\\
+ & 2\arrow[ur]
+\end{tikzcd}$\ (2,1,3,1,2) is not an MGS of the quiver $Q'$ nor is it an MGS of the ME-free version or skeleton of $Q$.\\
+\end{frame}
+
+\subsection{Result}
+
+\begin{frame}{$k$-edges}
+\begin{definition}
+A $k$\textit{-edge} is a tuple $(i,j)$ where $i,j\in [n]$ and $k|b_{ij}, k|b_{ji}$.
+\end{definition}
+\begin{definition}
+Let $Q$ be a quiver possibly having oriented cycles, let $k$ be an integer greater than 1. Assume that $Q_0$ = $\tilde{Q}_0 + \breve{Q}_0$, $P = Q]_{\tilde{Q}_0}, R = Q]_{\breve{Q}_0}$. If for all $i\in \tilde{Q}_0, j\in  \breve{Q}_0$ $k|b_{ij}$ and $k|b_{ji}$ we say $Q$ is $k$-\textit{partible} and $(\tilde{Q}, \breve{Q})$ is a $k$\textit{-partition} of $Q$.
+\end{definition}
+\end{frame}
+
+\begin{frame}{Theorem in the general case}
+\begin{theorem}
+Assume that ($\tilde{Q},\breve{Q})$ are $k$-partition of $Q$ for some $k>1$ any MGS of $Q$ is an MGS of $\tilde{Q}\cup\breve{Q}$.\label{T2B}
+\end{theorem}\pause
+\begin{corollary}
+Under the conditions of the theorem above, if $\tilde{Q}$ and $\breve{Q}$ are MGS-finite so is $Q$.
+\end{corollary}
+\end{frame}
+
+\subsection{Examples}
+
+\begin{frame}[fragile]{Examples}
+\begin{example}
+$Q:\begin{tikzcd}
+1\arrow[rd] &                                             &                   &5\arrow[dd]\\
+                 &2\arrow[dl]\rightdoublearrow & 4\arrow[ur] &\\
+3\arrow[uu] &                                            &                  &6\arrow[ul]\\
+\end{tikzcd}$ is a quiver with oriented cycles. Due to the theorem we can cut the $\begin{tikzcd}2\rightdoublearrow & 4\end{tikzcd}$ arrow. After cutting this arrow it is easy to see that $Q$ is MGS-finite.
+\end{example}
+\end{frame}
+
+\begin{frame}[fragile]{Examples}
+\begin{example}
+$Q:\begin{tikzcd}
+ &       2\rightdoublearrow                                      &  3\arrow[rd]&\\
+1\arrow[ru]                 &    &  &4\arrow[dl]\\
+ &     6\arrow[ul]                                       & 5\leftquadruplearrow                 &\\
+\end{tikzcd}$ is another quiver with oriented cycles.  Due to the theorem we can cut the $\begin{tikzcd}2\rightdoublearrow & 3\end{tikzcd}$ and  $\begin{tikzcd}6 & 5\leftquadruplearrow\end{tikzcd}$ arrows. After cutting these arrows it is easy to see that $Q$ is MGS-finite.
+\end{example}
+
+\end{frame}
+% Placing a * after \section means it will not show in the
+% outline or table of contents.
+\section*{Summary}
+
+\begin{frame}{Summary}
+  \begin{itemize}  
+    \item
+    We can completely describe MGSs of an ME-full quiver using MGSs of its ME-free version.\pause
+    \item Any two ME-equivalent quivers are MGS-equivalent to each other.\pause
+    \item Removal of multiple edges is possible in more limited cases when the quiver isn't acyclic.
+    \end{itemize}
+    \end{frame}
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+   % \beamertemplatebookbibitems
+  % Start with overview books.
+
+  %\bibitem{Author1990}
+    %A.~Author.
+    %\newblock {\em Handbook of Everything}.
+    %\newblock Some Press, 1990.
+ 
+    
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+ %\begin{frame} 
+\bibitem{BDP13} Thomas Br\"ustle, Gr\'{e}goire Dupont and Matthieu P\'{e}rotin, \textit{On Maximal Green Sequences},  Int Math Res Notices (2014), 4547--4586.
+\bibitem{BHIT15} Thomas Br\"ustle, Stephen Hermes, Kiyoshi Igusa and Gordana Todorov, \textit{Semi-invariant pictures and two conjectures on maximal green sequences}, J Algebra {\bf 473} (2017): 80--109.
+\bibitem{BST17} Thomas Br\"ustle, David Smith and Hipolito Treffinger, \textit{Stability conditions, $\tau$-tilting Theory and Maximal Green Sequences}, \href{https://arxiv.org/abs/1705.08227}{arXiv:1705.08227 [math.RT]}, 2017.
+\bibitem{FZ01} Sergey Fomin and Andrei Zelevinsky, \textit{Cluster algebras I: Foundations}, J. Amer. Math. Soc. 15 (2002), 497-529.
+\bibitem{FZ06} Sergey Fomin and Andrei Zelevinsky, \textit{Cluster algebras IV: Coefficients}, Compositio Math. 143 (2007) 112?164.
+%\bibitem{Gab72} Peter Gabriel, \textit{Unzerlegbare Darstellungen. I}, Manuscripta Mathematica 6: 71�103, 1972. (in German)
+\bibitem{GHKK14} Mark Gross, Paul Hacking, Sean Keel and Maxim Kontsevich, \textit{
+Canonical bases for cluster algebras}, J. Amer. Math. Soc. 31 (2018), 497-608.
+\bibitem{GM14} Alexander Garver and Gregg Musiker, \textit{On Maximal Green Sequences For Type A Quivers}, G. J Algebr Comb (2017) 45: 553.
+%\bibitem{Igu14} Kiyoshi Igusa, \textit{Notes on picture groups and maximal green sequences}, 2014
+\bibitem{IOTW15} Kiyoshi Igusa, Kent Orr, Gordana Todorov and Jerzy Weyman, \textit{Modulated semi-invariants},  \href{http://arxiv.org/abs/1507.03051}{arXiv:1507.03051 [math.RT]}.
+%\bibitem{IT14} Kiyoshi Igusa and Gordana Todorov, \textit{Picture groups and maximal green sequences}, unpublished preprint 2014.
+\bibitem{I17} Kiyoshi Igusa, \textit{Linearity of stability conditions}, \href{https://arxiv.org/abs/1706.06986}{arXiv:1706.06986}
+\bibitem{IZ17} Kiyoshi Igusa and Ying Zhou, \textit{Tame Hereditary Algebras have finitely many m-Maximal Green Sequences}, \href{https://arxiv.org/abs/1706.09118}{arXiv:1706.09118}
+\bibitem{Kel11} Bernhard Keller, \textit{Quiver mutation and quantum dilogarithm identities}, Representations of Algebras and Related Topics, Editors A. Skowronski and K. Yamagata, EMS Series of Congress Reports, European Mathematical Society (2011): 85-116.
+\bibitem{KQ15} Alastair King, Yu Qiu, \textit{Exchange graphs and Ext quivers}, Advances in Mathematics, Volume 285, 1106-1154, 2015.
+\bibitem{KY12} Steffen Koenig and Dong Yang, \textit{Silting objects, simple-minded collections, t-structures and co-t-structures for finite-dimensional algebras}, Doc. Math. 19 (2014), 403-438. 
+\bibitem{Mul15} Gregory Muller, \textit{The existence of a maximal green sequence is not invariant under quiver mutation}, Combinatorics, Volume 23, Issue 2 (2016) :P2.47. 
+%\bibitem{NR15} Tomoki Nakanishi and Dylan Rupel, \textit{Companion cluster algebras to a generalized cluster algebra}, \href{http://arxiv.org/abs/1504.06758}{arXiv:1504.06758 [math.RA]}, 2015.
+%\bibitem{NZ11} Tomoki Nakanishi and Andrei Zelevinsky, \textit{On tropical dualities in cluster algebras} 	 \href{http://arxiv.org/abs/1101.3736}{arXiv:1101.3736 [math.RA]}, 2011
+%
+  %\bibitem{FZ01} Sergey Fomin and Andrei Zelevinsky, 
+   %Cluster algebras I: Foundations,
+   %\newblock \href{http://arxiv.org/abs/math/0104151}{arXiv:math/0104151 [math.RT]}, 2001.
+   
+    %\bibitem{FZ06} Sergey Fomin and Andrei Zelevinsky, 
+   %Cluster algebras IV: Coefficients,
+   %\newblock \href{http://arxiv.org/abs/math/0602259}{arXiv:math/0602259 [math.RA]}, 2006.
+   
+    %\bibitem{GSV07} Michael Gekhtman, Michael Shapiro, Alek Vainshtein,
+     %On the properties of the exchange graph of a cluster algebra,
+    %\newblock \href{http://arxiv.org/abs/math/0703151}{arXiv:math/0703151 [math.CO]}, 2007.
+%   \bibitem{I14} Kiyoshi Igusa, Notes on Picture Groups and Maximal Green Sequences,
+%    \newblock unpublished preprint 2014.
+%
+%   \bibitem{IOTW} Kiyoshi Igusa, Kent Orr, Gordana Todorov and Jerzy Weyman,
+%   Picture Groups of Finite Type and Cohomology in Type $A_n$,
+%    \newblock unpublished preprint 2014.
+%    
+%   \bibitem{IOTW15} Kiyoshi Igusa, Kent Orr, Gordana Todorov and Jerzy Weyman,
+%   Modulated Semi-Invariants,
+%    \newblock \href{http://www.arxiv.org/abs/1507.03051v1}{arXiv:1507.03051v1 [math.RT]}, 2015.
+%  %\end{frame}  
+%  
+%  %\begin{frame}
+%   \bibitem{IT14} Kiyoshi Igusa and Gordana Todorov,
+%   Picture groups and maximal green sequences, 
+%   \newblock  unpublished preprint 2014.
+%   
+   % \bibitem{IZ15} Kiyoshi Igusa and Ying Zhou,
+     %The formula for the permutation of mutation sequences in $A_n$ straight orientation,
+    %\newblock \href{https://arxiv.org/abs/1606.00958}{arXiv:1606:00958[math.RT]}, 2016.
+%    \bibitem{Kel11}
+%    Bernhard Keller, 
+%    \newblock Quiver mutation and combinatorial DT-invariants, 
+%    \newblock DMTCS proc. AS, 2013, 9-20.
+%        
+%    \bibitem{NZ11} Tomoki Nakanishi and Andrei Zelevinsky, 
+%    On tropical dualities in cluster algebras
+%    \newblock \href{http://arxiv.org/abs/1101.3736}{arXiv:1101.3736 [math.RA]}, 2011
+    %\bibitem{ST12} David Speyer and Hugh Thomas,
+    %Acyclic cluster algebras revisited,
+    %\newblock \href{http://arxiv.org/abs/1203.0277/}{arXiv:1203.0277[math.RT]}, 2012.
+  
+  %\bibitem{Someone2000}
+    %S.~Someone.
+    %\newblock On this and that.
+    %\newblock {\em Journal of This and That}, 2(1):50--100,
+    %2000.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}
+
+
