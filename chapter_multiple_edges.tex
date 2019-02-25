@@ -50,7 +50,7 @@ If $Q$ is a quiver that isn't connected, $Q^1$, $Q^2$, $\cdots$ $Q^n$ are its co
 \indent On the other hand if all $Q^i$s are MGS-finite it is easy to see that so is $Q$ because the set of admissible $c$-vectors of $Q$ is the union of admissible $c$-vectors in MGSs of $Q^i$ all of which are finite.\\
 \end{proof}
 %\indent Using quiver folding it is easy to show that we only need to consider the simply-laced case.\\
-\indent There is also an unrelated result about MGS-finiteness I proved which I will include here.
+\indent There is also an unrelated result about MGS-finiteness we proved which we will include here.
 \begin{definition}
 A valued quiver is of \textit{finite green mutation type} if there are finitely many exchange matrices along its maximal green sequences.
 \end{definition}
@@ -123,11 +123,11 @@ If every MGS of $Q$ corresponds to some MGS of $Q'$ and vice versa then $Q$ and 
 \begin{enumerate}
 \item The set of $Q$-ME-free $c$-vectors of $Q$ and $Q'$ coincide.
 \item If $Q$ is an ME-ful quiver then for any positive $Q$-ME-ful vector $c\in\mathbb{R}^n$ $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.
-\item If $Q$ is an ME-ful quiver. Then any of the $Q$-ME-ful $c$-vectors can not be a dimension vector of an indecomposable rigid module for $Q'$. Any of the $Q$-ME-ful $c$-vectors of $Q'$ can not be a dimension vector of an indecomposable rigid module for $Q$.
+\item If $Q$ is an ME-ful quiver. Then any of the $Q$-ME-ful $c$-vectors can not be a dimension vector of an exceptional module for $Q'$. Any of the $Q$-ME-ful $c$-vectors of $Q'$ can not be a dimension vector of an exceptional module for $Q$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\indent For (1).Let the Euler matrices of $Q, Q''$ be $E = e_{ij}, E' = (e'_{ij})$ respectively. $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'}$ because whenever $e_{ij}, e'_{ij}$ differ $c_i = 0$ or $c_j = 0$ leaving the term related to $(i,j)$ 0. Hence the set of $Q$-ME-free $c$-vectors of $Q, Q'$ corresponding to indecomposable rigid modules coincide.\\
+\indent For (1).Let the Euler matrices of $Q, Q''$ be $E = e_{ij}, E' = (e'_{ij})$ respectively. $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'}$ because whenever $e_{ij}, e'_{ij}$ differ $c_i = 0$ or $c_j = 0$ leaving the term related to $(i,j)$ 0. Hence the set of $Q$-ME-free $c$-vectors of $Q, Q'$ corresponding to exceptional modules coincide.\\
 \indent For (2) Assume that such a vector, $c$ exists. $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'} = 1$. However the Euler matrix $E = (e_{ij})$ of $Q$ and the Euler matrix $E' = (e'_{ij})$ of $Q'$ differ in the sense that there exists some pair $(i,j)\in [n]$ such that $c_i\neq 0, c_j> 0$ and $0 = e'_{ij} > -2 \geq e_{ij}$. Since for any $k,l\in [n]$ $e'_{kl}\geq e_{kl}$ it is easy to see that $\langle c,c\rangle_{kQ'} > \langle c,c\rangle_{kQ}$ and that $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.\\
 \indent (3) is a consequence of (2) since $\langle M,M\rangle_{kQ}$ and $\langle M,M\rangle_{kQ'} $ can not both be 1.
 \end{proof}
@@ -150,7 +150,7 @@ MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its
 \end{theorem}
 \begin{proof}
 \indent If the statement is incorrect along an MGS of $Q$ pick the first $C$-matrix that isn't shared by $Q'$ assuming that such an MGS exists. \\
-\indent In this case either at least one $c$-vector is $Q$-ME-ful or none is. If some $c$-vector is $Q$-ME-ful it must be formed by extending one $Q$-ME-free indecomposable rigid module by another $Q$-ME-free indecomposable rigid module in $Q$ (i.e. $dim Ext_{kQ}(A,B) = 1$ because it can not be larger due to Lemma \ref{C4L}. Let's label the indecomposable module formed by the extension $M$. We need $Ext_{kQ}(B,A) = 0$ so that $\langle M,M\rangle_{kQ} = 1$) while in $Q'$  there are no such extensions (i.e. $dim Ext_{kQ'}(A,B) = 0$). However this is impossible because $A, B$ are rigid, $Hom$-orthogonal and indecomposable because $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$ which causes $\langle M,M\rangle_{kQ'}$ to be at least 3 which is impossible because $\langle M,M\rangle_{kQ'} = \langle A,A\rangle_{kQ'} + \langle A,B\rangle_{kQ'} + \langle B,A\rangle_{kQ'} + \langle B,B\rangle_{kQ'} = 2 - dim Ext_{kQ'}(A,B) - dim Ext_{kQ'}(B,A)$ is at most 2.\\
+\indent In this case either at least one $c$-vector is $Q$-ME-ful or none is. If some $c$-vector is $Q$-ME-ful it must be formed by extending one $Q$-ME-free exceptional module by another $Q$-ME-free exceptional module in $Q$ (i.e. $dim Ext_{kQ}(A,B) = 1$ because it can not be larger due to Lemma \ref{C4L}. Let's label the indecomposable module formed by the extension $M$. We need $Ext_{kQ}(B,A) = 0$ so that $\langle M,M\rangle_{kQ} = 1$) while in $Q'$  there are no such extensions (i.e. $dim Ext_{kQ'}(A,B) = 0$). However this is impossible because $A, B$ are rigid, $Hom$-orthogonal and indecomposable because $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$ which causes $\langle M,M\rangle_{kQ'}$ to be at least 3 which is impossible because $\langle M,M\rangle_{kQ'} = \langle A,A\rangle_{kQ'} + \langle A,B\rangle_{kQ'} + \langle B,A\rangle_{kQ'} + \langle B,B\rangle_{kQ'} = 2 - dim Ext_{kQ'}(A,B) - dim Ext_{kQ'}(B,A)$ is at most 2.\\
 \indent If no $c$-vector is $Q$-ME-ful then in $kQ$, $kQ'$ the relevant $Hom$ and $Ext$ groups shouldn't differ because neither of them involve the multiple edges that are absent in $kQ'$ . As a result that can't happen either.\\
 \indent Hence the $C$-matrices corresponding to $Q, Q'$ in the MGS are all the same. Any MGS of $Q$ must be an MGS of $Q'$ with the same $C$-matrices. Since all the $C$-matrices of the two quivers are the same they have the same associated permutation.\\
 \end{proof}
@@ -177,14 +177,14 @@ The following statements are true:
 The maximal green sequences of $Q: \begin{tikzcd}
 1\righttwicedoublearrow\arrow[rd] &  & 3\\
  & 2\arrow[ur]
-\end{tikzcd}$ are some maximal green sequences of its ME-free version $Q': 1\to 2\to 3$ that has no $c$-vector with support containing $\{1,3\}$ that remain ME-free in $Q$. It's easy to see that $Q$ is MGS-finite. In fact it has 3 MGSs.
+\end{tikzcd}$ are maximal green sequences of its ME-free version $Q': 1\to 2\to 3$ that has no $c$-vector with support containing $\{1,3\}$ and satisfies the conditions in \ref{T3B} with respect to the arrow $\begin{tikzcd} 1\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite. In fact it has 3 MGSs.
 \end{example}
 \begin{example}
-The maximal green sequences of $Q: \begin{tikzcd}
+The maximal green sequences of $Q: \begin{tikzcd}[cramped, sep=small]
 1\arrow[r] & 2 \rightdoublearrow&  3 \arrow[r] & 4\\
 \end{tikzcd}$ are some maximal green sequences of its ME-free version $Q': \begin{tikzcd}
 1\arrow[r] & 2&  3 \arrow[r] & 4\\
-\end{tikzcd}$ that has no $c$-vector with support containing $\{2,3\}$ that remain ME-free in $Q$. It's easy to see that $Q$ is MGS-finite because $A_2$ is.
+\end{tikzcd}$  that has no $c$-vector with support containing $\{2,3\}$ and satisfies the conditions in \ref{T3B} with respect to the arrow $\begin{tikzcd} 2\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite because $A_2$ is.
 \end{example}
 \indent Now we can provide a much shorter proof to the fact that all acyclic quivers with three vertices are MGS-finite which was originally proven in \cite{BDP13}.
 \begin{corollary}
