@@ -1,16 +1,26 @@
 \chapter{Two Alternative Definitions of Green Sequences}\label{C3}
-\indent In the introduction we introduced a result by Igusa, namely \ref{thm:3} there are new alternative definitions of maximal green sequences. How the result can possibly be generalized to green sequences in general is and interesting question that we have mostly solved.\\
+\section{Introduction}
+\indent In Chapter \ref{CB} we introduced a result by Igusa, namely Theorem \ref{thm:3} namely there are new alternative definitions of maximal green sequences. How the result can possibly be generalized to green sequences in general is and interesting question that we have mostly solved.\\
+\begin{theorem}\label{C3T}
+\indent (Theorem \ref{C3TB}) Let $\Lambda$ be a finite dimensional hereditary algebra. Let $(C^{\leq 0}, C^{\geq 0}), (C'^{\leq 0}, C'^{\geq 0})$ be two $t$-structures such that there exists at least one green sequence from $(C^{\leq 0}, C^{\geq 0})$ to $(C'^{\leq 0}, C'^{\geq 0})$. Let $\mathcal{T} = C^{\leq 0}\cap C'^{\geq 0}$.  Let $M_1,\cdots, M_n$ be a finite sequence in $\mathcal{T}$. The following are equivalent.
+\begin{enumerate}
+\item The sequence is a maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ on $\mathcal{T}$.
+\item The sequence is a finite $c$-green sequence on $\mathcal{T}$.
+\item The sequence is a green sequence from a simple-minded collection $\{X_i\}$ to another one $\{Y_i\}$.
+\end{enumerate}
+\end{theorem}
 \indent In Section 2 we will discuss an alternative definition of the stability condition on module categoris. In Section 3 we will discuss maximal backward-$Hom^{\leq 0}$ orthogonal sequences. In Section 4 we will discuss Harder-Narasimhan filtrations. In Section 5 we will establish the fact that the two alternative definitions are equivalent to the original ones.\\
 \section{Alternative definition of the stability condition on module categories}
+\indent This section is not used in the rest of the chapter. However it does provide new definitions of stability and semistability that are previously underdiscussed. Moreover the ideas in this section are related to $Hom^{\leq 0}$-backward orthogonal sequences.\\
 \indent In general in a triangulated category the concepts of monomorphisms and epimorphisms are less important because there are almost no nontrivial ones. Instead the concept of homotopy kernels and homotopy cokernels are much more important.\\
 \indent Before we can generalize the idea of a maximal green sequence we first need to generalize the idea of a stability condition without always relying on monomorphisms and epimorphisms.\\
 \begin{theorem}
-If $\Lambda$ is a finite dimensional algebra for an indecomposable module $M$ in a module category $mod \Lambda$ for a stability condition $\phi$ the following are equivalent:
+If $\Lambda$ is a finite dimensional hereditary algebra for an indecomposable module $M$ in a module category $mod \Lambda$ for a stability condition $\phi$ the following are equivalent:
 \begin{enumerate}
 \item $M$ is stable.
-\item For any quotient module $N$ of $M$ $\phi(M)<\phi(N)$.
-\item For any indecomposable stable module $N\neq M$ such that $(M,N)\neq 0$ $\phi(M)<\phi(N)$.
-\item For any indecomposable stable module $N\neq M$ such that $(N,M)\neq 0$ $\phi(N)<\phi(M)$.
+\item For any proper quotient module $N$ of $M$ $\phi(M)<\phi(N)$.
+\item For any indecomposable stable module $N\not\cong M$ such that $(M,N)\neq 0$ $\phi(M)<\phi(N)$.
+\item For any indecomposable stable module $N\not\cong M$ such that $(N,M)\neq 0$ $\phi(N)<\phi(M)$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -18,15 +28,15 @@ If $\Lambda$ is a finite dimensional algebra for an indecomposable module $M$ in
 \indent (2)$\to$(1) This proof is analogous to the proof of (1)$\to$(2).\\
 \indent (1),(2)$\to$(3) If $M,N$ are indecomposable stable modules and $0\neq f\in(M,N)$ it is easy to see that $Im f\in mod\Lambda$. Take one of its indecomposable summand, $L$. It is easy to see that $L$ is a submodule of $N$ and a quotient module of $M$ at the same time. Since $M,N$ are stable we have $\phi(M)<\phi(L)<\phi(N)$. The proof of the second statement of (3) can be achieved by swapping $M$ and $N$.\\
 \indent (1),(2)$\to$(4) This proof is analogous to the proof of (1),(2)$\to$(3).\\
-\indent (4)$\to$(1) Use induction. If $M$ is simple it is of cmyse stable. Otherwise assume that (4)$\to$(1) is already true for all indecomposable modules with dimension less than $dim(M)$. If $M$ satisfies condition (4) for any of its stable submodule $L$ we have $\phi(L)<\phi(M)$ so we only need to focus on the unstable ones. Assume that $L$ is one of its minimal unstable indecomposable submodules such that $\phi(N)\geq\phi(M)$. By induction there has to be an indecomposable stable submodule of $N$, $L$ such that $\phi(L)\geq \phi(N)$. Hence $\phi(L)\geq\phi(N)\geq\phi(M)$ and $(L,M)\neq 0$. Hence $M$ does not satisfy condition $(4)$ and we have reached a contradiction. As a result (4)$\to$(1) is proven.\\
-\indent (3)$\to$(2) This proof is analogous to the proof of (4)$\to$(1).\\
+\indent (4)$\to$(1) Use induction. If $M$ is simple it is of course stable. Hence (4)$\to$(1) is trivially true in the case of simples. Otherwise assume that (4)$\to$(1) is already true for all indecomposable modules with dimension less than $dim(M)$. If $M$ satisfies condition (4) for any of its stable submodule $L$ we have $\phi(L)<\phi(M)$ so we only need to focus on the unstable ones. Assume that $N$ is one of its minimal unstable indecomposable submodules such that $\phi(L)\geq\phi(M)$. By induction since $\lnot$(1) $\to$ $\lnot$(4) holds for $L$ there has to be an indecomposable stable module $N\not\cong L$ such that $(N,L)\neq 0$ and $\phi(N)\geq \phi(L)$. Hence $\phi(N)\geq\phi(L)\geq\phi(M)$ and $(N,M)\neq 0$. Hence $M$ does not satisfy condition $(4)$ and we have reached a contradiction. As a result (4)$\to$(1) is proven.\\
+\indent (3)$\to$(2) This proof is analogous to the proof of (4)$\to$(1). Use induction. If $M$ is simple (2) of course holds. Hence (3)$\to$(2) is trivially true in the case of simples. Otherwise assume that (3)$\to$(2) is already true for all indecomposable modules with dimension less than $dim(M)$. If $M$ satisfies condition (3) for any of its stable quotient submodule $L$ we have $\phi(M)<\phi(L)$ so we only need to focus on the unstable ones. Assume that $N$ is one of its minimal unstable indecomposable submodules such that $\phi(M)\geq\phi(L)$. By induction since $\lnot$(2) $\to$ $\lnot$(3) holds for $L$ there has to be an indecomposable stable module $N\not\cong L$ such that $(L,N)\neq 0$ and $\phi(L)\geq \phi(N)$. Hence $\phi(M)\geq\phi(L)\geq\phi(N)$ and $(M,N)\neq 0$. Hence $M$ does not satisfy condition $(3)$ and we have reached a contradiction. As a result (3)$\to$(2) is proven.\\
 \end{proof}
 \indent We can obtain a similar result in the case of semistability.\\
 \begin{theorem}
 If $\Lambda$ is a finite dimensional algebra for an indecomposable module $M$ in a module category $mod \Lambda$ for a stability condition $\phi$ the following are equivalent:
 \begin{enumerate}
 \item $M$ is semistable.
-\item For any quotient module $N$ of $M$ $\phi(M)\leq\phi(N)$.
+\item For any proper quotient module $N$ of $M$ $\phi(M)\leq\phi(N)$.
 \item For any indecomposable stable module $N$ such that $(M,N)\neq 0$ $\phi(M)\leq\phi(N)$.
 \item For any indecomposable stable module $N$ such that $(N,M)\neq 0$ $\phi(N)\leq\phi(M)$.
 \end{enumerate}
@@ -35,27 +45,30 @@ If $\Lambda$ is a finite dimensional algebra for an indecomposable module $M$ in
 \begin{definition}
 $M_1,M_2,\cdots, M_k$ is a backward $Hom^{\leq 0}$ orthogonal sequence of Schur objects if $(M_i[\geq 0], M_j) = 0$ for all $i>j$.
 \end{definition}
-\indent Our goal is to prove that if $M_1,M_2,\cdots, M_k$ is a maximal $Hom^{\leq 0}$-backward orthogonal sequence of Schur objects we can have $E_0(M_1,\cdots, M_k)=\mathcal{T}$.
+\indent Now let's prove a crucial lemma.\\
+%\indent Our goal is to prove that if $M_1,M_2,\cdots, M_k$ is a maximal $Hom^{\leq 0}$-backward orthogonal sequence of Schur objects we can have $E_0(M_1,\cdots, M_k)=\mathcal{T}$.
 \begin{lemma}\label{lem:C3L1}
-If $H_1, H_2$ are two hearts of $t$-structures, there exists a backward maximal Hom-$\leq 0$-orthogonal sequence from $H_1$ to $H_2$ then the first term of the sequence has to be a simple of $H_1$ that is not in $H_2$.
+If $H_1, H_2$ are two hearts of $t$-structures, there exists a backward maximal $Hom^{\leq 0}$-orthogonal sequence from $H_1$ to $H_2$ then the first term of the sequence has to be a simple of $H_1$ that is not in $H_2$.
 \end{lemma}
 \begin{proof}
-\indent Let's first assume that $M\in H_1[l]$ with $l\geq 0$ is the first term. There exists some simple $S\in H_1$ such that $S[l]$ is a subobject of $M$ in $H_1[l]$ which is Abelian. If there exists no non-initial term $N$ in the sequence such that $(N,S) \neq 0$ (note that it is impossible to have $(N[i],S)\neq 0$ for positive $i$ due to $N=\tau^{\leq 0}N$) then the sequence is not maximal because $S$ can be inserted before $M$. Hence we assume that such an $N$ exists, In this case $(N[l],M)= 0$ or the sequence would have no longer been backward Hom-$\leq 0$-orthogonal. Let $N' = (\tau^{\geq 0}N$ and $N'' = \tau^{<0} N$ . So we have the canonical triangle $N''\to N\to N'\to N''[1]$. Due to $(N[l],M) = 0$ it is obvious that $(N'[l],M) = 0$. Note that $M, N'[l], S[l]\in H_1[l]$. $(N'[l],S[l]) = 0$ since $S[l]$ is a subobject of $M$ in an Abelian category. As a result $(N',S) = 0$ and hence $(N,S) = 0$ which contradicts the assumption that $(N,S)\neq 0$.\\
+\indent Let's first assume that $M\in H_1[l]$ with $l\geq 0$ is the first term. There exists some simple $S\in H_1$ such that $S[l]$ is a subobject of $M$ in $H_1[l]$ which is Abelian. If there exists no non-initial term $N$ in the sequence such that $(N,S) \neq 0$ (note that it is impossible to have $(N[i],S)\neq 0$ for positive $i$ due to $N=\tau^{\leq 0}N$) then the sequence is not maximal because $S$ can be inserted before $M$. Hence we assume that such an $N$ exists, In this case $(N[l],M)= 0$ or the sequence would have no longer been backward $Hom^{\leq 0}$-orthogonal. Let $N' = (\tau^{\geq 0}N$ and $N'' = \tau^{<0} N$ . So we have the canonical triangle $N''\to N\to N'\to N''[1]$. Due to $(N[l],M) = 0$ it is obvious that $(N'[l],M) = 0$. Note that $M, N'[l], S[l]\in H_1[l]$. $(N'[l],S[l]) = 0$ since $S[l]$ is a subobject of $M$ in an Abelian category. As a result $(N',S) = 0$ and hence $(N,S) = 0$ which contradicts the assumption that $(N,S)\neq 0$.\\
 \indent Now let's assume that $M\in \tau^{\geq -l}$ but not $\tau^{\geq -l+1}$. Let $M' = \tau^{\leq -l}M$. Let $S[l]$ be a subobject of $M'$ in $H_1[l]$ which is Abelian. Note that $(S[l],M) = (S[l],M')\neq 0$ because $(S[l], M/M'[1]) = 0$ which is a consequence of . If there exists no non-initial term $N$ in the sequence such that $(N,S) \neq 0$ (note that again it is impossible to have $(N[i],S)\neq 0$ for positive $i$ due to $N=\tau^{\leq 0}N$) then the sequence is not maximal because $S$ can be inserted before $M$. Hence we assume that such an $N$ exists, In this case $(N[l],M)= 0$ or the sequence would have no longer been backward Hom-$\leq 0$-orthogonal. Let $N' = \tau^{\geq 0}N$ and $N'' = \tau^{<0} N$ . So we have the canonical triangle $N''\to N\to N'\to N''[1]$. Due to $(N[l],M) = 0$ it is obvious that $(N'[l],M) = 0$ and $(N'[l],M')=0$. Note that $M', N'[l], S[l]\in H_1[l]$. $(N'[l],S[l]) = 0$ since $S[l]$ is a subobject of $M'$ in an Abelian category. As a result $(N',S) = 0$ and hence $(N,S) = 0$ which contradicts the assumption that $(N,S)\neq 0$.\\
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Harder-Narasimhan filtration}
-\indent The fact that a category accepts a unique HN filtration is a very strong condition. In this case we can define the \textit{degree} of any object in $D^b(\Lambda)$ as the composition length of the object when decomposed using the HN filtration.\\
+\indent The fact that a category accepts a unique Harder-Narasimhan (HN) filtration is a very strong condition. In this case we can define the \textit{degree} of any object in $D^b(\Lambda)$ as the composition length of the object when decomposed using the HN filtration.\\
 \begin{lemma}
 If any object $Y$ in $D^b(\Lambda)$ accept a unique HN filtration $0\to Y_m\to\cdots\to Y_1=Y$ with $Y_i/Y_{i+1}\in \mathcal{E}(M_i)$, the following holds.
 \begin{enumerate}
+\item For any $i$ $M_i\in mod\, \Lambda[k]$ for a certain $k$.
 \item For any $i$ $M_i$ is indecomposable.
 \item For any $i$ $M_i$ is Schur.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\indent For (1) assume that $M_i$ is decomposable. Then $M_i = A\oplus B$ with $A\neq 0$ and $B\neq 0$. In this case $A$ and $B$ have nontrivial HN filtrations with entries other than the $i$-th entry and adding them up we should obtain an HN filtration for $M_i$ with entries other than the $i$-th entry which contradicts the fact that $M_i$ has a unique HN filtration.\\
-\indent For (2) assume that $M_i$ is not Schur. Then there exists $f\in End(M_i)$ such that $Im f\neq M_i$. Take an indecomposable direct summand of $Im f$, $N$. We have the following diagram.\\
+\indent For (1) assume that $M_i = \oplus_{k}M_i^k$ such that $M_i^k\in\, mod\, \Lambda[k]$. Define the generalized dimension vector of $M_i$ as $dim\, M_i\, =\, \Sigma_k (-1)^k\,dim\,M_i^k$. Any object $X$ that only have $i$-th entry in its HN filtration has to satisfy $dim\,X = k\,dim\,M_i$ for some nonnegative $k$.  If not all entries of $dim\, M_i$ are non-negative then $M_i^k = 0$ for all odd $k$ for otherwise the unique HN filtration of $M_i^k$ can not only have the $i$-th entry which violates the condition. Similarly if not all entries of $dim\, M_i$ are non-positive then $M_i^k = 0$ for all even $k$. If $dim\, M_i = 0$ then all $M_i^k$ has to be 0 because otherwise $dim\,M_i^k$ could never be a multiple of $dim\,M_i$. Hence $dim\, M_i$ has to be either a positive vector or a negative vector. Without loss of generality let's assume that it is a positive one. In this case $M_i^k = 0$ for all odd $k$. If $M_i^k \neq 0$ and $M_i^l\neq 0$ then $dim\,M_i^k\,<\,dim\,M_i$. This can not happen either.\\
+\indent For (2) assume that $M_i$ is decomposable. Then $M_i = A\oplus B$ with $A\neq 0$ and $B\neq 0$. In this case $A$ and $B$ have nontrivial HN filtrations with entries other than the $i$-th entry and adding them up we should obtain an HN filtration for $M_i$ with entries other than the $i$-th entry which contradicts the fact that $M_i$ has a unique HN filtration.\\
+\indent For (3) assume that $M_i$ is not Schur. Then there exists $f\in End(M_i)$ such that $Im f\neq M_i$. Take an indecomposable direct summand of $Im f$, $Q$. Since $Q$ is a quotient module of $M_i$ and $\Lambda$ is hereditary $Ext^1(M_i/Q, M_i)\to Ext^1(M_i/Q, Q) \neq 0$ is a surjection. We have the following diagram.\\
 $\begin{tikzcd}
 0\arrow[r] & M_i\arrow[r]\arrow[d] & X\arrow[r]\arrow[d] & M_i/Q \arrow[r]\arrow[d,equal] & 0\\
 0\arrow[r] & Q \arrow[r] & M_i\arrow[r] & M_i/Q \arrow[r] & 0\\
@@ -81,11 +94,11 @@ If any object $Y$ in $D^b(\Lambda)$ accept a unique HN filtration $0\to Y_m\to\c
 \indent (4) is true because $\triang{Y_i}{Y}{Y/Y_i}{Y_i[1]}$ is a triangle. If $Hom(Y,Y/Y_i)= 0$ the triangle splits and $Y_i = Y\oplus Y_i[-1]$. Since $Y_i[-1]$ has a unique HN filtration $Y_i$ has two HN filtrations, one with the first entry 0 and one with a nontrivial first entry. \\
 \indent Now let's prove (5). Assume that $i>j$ and $Hom(M_i[1],M_j) \neq 0$. Let's first assume that the highest term of the HN filtration of $M_j[-1]$ is a self-extension of $M_i$. If this is not the case assume that the highest term is a self-extension of $M_{i'}$. If $i'\leq j$ then it is clear that $Hom(M_i,M_j[-1])=0$ since the Hom from $M_i$ to all terms in the HN filtration of $M_j[-1]$ is 0 due to (1). Hence $i'>j$ and we can simply use $i'$ instead of $i$ since $Hom(M_{i'},M_j[-1])\neq 0$. So we can indeed assume that he highest entry of the HN filtration of $M_j[-1]$ is a self-extension of $M_i$. Let such an entry be $X_i$. Let $h$ be the highest nontrivial index of the HN filtration of $X_i[1]$ then $h$ is lower than $j$ or the highest nontrivial index of $M_j[-1]/X_i$ both of which are lower than $i$ due to (4). Apply (4) again to $X_i[1]$ as a self-extension of $M_i[1]$ the highest nontrivial index of the HN filtration of $M_i[1]$ is lower than $i$. Apply (2) to $M_i$ and we can reach a contradiction.\\
 \indent As for (6), since (2) is already proven let's assume that the result has been proven for all positive integers below $m$ and use induction. For the first claim it is clear that $M_i[1]$ can not be any $M_l$ or the induction hypothesis would be violated. Take the lowest nonzero entry $Y_k$ of the HN filtration of $M_i[1]$. If $k=i$ then $Hom(M_i[1],M_i)\neq 0$ which can not happen. If $k>i$ then we can apply the induction hypothesis to the HN filtration of $M_i[1]$ and $M_i[m]$ and show that this is false. Hence $k<i$. In this case $Hom(M_i[1],Y_k)\neq 0$. Hence $Hom(M_i[1],M_k)\neq 0$ which is impossible due to (5). Now let's prove the second claim. Let the lowest entry of the HN filtration of $Y[1]$ be $N_k\in\mathcal{E}(M_k)$ and let $0\to Y_j\to\cdots Y_l\to 0$ be the HN filtration of $Y$. It is easy to see that $k<l$ due to the induction hypothesis applied to $Y[1]$ and $Y[k]$. Hence $Hom(Y[1],M_k)\neq 0$. Hence for some $h>k$ $Hom(M_h[1],M_k)\neq 0$ which is impossible due to (5).\\
-\indent Finally we need to prove (7). Assume that the result is true for any positive integer below $m$ which is legit because (5) is already proven. Assume that $i>j$ and $Hom(M_i[m],M_j) \neq 0$. Let's first assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$. If this is not the case assume that the highest term is a self-extension of $M_{i'}$. If $i'\leq j$ then it is clear that $Hom(M_i,M_j[-m])=0$ since the Hom from $M_i$ to all terms in the HN filtration of $M_j[-m]$ is 0 due to (1). Hence $i'>j$ and we can simply use $i'$ instead of $i$ since $Hom(M_{i'},M_j[-m])\neq 0$. So we can indeed assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$ and let such an entry be $X_i$. Let $h$ be the highest nontrivial index of the HN filtration of $M_i[1]$ then $h$ is lower than the highest nontrivial index of $M_j[-m]/X_i$ or $Hom(M_h,M_j[1-m])\neq 0$ in which case $h<j$ by induction. Hence in both cases $h<i$. Apply (2) to $M_i$ and we can reach a contradiction.\\\\
+\indent Finally we need to prove (7). Assume that the result is true for any positive integer below $m$ which is legit because (5) is already proven. Assume that $i>j$ and $Hom(M_i[m],M_j) \neq 0$. Let's first assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$. If this is not the case assume that the highest term is a self-extension of $M_{i'}$. If $i'\leq j$ then it is clear that $Hom(M_i,M_j[-m])=0$ since the Hom from $M_i$ to all terms in the HN filtration of $M_j[-m]$ is 0 due to (1). Hence $i'>j$ and we can simply use $i'$ instead of $i$ since $Hom(M_{i'},M_j[-m])\neq 0$. So we can indeed assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$ and let such an entry be $X_i$. Let $h$ be the highest nontrivial index of the HN filtration of $M_i[1]$ then $h$ is lower than the highest nontrivial index of $M_j[-m]/X_i$ or $Hom(M_h,M_j[1-m])\neq 0$ in which case $h<j$ by induction. Hence in both cases $h<i$. Apply (2) to $M_i$ and we can reach a contradiction.\\
 \end{proof}
 \section{Equivalence of the definitions}
-\begin{theorem}
-\indent The following are equivalent.
+\begin{theorem}\label{C3TB}
+\indent Let $\Lambda$ be a finite dimensional algebra. Let $(C^{\leq 0}, C^{\geq 0}), (C'^{\leq 0}, C'^{\geq 0})$ be two $t$-structures such that there exists at least one green sequence from $(C^{\leq 0}, C^{\geq 0})$ to $(C'^{\leq 0}, C'^{\geq 0})$. Let $\mathcal{T} = C^{\leq 0}\cap C'^{\geq 0}$.  Let $M_1,\cdots, M_n$ be a finite sequence in $\mathcal{T}$. The following are equivalent.
 \begin{enumerate}
 \item The sequence is a maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ on $\mathcal{T}$.
 \item The sequence is a finite $c$-green sequence on $\mathcal{T}$.
@@ -93,16 +106,7 @@ If any object $Y$ in $D^b(\Lambda)$ accept a unique HN filtration $0\to Y_m\to\c
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-(1)$\to$(3) This has been proven in Lemma \ref{lem:C3L1}.\\
+(1)$\to$(3) By applying lemma \ref{lem:C3L1} repeatedly it is easy to see that any maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ on $\mathcal{T}$ is also a sequence of simples in hearts of t-structures related to each other by a finite sequence of forward mutations. Hence (1) implies (3).\\
 (2)$\to$(1) This has already been proven in Lemma \ref{lem:C3L2}. In particular maximality holds because of \ref{lem:C3L2}(3) and (4).\\
 (3)$\to$(2) This is obvious because using truncation functors we can easily show that any object in $\cup_{i=0}^k mod kQ[i]$ can be written uniquely as an HN filtration. 
 \end{proof}
-\indent It is easy to see this theorem can be easily generalized to arbitrary green sequences.
-\begin{theorem}
-\indent Let $\Lambda$ be a finite dimensional algebra. Let $(C^{\leq 0}, C^{\geq 0}), (C'^{\leq 0}, C'^{\geq 0})$ be two $t$-structures such that there exists at least one green sequence from $(C^{\leq 0}, C^{\geq 0})$ to $(C'^{\leq 0}, C'^{\geq 0})$. Let $\mathcal{T} = C^{\leq 0}\cap C'^{\geq 0})$.  Let $M_1,\cdots, M_n$ be a finite sequence in $\mathcal{T}$. The following are equivalent.
-\begin{enumerate}
-\item The sequence is a maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ on $\mathcal{T}$.
-\item The sequence is a finite $c$-green sequence on $\mathcal{T}$.
-\item The sequence is a green sequence from a simple-minded collection $\{X_i\}$ to another one $\{Y_i\}$.
-\end{enumerate}
-\end{theorem}
