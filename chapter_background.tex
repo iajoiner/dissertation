@@ -1,7 +1,11 @@
 \chapter{Background}\label{CB}
 \section{Notations}
-\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. When the category we are discussing is clearly $\mathcal{C}$ $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are finite direct sums of objects in $S$.\\
-\indent The definition of green and red are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.
+\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. When the category we are discussing is clearly $\mathcal{C}$ $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
+\indent The definition of green and red are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
+\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
+mn & \text{if }m>0,n>0\\
+-mn & \text{if }m<0,n<0\\
+0 & \text{if } mn\leq 0\end{cases}$\\
 \section{Quivers and path algebras}
 \subsection{Quivers}
 \begin{definition}
@@ -152,9 +156,9 @@ The \textit{permutation of a reddening sequence} $\mathbf{i}$ is $\rho$ for whic
 \end{definition}
 \indent Here is one of the simplest examples of the concept of the permutation:\\
 $\begin{tikzcd}
-1 \arrow[r] \arrow[d] & 2\arrow [d]\arrow[r,"\mu_1"]  & 1&2\arrow[l]\arrow[d]\arrow[r,"\mu_2"]&1\arrow[r] & 2\\
-1' \arrow[d,"\mu_2"]& 2'&1'\arrow[u]& 2'&1'\arrow[u] & 2'\arrow[u]\\
- 1\arrow[d]\arrow[dr]&2\arrow[l]\arrow[r,"\mu_1"]&1\arrow[r]&2\arrow[dl]\arrow[r,"\mu_2"]&1&2\arrow[l]\arrow[u,"(12)"]\\
+1 \arrow[r] \arrow[d] & 2\arrow [d]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
+1' \arrow[d,"\mu_2", shift left=3.5ex]& 2'&1'\arrow[u]& 2'&1'\arrow[u] & 2'\arrow[u]\\
+ 1\arrow[d]\arrow[dr]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\arrow[u,"(12)", shift left=3.5ex]\\
  1'&2'\arrow[u]&1'\arrow[u]&2'\arrow[ul]&1'\arrow[ur]&2'\arrow[ul]\\
 \end{tikzcd}$\\
 \indent It is obvious that the result of $\mu_2\mu_1$ and $\mu_2\mu_1\mu_2$ are not identical, though they can be transformed into each other by a single permutation on vertices.\\
@@ -309,6 +313,7 @@ Let $\catc$ be $mod kQ$ with $Q$ being $A_2$ straight orientation if we take $\m
 \begin{definition}
 \cite{KY12}Let $\Lambda$ be a finite dimensional algebra, let $D^b(\Lambda)$ be the bounded derived category of $\Lambda$. Let $(\catc^{\leq 0},\catc^{\geq 0})$ be a $t$-structure of $D^b(\Lambda)$. Let $\cata$ be its heart. Let $\cattf$ be a torsion pair in $\cata$. The \textit{left mutation} or \textit{forward mutation} $\mu_i^+(\catc^{\leq 0},\catc^{\geq 0}) = (\catc'^{\leq 0},\catc^{\geq 0})$  where $\catc'^{\leq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m>0 \text{ and } H^0(M)\in\catt\}$, $\catc'^{\geq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m<-1 \text{ and } H^{-1}(M)\in\catf\}$. Similarly we can define \textit{right mutations} (or \textit{backward mutations}). 
 \end{definition}
+\indent For more information about mutations of $t$-structures we recommend \cite{AI10}, \cite{BY13}, \cite{KQ15} and \cite{KY12}.
 \subsection{Green sequences}
 \indent Since we have maximal green sequences it is reasonable to look at the generalization of this concept, namely $m$-maximal green sequences. In order to do so we need to define the general concept of green and red sequences. In principle any forward mutation is considered green and any backward mutation red.\\
 \begin{definition}
@@ -434,8 +439,8 @@ Here is the preinjective component, $\mathcal{Q}$.\\
 \end{example}
 \indent Finally let's discuss Auslander-Reiten quivers of $D^b(kQ)$. For a tame quiver $Q$ there are infinitely many components of $D^b(kQ)$ consisting of shifts of preprojectives and preinjectives that are isomorphic to $\mathbb{Z}Q^{op}$. Let's label these components \textit{transjective}. The transjective component containing $\Lambda[m]$ is labelled $\mathcal{P}_m$.\\
 \indent There are also infinitely many regular components. There are at most 3 nonhomogeneous tubes in $mod kQ[m]$ for any $m$. There are also infinitely many homogeneous tubes in $mod kQ[m]$ for any $m$. However since no module in a homogeneous tube is rigid they don't affect our problem.\\
-\section{Wall-and-chamber Structures}
-\indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to chapters \ref{C1} and \ref{C3}.\\
+\section{Wall-and-chamber structures}
+\indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to chapters \ref{C1} and \ref{C3}. For more details we recommend \cite{}\\
 \subsection{Picture groups}
 \indent We also need to use the concept of the picture groups in order to prove the formula in \ref{C1}.\\
 \indent For a quiver of finite type, any dimension vector of an indecomposable representation, which we also refer to as a \textit{root}. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: <x,\beta>=0,\ <x,\beta'>\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments}. The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4} Sometimes we abuse notations and use the root $\beta$ to mean the wall $D(\beta)$ when the meaning is clear. We also use the notation $+\beta$ to mean the wall $\beta$ is a part of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $<x,\beta>\ >0$. Similarly we have the notation $-\beta$. For example $+\beta-\beta'$ means that $\beta$ and $\beta'$ are parts of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $<x,\beta>\ >0$ and $<x,\beta'>\ <0$.\\
@@ -466,7 +471,7 @@ A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)
 Let $B$ be an $n\times n$ exchange matrix and let $\rho\in S_n$ be a permutation. If $\rho(B)=B$ then $\rho$ is a \textit{symmetry} of $B$. The group of symmetries of $B$ is the \textit{Symmetry Group of} $B$ which we denote as $Sym\ B$. An exchange matrix with a non-trivial symmetry group is a \textit{symmetric exchange matrix}. Any nontrivial subgroup of $B$ is a \textit{Symmetry Subgroup of} $B$. The symmetry group of a valued quiver is defined as the symmetry group of the exchange matrix of the valued quiver.\\   
 \end{definition}
 \indent A symmetry subgroup $G$ acts on the extended exchange matrices $\tilde{B}$ in the obvious way, namely for some $\rho\in G$ $\rho \tilde{B}:=\rho(\tilde{B})$. We can also define right group actions of elements of $G$ on the set of $c$-vectors similarly, namely for any $v=(v_i)\in \mathbb{Z}^n$, $v\rho:=(v_{\rho(i)})$. Let $C(\mathcal{A})$ be the set of $c$-vectors of a cluster algebra of geometric type $\mathcal{A}(B)$. Orbits of $c\in C(\mathcal{A})$ is denoted as $Gc$. It is easy to see that all orbits are finite. $Fc := \Sigma_{c'\in Gc}\ c'$ is the \textit{folded version of} $c$.\\
-\indent Now we need to fold vertices first. For any nontrivial subgroup of $S_n$ let $n'$ be the set of orbits of the canonical group action of $S_n$ on $[n]$. Hence there exists maps from $[n]$ to $[n']$. Pick some surjection $f$ from $[n]$ to $[n']$ such that $f$ maps each orbit to one element of $[n']$. $f$ is a \textit{vertices folding map}. We sometimes abuse notations and identify $f(i)$ and $Gi$ when we do not need to specify $f$.\\
+\indent Now we need to fold vertices first. For any nontrivial subgroup of $S_n$ let $n'$ be the set of orbits of the canonical group action of $S_n$ on $[n]$. Hence there exists maps from $[n]$ to $[n']$. Pick some surjection $f$ from $[n]$ to $[n']$ such that $f$ maps each orbit to one element of $[n']$. $f$ is a \textit{vertex folding map}. We sometimes abuse notations and identify $f(i)$ and $Gi$ when we do not need to specify $f$.\\
 \begin{definition}
 (1)For any valued quiver $Q$ and its symmetry subgroup $G$, the \textit{folded version of $Q$ with respect to $G$} is defined as below:\\
 For each valued arrow $i\overset{(d_{ij},d_{ji})}{\longrightarrow} j$ it is replaced by $Gi\overset{(d_{ij}|Gi|,d_{ji}|Gj|)}{\longrightarrow} Gj$.\\
@@ -477,7 +482,7 @@ For any symmetry subgroup $G$ of $B$ any extended exchange matrix $\tilde{B}=(B'
 \end{definition}
 \indent Any symmetric extended exchange matrix can be folded.\\
 \begin{definition}
-For any symmetry subgroup $G$ of $B$ any symmetric extended exchange matrix $\tilde{B}=(B',C')'$ with respect to $G$. Then for any vertices folding map $f$ $F\tilde{B}:=(FB',FC')'$ is the \textit{folded version of} $\tilde{B}$ with $FC'=(\tilde{c}_1,\cdots, \tilde{c}_n)$ defined below: $\tilde{c}_i=\Sigma_{g\in f^{-1}(i)} \tilde{c}_g/|Gg|$ where $\tilde{c}_{gi}:=\Sigma_{k\in f^{-1}(i)} c_{gk}$.\\
+For any symmetry subgroup $G$ of $B$ any symmetric extended exchange matrix $\tilde{B}=(B',C')'$ with respect to $G$. Then for any vertex folding map $f$ $F\tilde{B}:=(FB',FC')'$ is the \textit{folded version of} $\tilde{B}$ with $FC'=(\tilde{c}_1,\cdots, \tilde{c}_n)$ defined below: $\tilde{c}_i=\Sigma_{g\in f^{-1}(i)} \tilde{c}_g/|Gg|$ where $\tilde{c}_{gi}:=\Sigma_{k\in f^{-1}(i)} c_{gk}$.\\
 \end{definition}
 \indent It is easy to see that if $c_i=e_i$ then $C=I_n$ then $C'=I_{n'}$ and if $C=-I_n$ then $C'=-I_{n'}$. Hence a framed valued quiver is folded into a framed valued quiver and a coframed valued quiver is folded into a coframed valued quiver. Also positive $c$-vectors are folded into positive ones and negative $c$-vectors are folded into negative ones.\\
 \begin{definition}
