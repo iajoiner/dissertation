@@ -465,42 +465,42 @@ A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)
 \item[(e)] There is a maximal green sequence for $\Lambda$ of length $m$ whose $i$th mutation is at the $c$-vector $\beta_i$. 
 \end{enumerate}
 \end{theorem}
-\section{Quiver folding}
-\indent In this section we will introduce the theory of quiver folding. Folding theory has been in folklore for a while. Despite not being used to prove anything in the thesis we are still going to discuss it here in details.\\
-\begin{definition}
-Let $B$ be an $n\times n$ exchange matrix and let $\rho\in S_n$ be a permutation. If $\rho(B)=B$ then $\rho$ is a \textit{symmetry} of $B$. The group of symmetries of $B$ is the \textit{Symmetry Group of} $B$ which we denote as $Sym\ B$. An exchange matrix with a non-trivial symmetry group is a \textit{symmetric exchange matrix}. Any nontrivial subgroup of $B$ is a \textit{Symmetry Subgroup of} $B$. The symmetry group of a valued quiver is defined as the symmetry group of the exchange matrix of the valued quiver.\\   
-\end{definition}
-\indent A symmetry subgroup $G$ acts on the extended exchange matrices $\tilde{B}$ in the obvious way, namely for some $\rho\in G$ $\rho \tilde{B}:=\rho(\tilde{B})$. We can also define right group actions of elements of $G$ on the set of $c$-vectors similarly, namely for any $v=(v_i)\in \mathbb{Z}^n$, $v\rho:=(v_{\rho(i)})$. Let $C(\mathcal{A})$ be the set of $c$-vectors of a cluster algebra of geometric type $\mathcal{A}(B)$. Orbits of $c\in C(\mathcal{A})$ is denoted as $Gc$. It is easy to see that all orbits are finite. $Fc := \Sigma_{c'\in Gc}\ c'$ is the \textit{folded version of} $c$.\\
-\indent Now we need to fold vertices first. For any nontrivial subgroup of $S_n$ let $n'$ be the set of orbits of the canonical group action of $S_n$ on $[n]$. Hence there exists maps from $[n]$ to $[n']$. Pick some surjection $f$ from $[n]$ to $[n']$ such that $f$ maps each orbit to one element of $[n']$. $f$ is a \textit{vertex folding map}. We sometimes abuse notations and identify $f(i)$ and $Gi$ when we do not need to specify $f$.\\
-\begin{definition}
-(1)For any valued quiver $Q$ and its symmetry subgroup $G$, the \textit{folded version of $Q$ with respect to $G$} is defined as below:\\
-For each valued arrow $i\overset{(d_{ij},d_{ji})}{\longrightarrow} j$ it is replaced by $Gi\overset{(d_{ij}|Gi|,d_{ji}|Gj|)}{\longrightarrow} Gj$.\\
-(2)For any symmetric exchange matrix $B$ and its symmetry subgroup $G$, the \textit{folded version of $B$ with respect to $G$} is defined as $\tilde{B}=(b'_{kl})$ where $b'_{GiGj}=b_{ij}|Gj|$. \\ \cite{Sal14}\cite{BHIT15}\\
-\end{definition}
-\begin{definition}
-For any symmetry subgroup $G$ of $B$ any extended exchange matrix $\tilde{B}=(B',C')$ such that $B'$ is symmetric is a \textit{symmetric extended exchange matrix with respect to} $G$ if for any $i\in [n]$ $|Gc_i|=|G_i|$ and for any $\rho\in G$, $Gc_{\rho(i)}=Gc_i$.\\
-\end{definition}
-\indent Any symmetric extended exchange matrix can be folded.\\
-\begin{definition}
-For any symmetry subgroup $G$ of $B$ any symmetric extended exchange matrix $\tilde{B}=(B',C')'$ with respect to $G$. Then for any vertex folding map $f$ $F\tilde{B}:=(FB',FC')'$ is the \textit{folded version of} $\tilde{B}$ with $FC'=(\tilde{c}_1,\cdots, \tilde{c}_n)$ defined below: $\tilde{c}_i=\Sigma_{g\in f^{-1}(i)} \tilde{c}_g/|Gg|$ where $\tilde{c}_{gi}:=\Sigma_{k\in f^{-1}(i)} c_{gk}$.\\
-\end{definition}
-\indent It is easy to see that if $c_i=e_i$ then $C=I_n$ then $C'=I_{n'}$ and if $C=-I_n$ then $C'=-I_{n'}$. Hence a framed valued quiver is folded into a framed valued quiver and a coframed valued quiver is folded into a coframed valued quiver. Also positive $c$-vectors are folded into positive ones and negative $c$-vectors are folded into negative ones.\\
-\begin{definition}
-For any symmetry subgroup $G$ of $B$ a mutation sequence $w=\Pi_{i=m}^1 \mu_{k_i}$ starting from an extended exchange matrix $\tilde{B}=(B',C')'$ with $B$ symmetric is \textit{symmetric with respect to } a symmetry subgroup $G$ if the following holds:\\
-1.$w$ is in the form $w=\Pi_{i=m}^1 \Pi_{j\in Gk_i} \mu_j$, which roughly means that vertices in any orbit is "mutated together".\\
-2.$\Pi_{i=m'}^1 \mu_{k_i} \tilde{B}$ is symmetric.\\
-\end{definition}
-\begin{definition}
-For any symmetry subgroup $G$ of a symmetric extended exchange matrix $\tilde{B}$ for any symmetric mutation sequence $w=\Pi_{i=m}^1 \Pi_{j\in Gk_i} \mu_j$, \textit{the folded version of $w$} is defined as $Gw:=\Pi_{i=m}^1 \mu'_{Gk_i}$.
-\end{definition}
-\indent It is easy to see that folding symmetric reddening sequences results in reddening sequences. Also folding symmetric green sequences results in green sequences. Folding symmetric maximal green sequences results in maximal green sequences.\\
-\begin{theorem}
-For any symmetry subgroup $G$ of a symmetric extended exchange matrix $\tilde{B}$ for any symmetric mutation sequence $w$, $F\circ w=Gw\circ F$.\\
-\end{theorem}
-\begin{proof}
-\indent Let's assume that the length of $Gw$ is 1. When the theorem has been proven in this particular case the rest is clear from induction. Hence let's assume $w=\Pi_{j\in Gi} \mu_j$ and $Gw=\mu'_{Gi}$. Note that $b_{jk}=0$ for any $j,k\in Gi$ since otherwise $j$ and $k$ would not be in the same orbit. It is also clear from symmetry that the set of vertices in $[n]$ that is a source of any valued arrow with some $j\in Gi$ its target is independent of the choice of $j$, which we denote as $P^{-}(Gi)$. Similarly we can define $P^+(Gi)$. The set of vertices in $[n]\backslash Gi$ that is not connected to any $j\in Gi$ is denoted as $I(Gi)$. Using the invariance lemmas it is easy to see that for any $j\in I(i)$ mutations at any element of $Gi$ does not affect the $j$-th row and the $j$-th column at all.\\
-\indent Assume that we do mutations on a symmetric extended exchange matrix $\tilde{B}=(B',C')'$. Let $B=(b_{jk})$, $C=(c_{jk})$. Hence $b'_{GjGk}=b_{ij}|Gj|$. $c'_{GjGk}=\Sigma_{l\in Gj k\in Gm}c_{lm}$.  Let $\tilde{C}=\mu'_{Gi}(C)=(c'_{j'k'})$ $w(\tilde{B})=(\tilde{b}_{jk})$ $w(\tilde{C})=(\tilde{c}_{jk})$ $F\tilde{B}=(\hat{B}',\hat{C}')'$ $F\circ w(\tilde{B})=(B_1',C_1')'$  $Gw\circ F(\tilde{B})=(B_2',C_2')'$. $B_1=(b^1_{jk})$ $C_1=(c^1_{jk})$ $B_2=(b^2_{jk})$ $C_2=(b^1_{jk})$.\\
-\indent Let's first calculate the left hand side. If $j$ or $k\in I(Gi)$ it is clear that $\tilde{b}_{jk}=b_{jk}$. If $j\in i$ or $k=i$ $\tilde{b}_{jk}=-b_{jk}$ due to the fact that $b_{jj'}=0$ for any $j,j'\in Gi$. Otherwise it is easy to see that $\tilde{b}_{jk}=b_{jk}+|Gi|sp(b_{ji},b_{ik})$ due to two facts: First of all, before a mutation at $l\in Gi$, the $l$-th row and column of the exchange matrix can not be affected by all previous mutations since between elements of $Gi$ there are no connections. Secondly for all $l\in Gi$, $b_{jl}$ and $b_{lk}$ are independent of $l$. Similarly, if $k\in Gi$ $\tilde{c}_{jk}=-c_{jk}$. Otherwise $\tilde{c}_{jk}=c_{jk}+\Sigma_{l\in Gi} sp(c_{jl}, b_{ik})$. Hence $b^1_{GjGk}=-b_{jk}|Gk|$ if $j$ or $k$ is in $Gi$. Otherwise $b^1_{GjGk}=b_{jk}|Gk|+|Gi||Gk|sp(b_{ji},b_{ik})$. If $k\in Gi$ $c^1_{GjGk}=-|Gk|\bar{c}_{GjGk}$. Otherwise $c^1_{GjGk}=\bar{c}_{GjGk}+\Sigma_{l\in Gi} sp(\bar{c}_{GjGl}, b_{ik})=\bar{c}_{GjGk}+|Gi|sp(\bar{c}_{GjGi},b_{ik})$.\\
-\indent Now let's calculate the right hand side. $\hat{b}_{GjGk}=|Gk|b_{jk}$. $\hat{c}_{GjGk}=|Gk|\bar{c}_{GjGk}$. If $j$ or $k\in Gi$ $b^2_{GjGk}=-b_{jk}|Gk|$. Otherwise $b^2_{GjGk}=b_{jk}|Gk|+sp(|Gi|b_{ji}, |Gk|b_{ik})=b_{jk}|Gk|+|Gi||Gk|sp(b_{ji}, b_{ik})$. If $j$ or $k\in Gi$ $c^2_{GjGk}=-|Gk|\bar{c}_{GjGk}$. Otherwise $c^2_{GjGk}=|Gk|\bar{c}_{GjGk}+sp(|Gi|\bar{c}_{GjGi},b_{ik}|Gk|)=|Gk|\bar{c}_{GjGk}+|Gi||Gk|sp(\bar{c}_{GjGi},b_{ik})$.\\
-\indent Hence $F\circ w=Gw\circ F$ has been proven.\\
-\end{proof}
+%\section{Quiver folding}
+%\indent In this section we will introduce the theory of quiver folding. Folding theory has been in folklore for a while. Despite not being used to prove anything in the thesis we are still going to discuss it here in details.\\
+%\begin{definition}
+%Let $B$ be an $n\times n$ exchange matrix and let $\rho\in S_n$ be a permutation. If $\rho(B)=B$ then $\rho$ is a \textit{symmetry} of $B$. The group of symmetries of $B$ is the \textit{Symmetry Group of} $B$ which we denote as $Sym\ B$. An exchange matrix with a non-trivial symmetry group is a \textit{symmetric exchange matrix}. Any nontrivial subgroup of $B$ is a \textit{Symmetry Subgroup of} $B$. The symmetry group of a valued quiver is defined as the symmetry group of the exchange matrix of the valued quiver.\\   
+%\end{definition}
+%\indent A symmetry subgroup $G$ acts on the extended exchange matrices $\tilde{B}$ in the obvious way, namely for some $\rho\in G$ $\rho \tilde{B}:=\rho(\tilde{B})$. We can also define right group actions of elements of $G$ on the set of $c$-vectors similarly, namely for any $v=(v_i)\in \mathbb{Z}^n$, $v\rho:=(v_{\rho(i)})$. Let $C(\mathcal{A})$ be the set of $c$-vectors of a cluster algebra of geometric type $\mathcal{A}(B)$. Orbits of $c\in C(\mathcal{A})$ is denoted as $Gc$. It is easy to see that all orbits are finite. $Fc := \Sigma_{c'\in Gc}\ c'$ is the \textit{folded version of} $c$.\\
+%\indent Now we need to fold vertices first. For any nontrivial subgroup of $S_n$ let $n'$ be the set of orbits of the canonical group action of $S_n$ on $[n]$. Hence there exists maps from $[n]$ to $[n']$. Pick some surjection $f$ from $[n]$ to $[n']$ such that $f$ maps each orbit to one element of $[n']$. $f$ is a \textit{vertex folding map}. We sometimes abuse notations and identify $f(i)$ and $Gi$ when we do not need to specify $f$.\\
+%\begin{definition}
+%(1)For any valued quiver $Q$ and its symmetry subgroup $G$, the \textit{folded version of $Q$ with respect to $G$} is defined as below:\\
+%For each valued arrow $i\overset{(d_{ij},d_{ji})}{\longrightarrow} j$ it is replaced by $Gi\overset{(d_{ij}|Gi|,d_{ji}|Gj|)}{\longrightarrow} Gj$.\\
+%(2)For any symmetric exchange matrix $B$ and its symmetry subgroup $G$, the \textit{folded version of $B$ with respect to $G$} is defined as $\tilde{B}=(b'_{kl})$ where $b'_{GiGj}=b_{ij}|Gj|$. \\ \cite{Sal14}\cite{BHIT15}\\
+%\end{definition}
+%\begin{definition}
+%For any symmetry subgroup $G$ of $B$ any extended exchange matrix $\tilde{B}=(B',C')$ such that $B'$ is symmetric is a \textit{symmetric extended exchange matrix with respect to} $G$ if for any $i\in [n]$ $|Gc_i|=|G_i|$ and for any $\rho\in G$, $Gc_{\rho(i)}=Gc_i$.\\
+%\end{definition}
+%\indent Any symmetric extended exchange matrix can be folded.\\
+%\begin{definition}
+%For any symmetry subgroup $G$ of $B$ any symmetric extended exchange matrix $\tilde{B}=(B',C')'$ with respect to $G$. Then for any vertex folding map $f$ $F\tilde{B}:=(FB',FC')'$ is the \textit{folded version of} $\tilde{B}$ with $FC'=(\tilde{c}_1,\cdots, \tilde{c}_n)$ defined below: $\tilde{c}_i=\Sigma_{g\in f^{-1}(i)} \tilde{c}_g/|Gg|$ where $\tilde{c}_{gi}:=\Sigma_{k\in f^{-1}(i)} c_{gk}$.\\
+%\end{definition}
+%\indent It is easy to see that if $c_i=e_i$ then $C=I_n$ then $C'=I_{n'}$ and if $C=-I_n$ then $C'=-I_{n'}$. Hence a framed valued quiver is folded into a framed valued quiver and a coframed valued quiver is folded into a coframed valued quiver. Also positive $c$-vectors are folded into positive ones and negative $c$-vectors are folded into negative ones.\\
+%\begin{definition}
+%For any symmetry subgroup $G$ of $B$ a mutation sequence $w=\Pi_{i=m}^1 \mu_{k_i}$ starting from an extended exchange matrix $\tilde{B}=(B',C')'$ with $B$ symmetric is \textit{symmetric with respect to } a symmetry subgroup $G$ if the following holds:\\
+%1.$w$ is in the form $w=\Pi_{i=m}^1 \Pi_{j\in Gk_i} \mu_j$, which roughly means that vertices in any orbit is "mutated together".\\
+%2.$\Pi_{i=m'}^1 \mu_{k_i} \tilde{B}$ is symmetric.\\
+%\end{definition}
+%\begin{definition}
+%For any symmetry subgroup $G$ of a symmetric extended exchange matrix $\tilde{B}$ for any symmetric mutation sequence $w=\Pi_{i=m}^1 \Pi_{j\in Gk_i} \mu_j$, \textit{the folded version of $w$} is defined as $Gw:=\Pi_{i=m}^1 \mu'_{Gk_i}$.
+%\end{definition}
+%\indent It is easy to see that folding symmetric reddening sequences results in reddening sequences. Also folding symmetric green sequences results in green sequences. Folding symmetric maximal green sequences results in maximal green sequences.\\
+%\begin{theorem}
+%For any symmetry subgroup $G$ of a symmetric extended exchange matrix $\tilde{B}$ for any symmetric mutation sequence $w$, $F\circ w=Gw\circ F$.\\
+%\end{theorem}
+%\begin{proof}
+%\indent Let's assume that the length of $Gw$ is 1. When the theorem has been proven in this particular case the rest is clear from induction. Hence let's assume $w=\Pi_{j\in Gi} \mu_j$ and $Gw=\mu'_{Gi}$. Note that $b_{jk}=0$ for any $j,k\in Gi$ since otherwise $j$ and $k$ would not be in the same orbit. It is also clear from symmetry that the set of vertices in $[n]$ that is a source of any valued arrow with some $j\in Gi$ its target is independent of the choice of $j$, which we denote as $P^{-}(Gi)$. Similarly we can define $P^+(Gi)$. The set of vertices in $[n]\backslash Gi$ that is not connected to any $j\in Gi$ is denoted as $I(Gi)$. Using the invariance lemmas it is easy to see that for any $j\in I(i)$ mutations at any element of $Gi$ does not affect the $j$-th row and the $j$-th column at all.\\
+%\indent Assume that we do mutations on a symmetric extended exchange matrix $\tilde{B}=(B',C')'$. Let $B=(b_{jk})$, $C=(c_{jk})$. Hence $b'_{GjGk}=b_{ij}|Gj|$. $c'_{GjGk}=\Sigma_{l\in Gj k\in Gm}c_{lm}$.  Let $\tilde{C}=\mu'_{Gi}(C)=(c'_{j'k'})$ $w(\tilde{B})=(\tilde{b}_{jk})$ $w(\tilde{C})=(\tilde{c}_{jk})$ $F\tilde{B}=(\hat{B}',\hat{C}')'$ $F\circ w(\tilde{B})=(B_1',C_1')'$  $Gw\circ F(\tilde{B})=(B_2',C_2')'$. $B_1=(b^1_{jk})$ $C_1=(c^1_{jk})$ $B_2=(b^2_{jk})$ $C_2=(b^1_{jk})$.\\
+%\indent Let's first calculate the left hand side. If $j$ or $k\in I(Gi)$ it is clear that $\tilde{b}_{jk}=b_{jk}$. If $j\in i$ or $k=i$ $\tilde{b}_{jk}=-b_{jk}$ due to the fact that $b_{jj'}=0$ for any $j,j'\in Gi$. Otherwise it is easy to see that $\tilde{b}_{jk}=b_{jk}+|Gi|sp(b_{ji},b_{ik})$ due to two facts: First of all, before a mutation at $l\in Gi$, the $l$-th row and column of the exchange matrix can not be affected by all previous mutations since between elements of $Gi$ there are no connections. Secondly for all $l\in Gi$, $b_{jl}$ and $b_{lk}$ are independent of $l$. Similarly, if $k\in Gi$ $\tilde{c}_{jk}=-c_{jk}$. Otherwise $\tilde{c}_{jk}=c_{jk}+\Sigma_{l\in Gi} sp(c_{jl}, b_{ik})$. Hence $b^1_{GjGk}=-b_{jk}|Gk|$ if $j$ or $k$ is in $Gi$. Otherwise $b^1_{GjGk}=b_{jk}|Gk|+|Gi||Gk|sp(b_{ji},b_{ik})$. If $k\in Gi$ $c^1_{GjGk}=-|Gk|\bar{c}_{GjGk}$. Otherwise $c^1_{GjGk}=\bar{c}_{GjGk}+\Sigma_{l\in Gi} sp(\bar{c}_{GjGl}, b_{ik})=\bar{c}_{GjGk}+|Gi|sp(\bar{c}_{GjGi},b_{ik})$.\\
+%\indent Now let's calculate the right hand side. $\hat{b}_{GjGk}=|Gk|b_{jk}$. $\hat{c}_{GjGk}=|Gk|\bar{c}_{GjGk}$. If $j$ or $k\in Gi$ $b^2_{GjGk}=-b_{jk}|Gk|$. Otherwise $b^2_{GjGk}=b_{jk}|Gk|+sp(|Gi|b_{ji}, |Gk|b_{ik})=b_{jk}|Gk|+|Gi||Gk|sp(b_{ji}, b_{ik})$. If $j$ or $k\in Gi$ $c^2_{GjGk}=-|Gk|\bar{c}_{GjGk}$. Otherwise $c^2_{GjGk}=|Gk|\bar{c}_{GjGk}+sp(|Gi|\bar{c}_{GjGi},b_{ik}|Gk|)=|Gk|\bar{c}_{GjGk}+|Gi||Gk|sp(\bar{c}_{GjGi},b_{ik})$.\\
+%\indent Hence $F\circ w=Gw\circ F$ has been proven.\\
+%\end{proof}
