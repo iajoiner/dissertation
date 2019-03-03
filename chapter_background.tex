@@ -2,10 +2,10 @@
 \section{Notations}
 \indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. When the category we are discussing is clearly $\mathcal{C}$ $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
 \indent The definition of green and red are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
-\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
-mn & \text{if }m>0,n>0\\
--mn & \text{if }m<0,n<0\\
-0 & \text{if } mn\leq 0\end{cases}$\\
+%\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
+%mn & \text{if }m>0,n>0\\
+%-mn & \text{if }m<0,n<0\\
+%0 & \text{if } mn\leq 0\end{cases}$\\
 \section{Quivers and path algebras}
 \subsection{Quivers}
 \begin{definition}
@@ -142,17 +142,18 @@ Assume that $-c_1$ is the $i$-th column and $-c_2$ is the $j$-th colu,n. Accordi
 \end{proof}
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
+\indent In this subsection if $Q$ is a cluster quiver then $\hat{Q}, \breve{Q}$ are the framed and coframed quiver associated with cluster quiver $Q$ respectively.\\
 \indent Here is the formal definition of such a permutation:\\
 \begin{definition}
-A \textit{permutation} from an ice quiver $(Q,F)$ to $(Q',F)$ is an isomorphism of quivers $Q\rightarrow Q'$ that preserve $F$.\cite{BDP13}\\
+\cite{BDP13} A \textit{permutation} from an ice quiver $(Q,F)$ to $(Q',F)$ is an isomorphism of quivers $Q\rightarrow Q'$ that preserve $F$.\\
 \end{definition}
 \indent We have a result from \cite{BDP13} which helps us define the permutation:\\
 \begin{theorem}
-Let $Q$ be a cluster quiver and let $Q'$ be a quiver that is a result of a reddening sequence on $\hat{Q}$, then  $Q'$ equals to a permutation of $\breve{Q}$\cite{BDP13}\\
+\cite{BDP13} Let $Q$ be a cluster quiver and let $Q'$ be a quiver that is a result of a reddening sequence on $\hat{Q}$, then  $Q'$ equals to a permutation of $\breve{Q}$.\\
 Due to the proposition, for a reddening sequence $\mathbf{i}=(i_1,\cdots, i_N)$, for some $\rho\in S_n$ we have $\mu_{i_N}\cdots\mu_{i_1}\hat{Q}=\rho\breve{Q}$.\\
 \end{theorem}
 \begin{definition}
-The \textit{permutation of a reddening sequence} $\mathbf{i}$ is $\rho$ for which $\mu_{i_N}\cdots\mu_{i_1}\hat{Q}=\rho\breve{Q}$.\cite{GM14}\\
+\cite{GM14} The \textit{permutation of a reddening sequence} $\mathbf{i}$ is $\rho$ for which $\mu_{i_N}\cdots\mu_{i_1}\hat{Q}=\rho\breve{Q}$.\\
 \end{definition}
 \indent Here is one of the simplest examples of the concept of the permutation:\\
 $\begin{tikzcd}
@@ -196,14 +197,24 @@ Let $Q$ be $\begin{tikzcd}1\arrow[r] & 2 \arrow[r] & 3\end{tikzcd}$. Here is the
 \subsection{Approximations}
 \indent According to \cite{KY12} there are bijections between silting objects, $t$-structures, co-$t$-structures and simple-minded collections in a wide range of cases and such bijections respect mutations. In \cite{BY13} more bijections are mentioned. Here we only need to cover three of them, namely silting objects, simple-minded collections and $t$-structures. To understand their mutations we must first introduce the concept of approximations.\\
 \begin{definition}
-Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. If $M\in Ob\catc, N\in Ob\mathcal{X}$, a morphism $f\in Hom_{\catc}(M,N)$ is a \textit{minimal left-$\mathcal{X}$ approximation} if for any $g\in End_{\catc} N$ such that $g\circ f = f$ $g$ is an isomorphism and for any $N'\in Ob\mathcal{X}$ for any $q\in Hom_{\catc}(M,N')$ we have $q$ factors through $f$.\\
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
+\begin{enumerate}
+\item $f$ is a \textit{left-$\mathcal{X}$ approximation} if for any $N'\in Ob\mathcal{X}$ and for any $q\in Hom_{\catc}(M,N')$ we have $q$ factors through $f$.
+\item $f$ is \textit{left minimal} if for any $g\in End_{\catc} N$ such that $g\circ f = f$ the morphism $g$ is an isomorphism.
+\item $f$ is a \textit{minimal left-$\mathcal{X}$ approximation} if it is both left minimal and is a left-$\mathcal{X}$ approximation.
+\end{enumerate}
 \end{definition}
 \begin{tikzcd}
 M\arrow[r,"f"]\arrow[rd,"q"] & N\arrow[dashed,d,"l"]\\
  & N'\\
 \end{tikzcd}
 \begin{definition}
-Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. If $N\in Ob\catc, M\in Ob\mathcal{X}$, A morphism $f\in Hom_{\catc}(M,N)$ is a \textit{minimal right-$\mathcal{X}$ approximation} if for any $g\in End_{\catc} M$ such that $f\circ g = f$ $g$ is an isomorphism and for any $M'\in Ob\mathcal{X}$ for any $q\in Hom_{\catc}(M',N)$ we have $q$ factors through $f$.\\
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
+\begin{enumerate}
+\item $f$ is a \textit{right-$\mathcal{X}$ approximation} if for any $M'\in Ob\mathcal{X}$ and for any $q\in Hom_{\catc}(M',N)$ we have $q$ factors through $f$.
+\item $f$ is \textit{right minimal} if for any $g\in End_{\catc} M$ such that $f\circ g = f$ the morphism $g$ is an isomorphism.
+\item $f$ is a \textit{minimal right-$\mathcal{X}$ approximation} if it is both right minimal and is a right-$\mathcal{X}$ approximation.
+\end{enumerate}
 \end{definition}
 \begin{tikzcd}
 M\arrow[r,"f"]& N\\
@@ -213,13 +224,13 @@ M'\arrow[ru,"q"]\arrow[u,dashed,"l"]& \\
 Let $\catc$ be $D^b(\Lambda)$ for some finite dimensional algebra $\Lambda$ and let $\mathcal{X}$ be one of its full subcategories. If $M\in\mathcal{X}$ then $1_M$ is both a minimal left-$\mathcal{X}$ approximation and a minimal right-$\mathcal{X}$ approximation.
 \end{example}
 \begin{example}
-Let $Q$ be $A_2$ straight orientation. Let $\catc$ be $D^b(kQ)$. Let $M = P_2$ and $\mathcal{X} = add(P_1)$. The minimal left-$\mathcal{X}$ approximation is the canonical morphism $P_2\to P_1$ induced by the inclusion $P_2\to P_1$ in the module category.
+Let $Q$ be $1\to 2$. Let $\catc$ be $D^b(kQ)$. Let $M = P_2$ and $\mathcal{X} = add(P_1)$. The minimal left-$\mathcal{X}$ approximation is the canonical morphism $P_2\to P_1$ induced by the inclusion $P_2\to P_1$ in the module category.
 \end{example}
 \begin{example}
-Let $Q$ be $A_2$ straight orientation. Let $\catc$ be $D^b(kQ)$. Let $M = P_2$ and $\mathcal{X} = add(P_1)$. The minimal right-$\mathcal{X}$ approximation is the zero morphism because there is no other morphism from $P_1$ to $P_2$.
+Let $Q$ be $1\to 2$. Let $\catc$ be $D^b(kQ)$. Let $M = P_2$ and $\mathcal{X} = add(P_1)$. The minimal right-$\mathcal{X}$ approximation is the zero morphism because there is no other morphism from $P_1$ to $P_2$.
 \end{example}
 \subsection{Silting objects}
-\indent Now let's introduce silting objects. We can think of indecomposable summands of them as indecomposable projectives in an Abelian category.\\
+\indent Now let's introduce silting objects.\\ %We can think of indecomposable summands of them as indecomposable projectives in an Abelian category.\\
 \begin{definition}
 Let $\Lambda$ be an algebra with $n$ primitive idempotents. A \textit{silting object} $T$ of $D^b(\Lambda)$ is an object such that $T$ has $n$ direct summands and $(T,T[m])=0$ for all $m>0$. A \textit{pre-silting object} is an object that only has to satisfy the second condition.\\
 \end{definition}
@@ -230,7 +241,7 @@ I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & 
 & P_2\arrow[ru]\arrow[rd]& &I_2\arrow[rd]\arrow[ru] & &P_2[1]\arrow[rd]\arrow[ru] & &I_2[1]\arrow[rd]\arrow[ru]\\
  P_3\arrow[ru]& &S_2\arrow[ru]& &I_1\arrow[ru] & &P_1[1]\arrow[ru] & &P_3[2]\\
 \end{tikzcd}\\
-\indent $\Lambda[i]$ is a silting object for any $i$. $T_1=P_3[1]\oplus P_1[1] \oplus I_1[1]$ is also a silting object.
+\indent $\Lambda[i]$ is a silting object for any $i$. $T_1=P_3\oplus P_1 \oplus I_1[1]$ is also a silting object.
 \end{example}
 \indent Now that we already have the definition of silting objects we can discuss their mutations.\\
 \begin{definition}
@@ -249,7 +260,7 @@ I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & 
 \subsection{Simple-minded collections}
 \indent Now let's introduce simple-minded collections. They are simple objects in some Abelian category known as hearts of $t$-structures.\\
 \begin{definition}
-Let $\Lambda$ be an algebra with $n$ primitive idempotents. A \textit{simple-minded collection} $\{S_i\}_{i\in [n]}$ of $D^b(\Lambda)$ is an $n$-element set such that $(S_i[\geq 0],S_j)=0$ for all $i\neq j$, $(S_i[>0], S_i) = 0$ for all $i$, $(S_i,S_i)$ is a division algebra.\\
+Let $\Lambda$ be an algebra with $n$ primitive idempotents. A \textit{simple-minded collection} $\{S_i\}_{i\in [n]}$ of $D^b(\Lambda)$ is an $n$-element set such that $(S_i[\geq 0],S_j)=0$ for all $i\neq j$, $(S_i[>0], S_i) = 0$ for all $i$ and $(S_i,S_i)$ is a division algebra.\\
 \end{definition}
 \begin{example}
 \indent As usual our example is $A_3$ straight orientation.\\
@@ -278,7 +289,7 @@ I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & 
 \begin{definition}
 A $t$-\textit{structure} on $D^b(\Lambda)$ is a pair $(D^{\leq 0},D^{\geq 0})$ such that the following holds.
 \begin{enumerate}
-\item For any $M\in D^b(\Lambda)$ there exists $M'\in D^{\leq 0}, M''\in D^{\geq 0})$ such that $M'\to M\to M''\to M'[1]$.
+\item For any $M\in D^b(\Lambda)$ there exists $M'\in D^{\leq 0}, M''\in D^{\geq 0}$ such that $M'\to M\to M''\to M'[1]$.
 \item $D^{\leq 0}[1]\subseteq D^{\leq 0}$,  $D^{\geq 0}[1]\supseteq D^{\geq 0}$.
 \item $(D^{\leq 0}[1], D^{\geq 0}) = 0$
 \end{enumerate}
@@ -299,15 +310,15 @@ A \textit{torsion pair} $(\mathcal{T},\mathcal{F})$ in an Abelian category $\cat
 \begin{enumerate}
 \item $Hom(\mathcal{T},\mathcal{F}) = 0$
 \item For any $M\in\catc\,\exists T\in\mathcal{T},\, F\in\mathcal{F}$ such that $0\to T\to M\to F\to 0$ is a short exact sequence.
-\item If for $M\in\catc$ $Hom(M,\mathcal{F}) = 0$, $M\in\mathcal{T}$.
-\item If for $M\in\catc$ $Hom(\mathcal{T}, M) = 0$, $M\in\mathcal{F}$.
+\item If for $M\in\catc$ and $Hom(M,\mathcal{F}) = 0$ then $M\in\mathcal{T}$.
+\item If for $M\in\catc$ and $Hom(\mathcal{T}, M) = 0$ then $M\in\mathcal{F}$.
 \end{enumerate}
 \end{definition}
 \begin{example}
-Let $\catc$ be $mod kQ$ with $Q$ being $A_2$ straight orientation if we take $\mathcal{T} = add(P_2)$ and $\mathcal{F} = add(I_1)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
+Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ if we take $\mathcal{T} = add(P_2)$ and $\mathcal{F} = add(I_1)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
 \end{example}
 \begin{example}
-Let $\catc$ be $mod kQ$ with $Q$ being $A_2$ straight orientation if we take $\mathcal{T} = add(P_1,I_1)$ and $\mathcal{F} = add(P_2)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
+Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ straight orientation if we take $\mathcal{T} = add(P_1,I_1)$ and $\mathcal{F} = add(P_2)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
 \end{example}
 \indent Now it is possible to define mutations of $t$-structures.
 \begin{definition}
@@ -342,13 +353,13 @@ I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & 
 \indent In this subsection we will review the basics about tame hereditary algebras, the components of their Auslander-Reiten quivers and the components of Auslander-Reiten quivers of their bounded derived categories for they are crucial to Chapter \ref{C2}. For more details about tame algebras we would like to refer the readers to \cite{DR76}, \cite{R84} and \cite{SS06}.\\
 \subsection{Tame quivers}
 \begin{definition}
-A \textit{tame algebra} is a $k$-algebra such that for each dimension there are finitely many 1-parameter families that parametrize all but finitely many indecomposable modules of the algebra.\\
+A \textit{tame algebra} is a $k$-algebra such that for each dimension vector there are finitely many 1-parameter families that parametrize all but finitely many indecomposable modules of the algebra.\\
 \end{definition}
 \begin{definition}
 A \textit{tame quiver} is a quiver such that its path algebra is a tame algebra.\\
 \end{definition}
 \begin{example}
-Here are all the (connected) tame quivers, $\tilde{A_n}, \tilde{D_n}, \tilde{E_6}. \tilde{E_7}, \tilde{E_8}$.
+Here are all the (connected) tame quivers, $\tilde{A_n}, \tilde{D_n}, \tilde{E_6}. \tilde{E_7}, \tilde{E_8}$. The orientation of the edges can be arbitrary as long as the quiver remains acyclic in the case of $\tilde{A_n}$.
 \end{example}
 $\begin{tikzcd}
 \tilde{A_n} &    		&2\arrow[r]  &\cdots\arrow[r]    &i\arrow[rd]	 &\\
@@ -376,7 +387,7 @@ $\begin{tikzcd}
 \subsection{Auslander-Reiten quivers of tame hereditary algebras}
 \indent In this subsection I'm going to discuss Auslander-Reiten quivers of basic tame hereditary algebras because information about them is slightly less well known.\\
 \begin{theorem}
-\indent The Auslander-Reiten quiver of a tame path algebra consists of three parts, the preprojectives, the preinjectives and the regulars.
+\indent \cite{DR76} The Auslander-Reiten quiver of a tame path algebra consists of three parts, the preprojectives, the preinjectives and the regulars.
 \end{theorem}
 \indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras.
 \begin{theorem}
@@ -440,31 +451,35 @@ Here is the preinjective component, $\mathcal{Q}$.\\
 \indent Finally let's discuss Auslander-Reiten quivers of $D^b(kQ)$. For a tame quiver $Q$ there are infinitely many components of $D^b(kQ)$ consisting of shifts of preprojectives and preinjectives that are isomorphic to $\mathbb{Z}Q^{op}$. Let's label these components \textit{transjective}. The transjective component containing $\Lambda[m]$ is labelled $\mathcal{P}_m$.\\
 \indent There are also infinitely many regular components. There are at most 3 nonhomogeneous tubes in $mod kQ[m]$ for any $m$. There are also infinitely many homogeneous tubes in $mod kQ[m]$ for any $m$. However since no module in a homogeneous tube is rigid they don't affect our problem.\\
 \section{Wall-and-chamber structures}
-\indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to chapters \ref{C1} and \ref{C3}. For more details we recommend \cite{}\\
+\indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to chapters \ref{C1} and \ref{C3}. For more details we recommend \cite{GHKK14}\cite{Mul15}\cite{BST17}\cite{BST18A}\cite{BST18B}\cite{IOTW15} and \cite{IT17}.\\
 \subsection{Picture groups}
-\indent We also need to use the concept of the picture groups in order to prove the formula in \ref{C1}.\\
-\indent For a quiver of finite type, any dimension vector of an indecomposable representation, which we also refer to as a \textit{root}. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: <x,\beta>=0,\ <x,\beta'>\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments}. The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4} Sometimes we abuse notations and use the root $\beta$ to mean the wall $D(\beta)$ when the meaning is clear. We also use the notation $+\beta$ to mean the wall $\beta$ is a part of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $<x,\beta>\ >0$. Similarly we have the notation $-\beta$. For example $+\beta-\beta'$ means that $\beta$ and $\beta'$ are parts of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $<x,\beta>\ >0$ and $<x,\beta'>\ <0$.\\
+\indent We also need to use the concept of the picture groups in order to prove the formula in \ref{C1}. For more details about picture groups we recommend \cite{IT17}.\\
+\begin{definition}
+Let $Q$ be an acyclic quiver. A representation $(\{V_i\}_{i\in Q_0}, \{\phi_a\}_{a\in Q_1})$ of $Q$ is \textit{thin} if $dim(V_i) \leq 1$ for all $i\in Q_0$.
+\end{definition}
+\indent For a quiver of finite type, any dimension vector of an indecomposable representation, which we also refer to as a \textit{root}. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: \langle x,\beta\rangle=0,\ \langle x,\beta'\rangle\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments}. The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4} Sometimes we abuse notations and use the root $\beta$ to mean the wall $D(\beta)$ when the meaning is clear. We also use the notation $+\beta$ to mean the wall $\beta$ is a part of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $\langle x,\beta\rangle\ >0$. Similarly we have the notation $-\beta$. For example $+\beta-\beta'$ means that $\beta$ and $\beta'$ are parts of the boundary of a compartment $\mathcal{U}$ and for any point $x\in\mathcal{U}$, $\langle x,\beta\rangle\ >0$ and $\langle x,\beta'\rangle\ <0$.\\
 \indent In $A_n$ in particular since all indecomposable representations are thin, the roots are $\beta_{ij}=e_j-e_i$ ($0<i<j<n$, $e_0$ is defined as the zero vector).\\
 \begin{definition}
-A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)=<S|R>$ with $S$ in bijection with the set of real Schur roots (the generator for $\beta$ is $x(\beta)$) and $R$ the set of relations $x(\beta_i)x(\beta_j)=\Pi x(\gamma_k)$ with $\gamma_k$ running over all these real Schur roots which are linear combinations $\gamma_k = a_k\beta_i+b_k\beta_j$ with $a_k/b_k$ increasing (going from 0/1 where $\gamma_1=\beta_j$ to 1/0 where $\gamma_k=\beta_i$) for any pair $(\beta_i,\beta_j)$ such that they are Hom-orthogonal and $Ext(\beta_i,\beta_j)=0$. \cite{IT17}\\
+A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)=\langle S|R\rangle$ with $S$ in bijection with the set of real Schur roots (the generator for $\beta$ is $x(\beta)$) and $R$ the set of relations $x(\beta_i)x(\beta_j)=\Pi x(\gamma_k)$ with $\gamma_k$ running over all these real Schur roots which are linear combinations $\gamma_k = a_k\beta_i+b_k\beta_j$ with $a_k/b_k$ increasing (going from 0/1 where $\gamma_1=\beta_j$ to 1/0 where $\gamma_k=\beta_i$) for any pair $(\beta_i,\beta_j)$ such that they are Hom-orthogonal and $Ext(\beta_i,\beta_j)=0$. \cite{IT17}\\
 \end{definition}
 \indent Note that for quiver $A_n$ all roots are real and Schur hence a real Schur root is just a root. Also we often simplify the notation of $x(\beta_{ij})$ to $x_{ij}$ which we use interchangeably with $x(\beta_{ij})$. The picture group for $A_n$ straight orientation is $G(A_n)=\{S|R\}$, $S=\{x_{ij}|0\leq i<j\leq n\}$, $R=\{x_{ij}x_{kl}=x_{kl}x_{ij}|[i,j]\cap[k,l]=\emptyset, [i,j]\text{ or }[k,l], $ i,j,k,l \\are distinct.\}$\cup\{x_{jk}x_{ij}=x_{ij}x_{ik}x_{jk}|0\leq i<j<k\leq n\}$.\\
 \indent Igusa and Todorov proved \cite{IT17} that there exists a bijection between the set of maximal green sequences and the set $\mathcal{P}(c)$ of positive expressions of the Coxeter element of the picture group for any acyclic valued quiver of finite type which applies to $A_n$ straight orientation.\\
 \subsection{Alternative definitions of maximal green sequences}
-\indent In the following theorem by Kiyoshi Igusa multiple equivalent definition of maximal green sequences was introduced. To understand more about the wall-and-chamber structure we suggest that the reader reads \cite{IOTW15}, \cite{GHKK14} or \cite{BST17}.
+\indent In the following theorem by Kiyoshi Igusa multiple equivalent definition of maximal green sequences was introduced. To understand more about the wall-and-chamber structure we suggest that the reader reads \cite{GHKK14}\cite{Mul15}\cite{BST17}\cite{BST18A}\cite{BST18B} and \cite{IOTW15}.
 \begin{theorem}
 \cite{I17} Let $\Lambda$ be a finite dimensional hereditary algebra over a field $K$. Let $\beta_1,\cdots,\beta_m\in \mathbb{N}^n$ be any finite sequence of nonzero, nonnegative integer vectors. Then the following are equivalent.\label{thm:3}
 \begin{enumerate}
-\item[(a)] There is a nonlinear stability function $Z_t:K_0\Lambda\to \mathbb{C}$ which is green and has exactly $m$ semistable pairs $(M_i,t_i)$ with $t_1<t_2<\cdots<t_m$ so that $\dim M_i=\beta_i$ for all $i$.%(making all pairs stable) 
-\item[(b)] There is a generic green path $\gamma:\mathbb{R}\to\mathbb{R}^n$ which crosses the walls $D(M_i)$, $i=1,\cdots,m$ in that order, and no other walls, so that $\dim M_i=\beta_i$ for all $i$.
-\item[(c)] There exist $\Lambda$-modules $M_m,\cdots,M_1$ with $\dim M_i=\beta_i$ which form a finite Harder-Narasimhan system for $\Lambda$. 
-\item[(d)] There exist Schurian $\Lambda$-modules $M_1,\cdots,M_m$ with $\dim M_i=\beta_i$ so that \begin{enumerate}
+%\item[(a)] There is a nonlinear stability function $Z_t:K_0\Lambda\to \mathbb{C}$ which is green and has exactly $m$ semistable pairs $(M_i,t_i)$ with $t_1<t_2<\cdots<t_m$ so that $\dim M_i=\beta_i$ for all $i$.%(making all pairs stable) 
+%\item[(b)] There is a generic green path $\gamma:\mathbb{R}\to\mathbb{R}^n$ which crosses the walls $D(M_i)$, $i=1,\cdots,m$ in that order, and no other walls, so that $\dim M_i=\beta_i$ for all $i$.
+\item[(a)] There exist $\Lambda$-modules $M_m,\cdots,M_1$ with $\dim M_i=\beta_i$ which form a finite Harder-Narasimhan system for $\Lambda$. 
+\item[(b)] There exist Schurian $\Lambda$-modules $M_1,\cdots,M_m$ with $\dim M_i=\beta_i$ so that \begin{enumerate}
 \item[(1)] $Hom_\Lambda(M_i,M_j)=0$ for $i>j$.
 \item[(2)] No other modules can be inserted into the sequence preserving (1).
 \end{enumerate}
-\item[(e)] There is a maximal green sequence for $\Lambda$ of length $m$ whose $i$th mutation is at the $c$-vector $\beta_i$. 
+\item[(c)] There is a maximal green sequence for $\Lambda$ of length $m$ whose $i$th mutation is at the $c$-vector $\beta_i$. 
 \end{enumerate}
 \end{theorem}
+\indent Such results have been generalized to the case of $m$-maximal green sequences in Chapter \ref{C3}.
 %\section{Quiver folding}
 %\indent In this section we will introduce the theory of quiver folding. Folding theory has been in folklore for a while. Despite not being used to prove anything in the thesis we are still going to discuss it here in details.\\
 %\begin{definition}
