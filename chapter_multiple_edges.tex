@@ -52,19 +52,20 @@ If $Q$ is a quiver that isn't connected, $Q^1$, $Q^2$, $\cdots$ $Q^n$ are its co
 %\indent Using quiver folding it is easy to show that we only need to consider the simply-laced case.\\
 \indent There is also an unrelated result about MGS-finiteness we proved which we will include here.
 \begin{definition}
-A valued quiver is of \textit{finite green mutation type} if there are finitely many exchange matrices along its maximal green sequences.
+A quiver is of \textit{finite green mutation type} if there are finitely many exchange matrices along its maximal green sequences.
 \end{definition}
-It is easy to see that any valued-quiver that has finitely many maximal green sequences is of finite green mutation type.\\
-\begin{lemma}
-If the coframed quiver $\breve{Q}$ of a valued quiver $Q$ is of finite green mutation type, $Q$ has finitely many maximal green sequences.\\
+It is easy to see that any quiver that has finitely many maximal green sequences is of finite green mutation type.\\
+\begin{lemma}\label{CF1}
+If the coframed quiver $\breve{Q}$ of a quiver $Q$ is of finite green mutation type, $Q$ has finitely many maximal green sequences.\\
 \end{lemma}
 \begin{proof}
-For a valued quiver $Q$ with $|Q_0|=n$, let $Q'=\breve{Q}$ be its coframed quiver and $Q''$ be the coframed quiver of $Q'$. Let's label the extra vertices of $Q'$ as $1',\cdots, n'$. Note that any maximal green sequence $w=(w_1,\cdots, w_k)$ of $Q$ can be extended into a maximal green sequence of $Q'$, $w'=(w_1,\cdots, w_k, 1', 2',\cdots, n')$. Note that any extended exchange matrix that appears in any maximal green sequence of $Q$ is an exchange matrix in some maximal green sequence of $Q'$. Since $Q'$ is of finite green mutation type, there are only finitely many exchange matrices in all maximal green sequences of $Q'$. Hence there are only finitely many extended exchange matrices in any maximal green sequence of $Q$. Since extended exchange matrices can not be repeated in a maximal green sequence, $Q$ has finitely many maximal green sequences.\\ 
+For a quiver $Q$ with $|Q_0|=n$, let $Q'=\breve{Q}$ be its coframed quiver and $Q''$ be the coframed quiver of $Q'$. Let's label the extra vertices of $Q'$ as $1',\cdots, n'$. Note that any maximal green sequence $w=(w_1,\cdots, w_k)$ of $Q$ can be extended into a maximal green sequence of $Q'$, $w'=(w_1,\cdots, w_k, 1', 2',\cdots, n')$. Note that any extended exchange matrix that appears in any maximal green sequence of $Q$ is an exchange matrix in some maximal green sequence of $Q'$. Since $Q'$ is of finite green mutation type, there are only finitely many exchange matrices in all maximal green sequences of $Q'$. Hence there are only finitely many extended exchange matrices in any maximal green sequence of $Q$. Since extended exchange matrices can not be repeated in a maximal green sequence, $Q$ has finitely many maximal green sequences.\\ 
 \end{proof}
 \indent Here is an easy corollary of the lemma above:\\
-\begin{corollary}
-If all valued quivers are of finite green mutation type, all valued quivers have finitely many maximal green sequences.\\
+\begin{corollary}\label{CF2}
+If all quivers are of finite green mutation type, all quivers have finitely many maximal green sequences.\\
 \end{corollary}
+\indent Lemma \ref{CF1} and Corollary \ref{CF2} also hold for valued quivers which we won't discuss in this paper. The proofs don't change when generalized to valued quivers.\\ 
 \section{The acyclic case}
 \indent Now we need some basic definitions in order to describe and prove the results.
 \begin{definition}
