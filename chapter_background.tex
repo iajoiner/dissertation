@@ -313,35 +313,48 @@ A $t$-\textit{structure} on $D^b(\Lambda)$ is a pair $(D^{\leq 0},D^{\geq 0})$ s
 \end{enumerate}
 \end{definition}
 \begin{example}
-Let $\Lambda$ be any finite dimensional algebra. $(\cup_{m=1}^{\infty}\Lambda[m], \cup_{m=0}^{\infty}\Lambda[-m])$ is clearly a $t$-structure.
+Let $\Lambda$ be any finite dimensional algebra. The \textit{standard $t$-structure}\\ $(\cup_{m=0}^{\infty}\Lambda[m], \cup_{m=0}^{\infty}\Lambda[-m])$ is clearly a $t$-structure.
 \end{example}
-\indent Now let's define hearts which will be very useful for a crucial proof in \ref{C3}, namely the proof of Lemma \ref{lem:C3L1}.
+\indent Now let's define hearts which will be very useful for a crucial proof in Chapter \ref{C3}, namely the proof of Lemma \ref{lem:C3L1}.
 \begin{definition}
 The \textit{heart} of a $t$-structure $(D^{\leq 0},D^{\geq 0})$ is defined as $\mathcal{H} = D^{\leq 0}\cap D^{\geq 0}$
 \end{definition}
 \begin{theorem}
 \cite{BBD} Hearts of $t$-structures are Abelian categories. 
 \end{theorem}
-\indent $t$-structures can be mutated just like silting objects and simple-minded collections. In order to do so we first need to define torsion pairs in Abelian categories.\\
-\begin{definition}
-A \textit{torsion pair} $(\mathcal{T},\mathcal{F})$ in an Abelian category $\catc$ is a pair of two subcategories such that the following holds.
-\begin{enumerate}
-\item $Hom(\mathcal{T},\mathcal{F}) = 0$
-\item For any $M\in\catc\,\exists T\in\mathcal{T},\, F\in\mathcal{F}$ such that $0\to T\to M\to F\to 0$ is a short exact sequence.
-\item If for $M\in\catc$ and $Hom(M,\mathcal{F}) = 0$ then $M\in\mathcal{T}$.
-\item If for $M\in\catc$ and $Hom(\mathcal{T}, M) = 0$ then $M\in\mathcal{F}$.
-\end{enumerate}
-\end{definition}
 \begin{example}
-Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ if we take $\mathcal{T} = add(P_2)$ and $\mathcal{F} = add(I_1)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
+Let $\Lambda$ be any finite dimensional algebra. The heart of the standard $t$-structure is $mod \Lambda$ itself which is of course Abelian.
 \end{example}
-\begin{example}
-Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ straight orientation if we take $\mathcal{T} = add(P_1,I_1)$ and $\mathcal{F} = add(P_2)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
-\end{example}
-\indent Now it is possible to define mutations of $t$-structures.
-\begin{definition}
-\cite{KY12}Let $\Lambda$ be a finite dimensional algebra, let $D^b(\Lambda)$ be the bounded derived category of $\Lambda$. Let $(\catc^{\leq 0},\catc^{\geq 0})$ be a $t$-structure of $D^b(\Lambda)$. Let $\cata$ be its heart. Let $\cattf$ be a torsion pair in $\cata$. The \textit{left mutation} or \textit{forward mutation} $\mu_i^+(\catc^{\leq 0},\catc^{\geq 0}) = (\catc'^{\leq 0},\catc^{\geq 0})$  where $\catc'^{\leq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m>0 \text{ and } H^0(M)\in\catt\}$, $\catc'^{\geq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m<-1 \text{ and } H^{-1}(M)\in\catf\}$. Similarly we can define \textit{right mutations} (or \textit{backward mutations}). 
-\end{definition}
+\indent Now let's introduce truncation functors associated with $t$-structures. 
+\begin{lemma}
+\cite{BBD}  Let $\catd$ be a triangulated category. Let $(D^{\leq 0},D^{\geq 0})$ be a $t$-structure on $\catd$. The inclusion ${\mathcal{D}^{\geq n} \rightarrow \mathcal{D}}$ has a left adjoint ${\tau_{\geq n}}$. Similarly, the inclusion ${\mathcal{D}^{\leq n} \rightarrow \mathcal{D}}$ has a right adjoint ${\tau_{\leq n}}$. These are called \textit{truncation functors}.
+\end{lemma}
+%\begin{definition}
+%\cite{B07} A $t$-structure $(D^{\leq 0},D^{\geq 0})$ of the triangulated category $\catd$ is \textit{bounded} if $\catd = \cup_{i,j} D^{\leq i}\cap D^{\geq j}$.
+%\end{definition}
+%\begin{example}
+%Let $\Lambda$ be any finite dimensional algebra. The standard $t$-structure is clearly bounded since $D^b(\Lambda) = \cup_i D^{\leq i}\cap D^{\geq i}$.
+%\end{example}
+%\indent $t$-structures can be mutated just like silting objects and simple-minded collections. In order to do so we first need to define torsion pairs in Abelian categories.\\
+%\begin{definition}
+%A \textit{torsion pair} $(\mathcal{T},\mathcal{F})$ in an Abelian category $\catc$ is a pair of two subcategories such that the following holds.
+%\begin{enumerate}
+%\item $Hom(\mathcal{T},\mathcal{F}) = 0$
+%\item For any $M\in\catc\,\exists T\in\mathcal{T},\, F\in\mathcal{F}$ such that $0\to T\to M\to F\to 0$ is a short exact sequence.
+%\item If for $M\in\catc$ and $Hom(M,\mathcal{F}) = 0$ then $M\in\mathcal{T}$.
+%\item If for $M\in\catc$ and $Hom(\mathcal{T}, M) = 0$ then $M\in\mathcal{F}$.
+%\end{enumerate}
+%\end{definition}
+%\begin{example}
+%Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ if we take $\mathcal{T} = add(P_2)$ and $\mathcal{F} = add(I_1)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
+%\end{example}
+%\begin{example}
+%Let $\catc$ be $mod kQ$ with $Q$ being $1\to 2$ straight orientation if we take $\mathcal{T} = add(P_1,I_1)$ and $\mathcal{F} = add(P_2)$ we can see that the pair $\cattf$ satisfies the conditions above and is hence a torsion pair in $\catc$.
+%\end{example}
+%\indent Now it is possible to define mutations of $t$-structures.
+%\begin{definition}
+%\cite{KY12}Let $\Lambda$ be a finite dimensional algebra, let $D^b(\Lambda)$ be the bounded derived category of $\Lambda$. Let $(\catc^{\leq 0},\catc^{\geq 0})$ be a $t$-structure of $D^b(\Lambda)$. Let $\cata$ be its heart. Let $\cattf$ be a torsion pair in $\cata$. The \textit{left mutation} or \textit{forward mutation} $\mu_i^+(\catc^{\leq 0},\catc^{\geq 0}) = (\catc'^{\leq 0},\catc^{\geq 0})$  where $\catc'^{\leq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m>0 \text{ and } H^0(M)\in\catt\}$, $\catc'^{\geq 0} = \{M\in\catc| H^m(M) = 0 \text{ for } m<-1 \text{ and } H^{-1}(M)\in\catf\}$. Similarly we can define \textit{right mutations} (or \textit{backward mutations}). 
+%\end{definition}
 \indent For more information about mutations of $t$-structures we recommend \cite{AI10}, \cite{BY13}, \cite{KQ15} and \cite{KY12}.
 \subsection{Green sequences}
 \indent Since we have maximal green sequences it is reasonable to look at the generalization of this concept, namely $m$-maximal green sequences. In order to do so we need to define the general concept of green and red sequences. In principle any forward mutation is considered green and any backward mutation red.\\
