@@ -1,7 +1,7 @@
 \chapter{Background}\label{CB}
 \section{Notations}
-\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. When the category we are discussing is clearly $\mathcal{C}$ $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
-\indent The definition of green and red are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
+\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. When the category we are discussing is clearly $\mathcal{C}$ then $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories of $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are summands of finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
+\indent The definition of green and red (vertices, mutations, sequences) are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
 %\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
 %mn & \text{if }m>0,n>0\\
 %-mn & \text{if }m<0,n<0\\
@@ -9,7 +9,7 @@
 \section{Quivers and path algebras}
 \subsection{Quivers}
 \begin{definition}
-A \textit{quiver} $Q$ is a quadruple $(Q_0,Q_1,s,t)$ with $Q_0$ and $Q_1$ sets and $s,t$: $Q_1\rightarrow Q_0$. An element of $Q_0$ is a \textit{vertex} of $Q$. An element of $Q_1$ is an \textit{arrow} of $Q$. $s$ maps each arrow to its source and $t$ maps each arrow to its target.
+A \textit{quiver} $Q$ is a quadruple $(Q_0,Q_1,s,t)$ with $Q_0$ and $Q_1$ sets and $s,t$: $Q_1\rightarrow Q_0$. An element of $Q_0$ is a \textit{vertex} of $Q$. An element of $Q_1$ is an \textit{arrow} of $Q$. The map $s$ maps each arrow to its source and $t$ maps each arrow to its target.
 \end{definition}
 \indent Intuitively we can think of elements of $Q_1$ as oriented edges. Any arrow has a unique source and a unique target both of which are vertices. This is how we obtain the $s$ and $t$ maps. Unless necessary we generally omit the $s$ and $t$ and denote a quiver by $Q = (Q_0, Q_1)$.\\
 \begin{example}
@@ -25,7 +25,7 @@ A \textit{subquiver} $Q' = (Q'_0,Q'_1, s', t')$ in a quiver $Q = (Q_0,Q_1, s, t)
 \indent From now on we generally do not distinguish between $s$ and $s'$, $t$ and $t'$.\\
 \indent Not all quivers are useful for the purpose of this paper. This is why we need to add restrictions. In order to do so we need to introduce several definitions.\\
 \begin{definition}
-An \textit{oriented cycle} in a quiver $Q$ is a subquiver $Q' = (Q'_0, Q'_1, s, t)$ such that $Q'_0 = \{v_0,v_1,\cdots, v_{k-1}\},Q'_1 = \{a_0,a_1,\cdots, a_{k-1}\}, s(a_i) = v_i, t(a_i) = v_{i+1}$. Here $v_k$ is defined as $v_0$.
+An \textit{oriented cycle} in a quiver $Q$ is a subquiver $Q' = (Q'_0, Q'_1, s, t)$ such that $Q'_0 = \{v_0,v_1,\cdots, v_{k-1}\},Q'_1 = \{a_0,a_1,\cdots, a_{k-1}\}, s(a_i) = v_i$ and $t(a_i) = v_{i+1}$. Here $v_k$ is defined as $v_0$.
 \end{definition}
 \begin{definition}
 A \textit{$k$-cycle} is an oriented cycle with $k$ vertices.
