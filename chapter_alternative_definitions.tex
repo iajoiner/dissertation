@@ -27,10 +27,10 @@
 \begin{theorem}
 If $\Lambda$ is a finite dimensional hereditary algebra for an indecomposable module $M$ in a module category $mod \Lambda$ for a stability condition $\phi$ the following are equivalent:
 \begin{enumerate}
-\item $M$ is stable. That is, for any proper submodule $N$ of $M$ $\phi(N)<\phi(M)$.
-\item For any proper quotient module $N$ of $M$ $\phi(M)<\phi(N)$.
-\item For any indecomposable stable module $N\not\cong M$ such that $(M,N)\neq 0$ $\phi(M)<\phi(N)$.
-\item For any indecomposable stable module $N\not\cong M$ such that $(N,M)\neq 0$ $\phi(N)<\phi(M)$.
+\item $M$ is stable. That is, for any proper submodule $N$ of $M$ it is true that $\phi(N)<\phi(M)$.
+\item For any proper quotient module $N$ of $M$ it is true that $\phi(M)<\phi(N)$.
+\item For any indecomposable stable module $N\not\cong M$ such that $(M,N)\neq 0$ it is true that $\phi(M)<\phi(N)$.
+\item For any indecomposable stable module $N\not\cong M$ such that $(N,M)\neq 0$ it is true that $\phi(N)<\phi(M)$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -46,9 +46,9 @@ If $\Lambda$ is a finite dimensional hereditary algebra for an indecomposable mo
 If $\Lambda$ is a finite dimensional algebra for an indecomposable module $M$ in a module category $mod \Lambda$ for a stability condition $\phi$ the following are equivalent:
 \begin{enumerate}
 \item $M$ is semistable.
-\item For any proper quotient module $N$ of $M$ $\phi(M)\leq\phi(N)$.
-\item For any indecomposable stable module $N$ such that $(M,N)\neq 0$ $\phi(M)\leq\phi(N)$.
-\item For any indecomposable stable module $N$ such that $(N,M)\neq 0$ $\phi(N)\leq\phi(M)$.
+\item For any proper quotient module $N$ of $M$ it is true that $\phi(M)\leq\phi(N)$.
+\item For any indecomposable stable module $N$ such that $(M,N)\neq 0$ it is true that $\phi(M)\leq\phi(N)$.
+\item For any indecomposable stable module $N$ such that $(N,M)\neq 0$ it is true that $\phi(N)\leq\phi(M)$.
 \end{enumerate}
 \end{theorem}
 \section{Maximal backward $Hom^{\leq 0}$ orthogonal sequences}
@@ -79,6 +79,19 @@ $\begin{tikzcd}
 \end{tikzcd}$
 where $X_{i-1}/X_i$ is a self-extension of $M_i$. 
 \end{definition}
+\indent If an object has an HN filtration with respect to $\{M_i\}_{i\in[N]}$ then it makes sense to define its \textit{lowest and highest indices} with respect to the filtration.\\
+\begin{definition}
+Let $\catt$ be a subcategory of a triangulated category. $M_1,\cdots, M_k\in \catt$ are a finite sequence of nonzero objects. If some object $X\in\catt$ has an HN filtration $\begin{tikzcd}
+0 = X_k\arrow[rr] &                               & X_{k-1}\arrow[ld]\arrow[rr]&                & X_{k-2}\arrow[ld]& \cdots & X_0 = X\arrow[ld]\arrow[l,leftarrow]\\
+                            & X_{k-1}/X_k\arrow[lu, dashrightarrow] &        & X_{k-2}/X_{k-1}\arrow[lu, dashrightarrow] & \cdots & X_0/X_1&
+\end{tikzcd}$ with respect to $M_1,\cdots, M_k$ then we can define the following:
+\begin{enumerate}
+\item The \textit{lowest index} in the filtration is defined as the smallest $i$ such that $X_{i-1}/X_i\neq 0$.
+\item The \textit{highest index} in the filtration is defined as the largest $i$ such that $X_{i-1}/X_i\neq 0$.
+\end{enumerate}
+\end{definition}
+\indent If $X$ has a unique HN filtration with respect to $M_1,\cdots, M_k$ then the lowest and highest indices of $X$ are only dependent on $M_1,\cdots, M_k$. In this case we can refer to them as $l_X$ and $h_X$ without any ambiguity.\\
+\indent We may sometimes abuse notations and refer to the unique HN filtration of some $X$ as $0\to X_{h_X-1}\to\cdots\to X_{l_X} = X$.\\
 \begin{definition}
 Let $\catt$ be a subcategory of a triangulated category. $M_1,\cdots, M_k\in \catt$ are a finite sequence of nonzero objects. $M_1,\cdots, M_k$ form a \textit{finite HN system for $\catt$} if any object $X\in\catt$ has a unique HN filtration with respect to $M_1,\cdots, M_k$.
 \end{definition}
@@ -87,14 +100,14 @@ Let $\catt$ be a subcategory of a triangulated category. $M_1,\cdots, M_k\in \ca
 Let $\Lambda$ be a finite dimensional hereditary algebra. Let $\mathcal{T} = add(\cup_{i=0}^{m-1} (mod\,\Lambda)[i])$. Let $M_1,\cdots, M_n$ be a finite sequence of nonzero objects in $\mathcal{T}$. If any object $Y$ in $\catt$ accept a unique HN filtration $0\to Y_m\to\cdots\to Y_1=Y$ with $Y_i/Y_{i+1}\in \mathcal{E}(M_i)$, the following holds.
 \begin{enumerate}
 %\item For any $i$ $M_i\in mod\, \Lambda[k]$ for a certain $k$.
-\item For any $i$ $M_i$ is indecomposable.
-\item For any $i$ $M_i$ is Schur.
+\item For any $i$ it is true that $M_i$ is indecomposable.
+\item For any $i$ it is true that $M_i$ is Schur.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
 %\indent For (1) assume that $M_i = \oplus_{k}M_i^k$ such that $M_i^k\in\, mod\, \Lambda[k]$. Define the generalized dimension vector of $M_i$ as $dim\, M_i\, =\, \Sigma_k (-1)^k\,dim\,M_i^k$. Any object $X$ that only have $i$-th entry in its HN filtration has to satisfy $dim\,X = k\,dim\,M_i$ for some nonnegative $k$.  If not all entries of $dim\, M_i$ are non-negative then $M_i^k = 0$ for all odd $k$ for otherwise the unique HN filtration of $M_i^k$ can not only have the $i$-th entry which violates the condition. Similarly if not all entries of $dim\, M_i$ are non-positive then $M_i^k = 0$ for all even $k$. If $dim\, M_i = 0$ then all $M_i^k$ has to be 0 because otherwise $dim\,M_i^k$ could never be a multiple of $dim\,M_i$. Hence $dim\, M_i$ has to be either a positive vector or a negative vector. Without loss of generality let's assume that it is a positive one. In this case $M_i^k = 0$ for all odd $k$. If $M_i^k \neq 0$ and $M_i^l\neq 0$ then $dim\,M_i^k\,<\,dim\,M_i$. This can not happen either.\\
 \indent For (1) assume that $M_i$ is decomposable. Then $M_i = A\oplus B$ with $A\neq 0$ and $B\neq 0$. In this case $A$ and $B$ have nontrivial HN filtrations and adding them up we should obtain an HN filtration for $M_i$ that isn't the canonical one which contradicts the fact that $M_i$ has a unique HN filtration.\\
-\indent For (2) assume that $M_i$ is not Schur. Then there exists $f\in End(M_i)$ such that $Im f\neq M_i$. Take an indecomposable direct summand of $Im f$, $Q$. Since $Q$ is a quotient module of $M_i$ and $\Lambda$ is hereditary $Ext^1(M_i/Q, M_i)\to Ext^1(M_i/Q, Q) \neq 0$ is a surjection. We have the following diagram.\\
+\indent For (2) assume that $M_i$ is not Schur. Without loss of generality we can assume that $M_i\in mod\Lambda$. Then there exists $f\in End(M_i)$ such that $Im f\neq M_i$. Take an indecomposable direct summand of $Im f$, $Q$. Since $Q$ is a quotient module of $M_i$ and $\Lambda$ is hereditary $Ext^1(M_i/Q, M_i)\to Ext^1(M_i/Q, Q) \neq 0$ is a surjection. We have the following diagram.\\
 $\begin{tikzcd}
 0\arrow[r] & M_i\arrow[r]\arrow[d] & X\arrow[r]\arrow[d] & M_i/Q \arrow[r]\arrow[d,equal] & 0\\
 0\arrow[r] & Q \arrow[r] & M_i\arrow[r] & M_i/Q \arrow[r] & 0\\
@@ -116,22 +129,22 @@ $\begin{tikzcd}
 \begin{lemma}\label{lem:C3L2}
 Let $\Lambda$ be a finite dimensional hereditary algebra. Let $\mathcal{T} = add(\cup_{i=0}^{m-1} (mod\,\Lambda)[i])$. Let $M_1,\cdots, M_n$ be a finite sequence of nonzero objects in $\mathcal{T}$. If any object $Y$ in $D^b(\Lambda)$ accept a unique HN filtration $0\to Y_N\to\cdots\to Y_1=Y$ with $Y_i/Y_{i+1}\in \mathcal{E}(M_i)$, the following holds.
 \begin{enumerate}
-\item $Hom(M_i,M_j) = 0$ for any $i>j$.
-\item If $M_j = M_i[1]$ then $j>i$. Moreover if $Y$ is any object and the lowest nonzero entry of the HN filtration of $Y$ has index can not be higher than the highest nonzero entry of the HN filtration of $Y[1]$. 
-\item If $Y_i\neq 0$ $Hom(Y_i, Y)\neq 0$ for any $i$.
-\item If $Y/Y_i\neq 0$ $Hom(Y, Y/Y_i)\neq 0$ for any $i>1$.
-\item $Hom(M_i[1],M_j) = 0$ for any $i>j$.
+\item For any $i>j$ it is true that $Hom(M_i,M_j) = 0$.
+\item If $M_j = M_i[1]$ then $j>i$. Moreover if $Y$ is any object, the lowest nonzero entry of the HN filtration of $Y$ has index $l_Y$, can not be higher than the highest nonzero entry of the HN filtration of $Y[1]$ then $l_Y\leq h_{Y[1]}$.
+\item If $Y_i\neq 0$ for some $i\in[N]$ then $Hom(Y_i, Y)\neq 0$ .
+\item If $Y/Y_i\neq 0$ for some $1<i\leq N$ then $Hom(Y, Y/Y_i)\neq 0$ .
+\item For any $i>j$ it is true that $Hom(M_i[1],M_j) = 0$.
 \item If $M_j = M_i[m]$ where $m>0$ then $j>i$. Moreover if $Y$ is any object and the lowest nonzero entry of the HN filtration of $Y$ has index can not be higher than the highest nonzero entry of the HN filtration of $Y[m]$ for any positive $m$. 
 \item $Hom(M_i[m],M_j) = 0$ where $m>0$ for any $i>j$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\indent (1) is true because otherwise we have completely different HN filtrations for $M_i\oplus M_j$, namely $\triangwm{M_i}{(1,0)^t}{M_i\oplus M_j}{(0,1)}{M_j}{0}{M_i[1]}$ and $\triangwm{M_i}{(1,f)^t}{M_i\oplus M_j}{(f,-1)}{M_j}{0}{M_i[1]}$.\\
+\indent (1) is true because otherwise we have completely different HN filtrations for $M_i\oplus M_j$, namely $\triangwm{M_i}{(1,0)^t}{M_i\oplus M_j}{(0,1)}{M_j}{0}{M_i[1]}$ and $\triangwm{M_i}{(1,f)^t}{M_i\oplus M_j}{(f,-1)}{M_j}{0}{M_i[1]}$ where $f$ is a nontrivial morphism from $M_i$ to $M_j$.\\
 \indent (2) is true because otherwise $M_i\to 0\to M_i[1]\to M_i[1]$ will be an HN filtration of 0 and hence there will be at least two HN filtrations of 0. Similarly if the HN filtration of $Y$ is strictly before the HN filtration of $Y[1]$ $0\to Y\to Y[1]\to 0$ will be an HN filtration of 0.\\
 \indent Let $l \geq i$ be any number such that $Y_l/Y_{l+1}\neq 0$. Since $Y_i\neq 0$ such $l$ must exist. (3) is true because $\triang{Y_i}{Y}{Y/Y_i}{Y_i[1]}$ is a triangle. If $Hom(Y_i,Y)= 0$ the triangle splits and $Y/Y_i = Y\oplus Y_i[1]$. Since $Y_i[1]$ has a unique HN filtration $Y/Y_i$ has two HN filtrations, one with the $l$-th entry 0 and one with a nontrivial $l$-th entry. \\
 \indent Let $l < i$ be any number such that $Y_l/Y_{l+1}\neq 0$. Since $Y/Y_i\neq 0$ such $l$ must exist. (4) is true because $\triang{Y_i}{Y}{Y/Y_i}{Y_i[1]}$ is a triangle. If $Hom(Y,Y/Y_i)= 0$ the triangle splits and $Y_i = Y\oplus Y_i[-1]$. Since $Y_i[-1]$ has a unique HN filtration $Y_i$ has two HN filtrations, one with the $l$-th entry 0 and one with a nontrivial $l$-th entry. \\
 \indent Now let's prove (5). Assume that $i>j$ and $Hom(M_i[1],M_j) \neq 0$. Since $Hom(M_i,M_j[-1])\neq 0$ and that $M_j\in\catt$ it is clear that $M_j[-1]\in\catt$ and hence has a unique HN filtration. Let's first assume that the highest term of the HN filtration of $M_j[-1]$ is a self-extension of $M_i$. If this is not the case assume that the highest term is a self-extension of $M_{i'}$. If $i'\leq j$ then it is clear that $Hom(M_i,M_j[-1])=0$ since the Hom from $M_i$ to all terms in the HN filtration of $M_j[-1]$ is 0 due to (1). Hence $i'>j$ and we can simply use $i'$ instead of $i$ since $Hom(M_{i'},M_j[-1])\neq 0$. So we can indeed assume that the highest entry of the HN filtration of $M_j[-1]$ is a self-extension of $M_i$. Let such an entry be $X_i$. Since $Hom(M_i[1], M_j)\neq 0$ and $M_i\in\catt$ we can see that $M_i[1]\in\catt$. As a result $X_i[1]\in\catt$. Let $h$ be the highest nontrivial index of the HN filtration of $X_i[1]$ then $h$ is not higher than $j$ or the highest nontrivial index of $M_j[-1]/X_i$ both of which are lower than $i$ due to (4) since $M_j[-1]\to M_j[-1]/X_i\to X_i[1]\to M_j$ is a triangle. Apply (4) again to $X_i[1]$ as a self-extension of $M_i[1]$ the highest nontrivial index of the HN filtration of $M_i[1]$ is lower than $i$. Apply (2) to $M_i$ and we can reach a contradiction.\\
-\indent As for (6), since (2) is already proven let's assume that the result has been proven for all positive integers below $m$ and use induction. For the first claim it is clear that $M_i[1]$ can not be any $M_l$ or the induction hypothesis would be violated. It is also clear that $M_i[1]\in\catt$ since $M_i, M_i[m]\in\catt$. Take the lowest nonzero entry $Y_k$ of the HN filtration of $M_i[1]$. If $k=i$ then $Hom(M_i[1],M_i)\neq 0$ which can not happen. If $k>i$ then we can apply the induction hypothesis to the HN filtration of $M_i[1]$ and $M_i[m]$ and show that this is false. Hence $k<i$. In this case $Hom(M_i[1],Y_k)\neq 0$. Hence $Hom(M_i[1],M_k)\neq 0$ which is impossible due to (5). Now let's prove the second claim. Here since $Y,Y[m]\in\catt$ so does $Y[1]$. Let the lowest entry of the HN filtration of $Y[1]$ be $N_k\in\mathcal{E}(M_k)$ and let $0\to Y_j\to\cdots Y_l\to 0$ be the HN filtration of $Y$. It is easy to see that $k<l$ due to the induction hypothesis applied to $Y[1]$ and $Y[k]$. Hence $Hom(Y[1],M_k)\neq 0$. Hence for some $h>k$ $Hom(M_h[1],M_k)\neq 0$ which is impossible due to (5).\\
+\indent As for (6), since (2) is already proven let's assume that the result has been proven for all positive integers below $m$ and use induction. For the first claim it is clear that $M_i[1]$ can not be any $M_l$ or the induction hypothesis would be violated. It is also clear that $M_i[1]\in\catt$ since $M_i, M_i[m]\in\catt$. Take the lowest nonzero entry $Y_k$ of the HN filtration of $M_i[1]$. If $k=i$ then $Hom(M_i[1],M_i)\neq 0$ which can not happen. If $k>i$ then we can apply the induction hypothesis to the HN filtration of $M_i[1]$ and $M_i[m]$ and show that this is false. Hence $k<i$. In this case $Hom(M_i[1],Y_k)\neq 0$. Hence $Hom(M_i[1],M_k)\neq 0$ which is impossible due to (5). Now let's prove the second claim. Here since $Y,Y[m]\in\catt$ so does $Y[1]$. Let the lowest entry of the HN filtration of $Y[1]$ be $N_k\in\mathcal{E}(M_k)$ and let $0\to Y_j\to\cdots Y_l = Y$ be the HN filtration of $Y$. It is easy to see that $k<l$ due to the induction hypothesis applied to $Y[1]$ and $Y[k]$. Hence $Hom(Y[1],M_k)\neq 0$. Hence for some $h>k$ we have $Hom(M_h[1],M_k)\neq 0$ which is impossible due to (5).\\
 \indent Finally we need to prove (7). Assume that the result is true for any positive integer below $m$ which is legit because (5) is already proven. Assume that $i>j$ and $Hom(M_i[m],M_j) \neq 0$. Since $Hom(M_i, M_j[-m])\neq 0$ and $M_j\in\catt$ it is clear that $M_j[-m]\in\catt$. Let's first assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$. If this is not the case assume that the highest term is a self-extension of $M_{i'}$. If $i'\leq j$ then it is clear that $Hom(M_i,M_j[-m])=0$ since the Hom from $M_i$ to all terms in the HN filtration of $M_j[-m]$ is 0 due to (1). Hence $i'>j$ and we can simply use $i'$ instead of $i$ since $Hom(M_{i'},M_j[-m])\neq 0$. So we can indeed assume that the highest entry of the HN filtration of $M_j[-m]$ is a self-extension of $M_i$ and let such an entry be $X_i$. Since $Hom(M_i[1], M_j[1-m])\neq 0$ and $M_i\in\catt$ we can see that $M_i[1]\in\catt$. As a result $X_i[1]\in\catt$. Let $h$ be the highest nontrivial index of the HN filtration of $X_i[1]$ then $h$ is no higher than the highest nontrivial index of $M_j[-m]/X_i$ or $Hom(M_h,M_j[1-m])\neq 0$ in which case $h\leq j$ by induction since $M_j[-m]\to M_j[-m]/X_i\to X_i[1]\to M_j[1-m]$ is a triangle. Hence in both cases $h<i$. Apply (4) again to $X_i[1]$ as a self-extension of $M_i[1]$ the highest nontrivial index of the HN filtration of $M_i[1]$ is lower than $i$. Apply (2) to $M_i$ and we can reach a contradiction.\\
 \end{proof}
 %\indent Here Lemma 4.4.2 only applies if the unique HN filtration exists for all objects $Y\in D^b(\Lambda)$. When restricted to the case of actual green sequences most of the arguments remain  the same. However truncation functors need to be used in some cases.\\
@@ -163,13 +176,13 @@ Let $\Lambda$ be a finite dimensional hereditary algebra. Let $\mathcal{T} = add
 %\indent Let $\Lambda$ be a finite dimensional hereditary algebra. Let $(C^{\leq 0}, C^{\geq 0}), (C'^{\leq 0}, C'^{\geq 0})$ be two $t$-structures such that there exists at least one green sequence from $(C^{\leq 0}, C^{\geq 0})$ to $(C'^{\leq 0}, C'^{\geq 0})$. Let $\mathcal{T} = C^{\leq 0}\cap C'^{\geq 0}$.  Let $M_1,\cdots, M_n$ be a finite sequence in $\mathcal{T}$. The following are equivalent.
 \indent Let $\Lambda$ be a finite dimensional hereditary algebra. Let $\mathcal{T} = add(\cup_{i=0}^{m-1} (mod\,\Lambda)[i])$. Let $M_1,\cdots, M_n$ be a finite sequence of nonzero objects in $\mathcal{T}$. The following are equivalent:
 \begin{enumerate}
-\item The sequence is a maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ in $\mathcal{T}$.
+\item The sequence is a maximal backward $Hom^{\leq 0}$-orthogonal sequence of Schurian objects $\{M_n\}$ in $\mathcal{T}$.
 \item The sequence is a finite sequence in $\mathcal{T}$ that forms a finite HN system for $\mathcal{T}$.
 \item The sequence is a sequence of simples from the simple-minded collection $\{S_1,\cdots, S_n\}$ to  $\{S_1[m],\cdots, S_n[m]\}$, that is, it is an $m$-maximal green sequence.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-\indent (1)$\to$(3) By applying lemma \ref{lem:C3L1} repeatedly it is easy to see that any maximal sequence of backward $Hom^{\leq 0}$-orthogonal Schurian objects $\{M_n\}$ on $\mathcal{T}$ is also a sequence of simples in hearts of t-structures related to each other by a finite sequence of forward mutations. Hence (1) implies (3).\\
-\indent (2)$\to$(1) Schurness has been proved in Lemma \ref{lem:C3L3}. Backward $Hom^{\leq 0}$ orthogonality has already been proven in Lemma \ref{lem:C3L2}. Maximality holds because of \ref{lem:C3L2}(3) and (4) due to the reasoning below. Since if the sequence is not maximal then there exists some $M$.such that it can be inserted in the backward $Hom^{\leq 0}$ orthogonal sequence. However such an $M$ must have a unique HN filtration. Hence there exists some $i\leq j$ such that $(M_j, M)\neq 0$ and $(M, M_i)\neq 0$. In this case $M$ can not be inserted in the backward $Hom^{\leq 0}$ orthogonal sequence which proves its maximality.\\
-\indent (3)$\to$(2) This is obvious because using truncation functors we can easily show that any object in $\cup_{i=0}^k mod kQ[i]$ can be written uniquely as an HN filtration. 
+\indent (1)$\to$(3) By applying Lemma \ref{lem:C3L1} repeatedly it is easy to see that any maximal backward $Hom^{\leq 0}$-orthogonal sequence of Schurian objects $\{M_n\}$ on $\mathcal{T}$ is also a sequence of simples in hearts of $t$-structures related to each other by a finite sequence of forward mutations. Hence (1) implies (3).\\
+\indent (2)$\to$(1) Schurness has been proved in Lemma \ref{lem:C3L3}. Backward $Hom^{\leq 0}$ orthogonality has already been proven in Lemma \ref{lem:C3L2}. Maximality holds because of Lemma \ref{lem:C3L2}(3) and (4) due to the reasoning below. Since if the sequence is not maximal then there exists some $M$.such that it can be inserted in the backward $Hom^{\leq 0}$ orthogonal sequence. However such an $M$ must have a unique HN filtration. Hence there exists some $i\leq j$ such that $(M_j, M)\neq 0$ and $(M, M_i)\neq 0$. In this case $M$ can not be inserted in the backward $Hom^{\leq 0}$ orthogonal sequence which proves its maximality.\\
+\indent (3)$\to$(2) This is obvious because using truncation functors we can easily show that any object in $\catt$ can be written uniquely as an HN filtration. 
 \end{proof}
