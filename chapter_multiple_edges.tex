@@ -39,7 +39,7 @@ A quiver $Q$ is \textit{MGS-finite} if $Q$ has finitely many maximal green seque
 Any quiver $Q$ mutation equivalent to an acyclic quiver of finite or tame type is MGS-finite.
 \end{theorem}
 \begin{proof}
-Due to \cite{BHIT15} the result is already proven in the mutation-equivalent to tame type case. For the mutation-equivalent to finite type case using the Rotation Lemma in \cite{BHIT15} it is obvious that any MGS in such a quiver must be an $k$-reddening sequence of an acyclic quiver of finite type for a fixed $k$. There are only finitely many such sequences because a $k$-reddening sequence can only repeat a cluster $k+1$ times as shown in \cite{BHIT15} and \cite{IZ17} and in an acyclic quiver of finite type there are only finitely many cluster-tilting objects and hence clusters.
+Due to \cite{BHIT15} the result is already proven in the mutation-equivalent to tame type case. For the mutation-equivalent to finite type case using the Rotation Lemma in \cite{BHIT15} it is obvious that any MGS in such a quiver must be an $k$-reddening sequence of an acyclic quiver of finite type for a fixed $k$. There are only finitely many such sequences because a $k$-reddening sequence can only repeat a cluster $k+1$ times as shown in \cite{BHIT15} and \cite{IZ17} and in an acyclic quiver of finite type there are only finitely many cluster-tilting objects and hence finitely many clusters.
 \end{proof}
 \begin{lemma}
 If $Q$ is a quiver that isn't connected, $Q^1$, $Q^2$, $\cdots$ $Q^n$ are its connected components. Each $Q^i$ is MGS-finite if and only if $Q$ is MGS-finite.
@@ -123,20 +123,20 @@ If every MGS of $Q$ corresponds to some MGS of $Q'$ and vice versa then $Q$ and 
 \indent Let $Q$ be a quiver and $Q'$ be its ME-free version. The following holds:\label{L2}
 \begin{enumerate}
 \item The set of $Q$-ME-free $c$-vectors of $Q$ and $Q'$ coincide.
-\item If $Q$ is an ME-ful quiver then for any positive $Q$-ME-ful vector $c\in\mathbb{R}^n$ $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.
+\item If $Q$ is an ME-ful quiver then for any positive $Q$-ME-ful vector $c\in\mathbb{R}^n$ then $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.
 \item If $Q$ is an ME-ful quiver. Then any of the $Q$-ME-ful $c$-vectors can not be a dimension vector of an exceptional module for $Q'$. Any of the $Q$-ME-ful $c$-vectors of $Q'$ can not be a dimension vector of an exceptional module for $Q$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\indent For (1).Let the Euler matrices of $Q, Q''$ be $E = e_{ij}, E' = (e'_{ij})$ respectively. $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'}$ because whenever $e_{ij}, e'_{ij}$ differ $c_i = 0$ or $c_j = 0$ leaving the term related to $(i,j)$ 0. Hence the set of $Q$-ME-free $c$-vectors of $Q, Q'$ corresponding to exceptional modules coincide.\\
-\indent For (2) Assume that such a vector, $c$ exists. $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'} = 1$. However the Euler matrix $E = (e_{ij})$ of $Q$ and the Euler matrix $E' = (e'_{ij})$ of $Q'$ differ in the sense that there exists some pair $(i,j)\in [n]$ such that $c_i\neq 0, c_j> 0$ and $0 = e'_{ij} > -2 \geq e_{ij}$. Since for any $k,l\in [n]$ $e'_{kl}\geq e_{kl}$ it is easy to see that $\langle c,c\rangle_{kQ'} > \langle c,c\rangle_{kQ}$ and that $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.\\
+\indent For (1) let the Euler matrices of $Q, Q''$ be $E = e_{ij}, E' = (e'_{ij})$ respectively. Then we have $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'}$ because whenever $e_{ij}, e'_{ij}$ differ $c_i = 0$ or $c_j = 0$ leaving the term related to $(i,j)$ being 0. Hence the set of $Q$-ME-free $c$-vectors of $Q, Q'$ corresponding to exceptional modules coincide.\\
+\indent For (2) assume that such a vector $c$ exists. We have $\langle c,c\rangle_{kQ} = \langle c,c\rangle_{kQ'} = 1$. However the Euler matrix $E = (e_{ij})$ of $Q$ and the Euler matrix $E' = (e'_{ij})$ of $Q'$ differ in the sense that there exists some pair $(i,j)\in [n]$ such that $c_i\neq 0, c_j> 0$ and $0 = e'_{ij} > -2 \geq e_{ij}$. Since for any $k,l\in [n]$ we have $e'_{kl}\geq e_{kl}$ it is easy to see that $\langle c,c\rangle_{kQ'} > \langle c,c\rangle_{kQ}$ and that $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$.\\
 \indent (3) is a consequence of (2) since $\langle M,M\rangle_{kQ}$ and $\langle M,M\rangle_{kQ'} $ can not both be 1.
 \end{proof}
 \begin{lemma}
 Let $Q$ be an ME-ful quiver. Any MGS of an ME-ful quiver $Q$ must not contain any $Q$-ME-ful $c$-vector of $Q'$ or any vector $c$ which is an imaginary root of $Q'$.
 \end{lemma}
 \begin{proof}
-\indent Due to \ref{L2}(3) we only need to prove the second part. In that case $\langle c,c\rangle_{kQ} \leq \langle c,c\rangle_{kQ'} < 1$. Hence $c$ is not a $c$-vector of $Q$.
+\indent Due to Lemma \ref{L2}(3) we only need to prove the second part. In that case $\langle c,c\rangle_{kQ} \leq \langle c,c\rangle_{kQ'} < 1$. Hence $c$ is not a $c$-vector of $Q$.
 %\indent Using an argument similar to that of the lemma above any MGS of $Q$ can not share any $Q$-ME-ful $c$-vector $Q'$ has. As a result any generic green path inducing a $Q$-ME-ful MGS of $Q'$ induces an infinite reddening sequence in $kQ$.\\
 %\indent Since any generic green path inducing an infinite green sequence of $Q'$ has to cross at least one wall corresponding to an indecomposable non-rigid module $M$ it has to cross at least one wall corresponding to an indecomposable non-rigid module in $Q$ since $\langle c,c\rangle_{kQ} < \langle c,c\rangle_{kQ'}$ holds for all $Q$-ME-ful $c$-vectors. At the same time the wall stands because by adding arrows with zero maps we can see $M$ as indecomposable non-rigid modules of $kQ'$ and conditions for $M$ to be stable is the same in $kQ$ and $kQ'$. As a result any generic green path inducing an infinite green sequence of $Q'$ induces an infinite green sequence in $kQ$.\\
 %\indent Hence the only possible strongly generic green paths inducing MGSs in $kQ$ must be from $Q$-ME-free green sequences in $kQ'$.
@@ -147,7 +147,7 @@ Let $Q$ be an ME-ful quiver. Any MGS of an ME-ful quiver $Q$ must not contain an
 %\end{lemma}
 \indent Now we can easily establish the following theorem.
 \begin{theorem}
-MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, $Q'$.\label{C4T1B}
+MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, namely $Q'$.\label{C4T1B}
 \end{theorem}
 \begin{proof}
 \indent If the statement is incorrect along an MGS of $Q$ pick the first $C$-matrix that isn't shared by $Q'$ assuming that such an MGS exists. \\
@@ -157,10 +157,10 @@ MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its
 \end{proof}
 \indent Now we can prove a stronger result.\\
 \begin{theorem}\label{C4T3B}
-Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
+Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ it is true that the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
 \end{theorem}
 \begin{proof}
-Let's compare $\langle M, N \rangle_{kQ}$ and $\langle M, N \rangle_{kQ'}$. They differ if and only if there exists some multiple edge from $i$ to $j$ such that $i$ is in the support of $M$ and $j$ is in the support of $N$. In this case since $Hom_{kQ}(M,N) = Hom_{kQ'}(M,N)  = Ext_{kQ'}(M,N) = 0$ $dim Ext_{kQ}(M,N) > 0$. Repeating the argument in \ref{C4T3B} we can show that this is the only possible scenario for a $Q$-ME-free MGSs of $Q'$ to not be identical to an MGS in $Q$.
+Let's compare $\langle M, N \rangle_{kQ}$ and $\langle M, N \rangle_{kQ'}$. They differ if and only if there exists some multiple edge from $i$ to $j$ such that $i$ is in the support of $M$ and $j$ is in the support of $N$. In this case since $Hom_{kQ}(M,N) = Hom_{kQ'}(M,N)  = Ext_{kQ'}(M,N) = 0$ it is true that $dim Ext_{kQ}(M,N) > 0$. Repeating the argument in Theorem \ref{C4T1B} we can show that this is the only possible scenario for a $Q$-ME-free MGSs of $Q'$ to not be identical to an MGS in $Q$.
 \end{proof}
 \begin{corollary}\label{C4CB}
 The following statements are true:
@@ -172,20 +172,21 @@ The following statements are true:
 \end{enumerate}
 \end{corollary}
 \begin{proof}
-\indent Only (4) needs to be proven even though it is still obvious. For ME-equivalent quivers $Q$ and $Q'$ the conditions of \ref{C4T3B} are identical which is why the number of MGS are identical.
+\indent Only (4) needs to be proven even though it is still obvious. For ME-equivalent quivers $Q$ and $Q'$ the conditions of Theorem \ref{C4T3B} are identical which is why the number of MGS are identical.
 \end{proof}
 \begin{example}
 The maximal green sequences of $Q: \begin{tikzcd}
 1\righttwicedoublearrow\arrow[rd] &  & 3\\
  & 2\arrow[ur]
-\end{tikzcd}$ are maximal green sequences of its ME-free version $Q': 1\to 2\to 3$ that has no $c$-vector with support containing $\{1,3\}$ and satisfies the conditions in \ref{C4T3B} with respect to the arrow $\begin{tikzcd} 1\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite. In fact it has 3 MGSs.
+\end{tikzcd}$ are maximal green sequences of its ME-free version $Q': 1\to 2\to 3$ that has no $c$-vector with support containing $\{1,3\}$ and satisfies the conditions in Theorem \ref{C4T3B} with respect to the arrow $\begin{tikzcd} 1\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite. In fact it has 3 MGSs.
 \end{example}
 \begin{example}
 The maximal green sequences of $Q: \begin{tikzcd}[cramped, sep=small]
 1\arrow[r] & 2 \rightdoublearrow&  3 \arrow[r] & 4\\
-\end{tikzcd}$ are some maximal green sequences of its ME-free version $Q': \begin{tikzcd}
-1\arrow[r] & 2&  3 \arrow[r] & 4\\
-\end{tikzcd}$  that has no $c$-vector with support containing $\{2,3\}$ and satisfies the conditions in \ref{C4T3B} with respect to the arrow $\begin{tikzcd} 2\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite because $A_2$ is.
+\end{tikzcd}$ are some maximal green sequences of its ME-free version $Q':1\to 2$\quad$3\to 4$ % \begin{tikzcd}
+%1\arrow[r] & 2&  3 \arrow[r] & 4\\
+%\end{tikzcd}$  
+that has no $c$-vector with support containing $\{2,3\}$ and satisfies the conditions in Theorem \ref{C4T3B} with respect to the arrow $\begin{tikzcd} 2\rightdoublearrow & 3\end{tikzcd}$. It's easy to see that $Q$ is MGS-finite because $A_2$ is.
 \end{example}
 \indent Now we can provide a much shorter proof to the fact that all acyclic quivers with three vertices are MGS-finite which was originally proven in \cite{BDP13}.
 \begin{corollary}
@@ -245,7 +246,7 @@ $\begin{bmatrix}
 \indent Here we have a maximal green sequence with at least one ME-full $c$-vector. Moreover it is easy to see that if we replace the double edge by triple edge and obtain $Q': \begin{tikzcd}
 1\arrow[rd] &  & 3\lefttwicetriplearrow\\
  & 2\arrow[ur]
-\end{tikzcd}$\ (2,1,3,1,2) is not a $c$-vector of the quiver $Q'$ nor is it an MGS of the ME-free version or skeleton of $Q$.\\
+\end{tikzcd}$\ (2,1,3,1,2) is not an MGS of the quiver $Q'$ nor is it an MGS of the ME-free version or skeleton of $Q$.\\
 \indent However we can still perform quiver cutting in more limited situations. Let's first introduce a concept.
 \begin{definition}
 A $k$\textit{-edge} is a tuple $(i,j)$ where $i,j\in [n]$ and $k|b_{ij}, k|b_{ji}$.
@@ -254,13 +255,13 @@ A $k$\textit{-edge} is a tuple $(i,j)$ where $i,j\in [n]$ and $k|b_{ij}, k|b_{ji
 Let $Q$ be a quiver possibly having oriented cycles, let $k$ be an integer greater than 1. Assume that $Q_0$ = $\tilde{Q}_0 + \breve{Q}_0$, $P = Q]_{\tilde{Q}_0}, R = Q]_{\breve{Q}_0}$. If for all $i\in \tilde{Q}_0, j\in  \breve{Q}_0$ $k|b_{ij}$ and $k|b_{ji}$ we say $Q$ is $k$-\textit{partible} and $(P, R)$ is a $k$\textit{-partition} of $Q$.
 \end{definition}
 \begin{theorem}
-Assume that ($\tilde{Q},\breve{Q})$ are $k$-partition of $Q$ for some $k>1$ any MGS of $Q$ is an MGS of $\tilde{Q}\cup\breve{Q}$.\label{C4T2B}
+Assume that ($\tilde{Q},\breve{Q})$ are $k$-partition of $Q$ for some $k>1$ then any MGS of $Q$ is an MGS of $\tilde{Q}\cup\breve{Q}$.\label{C4T2B}
 \end{theorem}
 \begin{proof}
-The property that for any $i\in Q_1$ and $j\in Q_2$ $k|c_{ij}$ is preserved by mutation. Hence any mutation that cause any $c$-vector to cross bot has to violate the Sink before Source Theorem.
+The property that for any $i\in Q_1$ and $j\in Q_2$ $k|c_{ij}$ is preserved by mutation. Hence any mutation that cause any $c$-vector to cross bot has to violate the Sink before Source Theorem in \cite{BHIT15}.
 \end{proof}
 \begin{corollary}
-Under the conditions of the theorem above, if $\tilde{Q}$ and $\breve{Q}$ are MGS-finite so is $Q$.
+Under the conditions of the theorem above, if $\tilde{Q}$ and $\breve{Q}$ are MGS-finite then so is $Q$.
 \end{corollary}
 \begin{proof}
 If $\tilde{Q}$ and $\breve{Q}$ are MGS-finite so is $\tilde{Q}\cup\breve{Q}$. As a result so is $Q$ due to the theorem.
