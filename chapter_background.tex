@@ -192,10 +192,10 @@ The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated 
 \end{definition}
 \indent Here is one of the simplest examples of the concept of the permutation:\\
 $\begin{tikzcd}
-1 \arrow[r] \arrow[d] & 2\arrow [d]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
-1' \arrow[d,"\mu_2", shift left=3.5ex]& 2'&1'\arrow[u]& 2'&1'\arrow[u] & 2'\arrow[u]\\
- 1\arrow[d]\arrow[dr]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\arrow[u,"(12)", shift left=3.5ex]\\
- 1'&2'\arrow[u]&1'\arrow[u]&2'\arrow[ul]&1'\arrow[ur]&2'\arrow[ul]\\
+1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
+1' \arrow[d,"\mu_2", shift left=4.5ex]& 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\\
+ 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\arrow[u,"(12)", shift left=4.5ex]\\
+ 1'&2'\arrow[u,red]&1'\arrow[u,red]&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[ul,red]\\
 \end{tikzcd}$\\
 \indent It is obvious that the result of $\mu_2\mu_1$ and $\mu_2\mu_1\mu_2$ are not identical, though they can be transformed into each other by a single permutation on vertices.\\
 \indent The associated permutation is not only intuitive when defined on reddening sequences. In the case of loop sequences they are even more intuitive. Using the $c$-vector theorem from \cite{ST12} we can see that the only nontrivial effect loop sequences can have on an extended matrix is a permutation. Hence loop sequences are equivalent to permutations on an extended matrix.\\
@@ -213,6 +213,13 @@ The \textit{matrix of a permutation}, $\sigma\in S_n$, is defined as the $n\time
 A \textit{loop sequence} $w$ is a sequence of mutations $\mu_{i_k}\cdots\mu_{i_1}$ on an ice quiver $(Q,F)$ such that $\mu_{i_k}\cdots\mu_{i_1}(Q) = \rho(Q)$ for some permutation $\rho$.\\
 \end{definition}
 \begin{example}
+\indent Let $Q$ be $1\to 2$. Here is the loop sequence (1,2,1,2,1) with associated permutation $(12)$.\\
+$\begin{tikzcd}
+1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
+1' \arrow[d,"(12)", shift left=4.5ex]& 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\arrow[d,"\mu_1", shift right=4.5ex]\\
+ 1\arrow[dr,green]&2\arrow[l]\arrow[dl,green]&1\arrow[r]\arrow[l,"\mu_1", shift left=3.5ex]&2\arrow[dl,green]\arrow[d,green]&1\arrow[l,"\mu_2", shift left=3.5ex]\arrow[d,green]&2\arrow[l]\\
+ 1'&2'&1'&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[u,red]\\
+\end{tikzcd}$
 \end{example}
 \begin{definition}
 For any loop sequence $w$ the permutation $\rho$ such that $w(\tilde{B})=\rho(\tilde{B})$ is defined as \textit{the associated permutation of the loop sequence $w$}.\\
@@ -236,7 +243,6 @@ Let $Q$ be $\begin{tikzcd}1\arrow[r] & 2 \arrow[r] & 3\end{tikzcd}$. Here is the
 \cdots& P_3\arrow[ru]& &S_2\arrow[ru]& &I_1\arrow[ru] & &P_1[1]\arrow[ru] & &P_3[2] & \cdots\\
 \end{tikzcd}
 \end{example}
-\indent 
 \subsection{Approximations}
 \indent According to \cite{KY12} there are bijections between silting objects, $t$-structures, co-$t$-structures and simple-minded collections in a wide range of cases and such bijections respect mutations. In \cite{BY13} more bijections are mentioned. Here we only need to cover three of them, namely silting objects, simple-minded collections and $t$-structures. To understand their mutations we must first introduce the concept of approximations.\\
 \begin{definition}
