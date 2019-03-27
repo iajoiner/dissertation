@@ -16,8 +16,16 @@ For a tame quiver $Q$ there is a uniform bound, depending only on $Q$ and $m$, o
 \indent It is easy to see why Lemma \ref{def:C3L2} implies the theorem. Here the \textit{transjective degree} of an indecomposable transjective object $\tau^iP_j[k]$ is defined as $deg(\tau^iP_j[k])=i$. The \textit{maximal transjective degree} and \textit{minimal transjective degree} of a silting object are defined as the highest/lowest transjective degree of its indecomposable transjective summands respectively.\\
 \indent In Section 2 we prove Lemma \ref{def:C3L1}. In Section 3 we prove Lemma \ref{def:C3L2}. In Section 4 we further generalize the theorem to arbitrary finite mutation sequences with finitely many forward/green or backward/red mutations.\\
 \section{Proof of Lemma \ref{def:C3L1}}
-\indent To prove \ref{def:C3L1} we need to understand regular components of Auslander-Reiten quivers of $D^b(kQ)$ for tame quivers. Regular components of Auslander-Reiten quivers of tame path algebras are all standard stable tubes with at most three tubes nonhomogeneous (see \cite{DR76} and Chapter X of \cite{SS06}). Note that no object on a homogeneous tube is rigid so no object there can appear in a silting object of $D^b(kQ)$. Hence we only need to discuss the nonhomogeneous tubes.\\
-\indent It is easy to see that in an indecomposable object in a standard stable tube $\mathcal{T}$ of size $n$, $M$ and any of its shifts can not be in the same pre-silting object. If $\{M_i\}_{i\in I}$ are a family of indecomposable objects of $D^b(kQ)$ and $\Pi_{i\in I}M_i[n_i]$ is not pre-silting for any $\{n_i\}_{i\in I}$ We say that $\{M_i\}_{i\in I}$ is \textit{silting-incompatible}. Otherwise we say that it is \textit{silting-compatible}. From now on in this proof we identify $[n]$ with $\mathbb{Z}/n\mathbb{Z}$ and hence will no longer differentiate between $0$ and $n$ which we usually denote as $n$. It is also clear that it makes sense to define $[a_1, a_2,\cdots, a_k]$ on $[n]$ in the sense of cyclic orders. Ex: $[1,2,3]$ and $[2,3,1]$ hold in $[4]$. Let $M_i$ be the regular simples of the tube such that $\tau M_i=M_{i-1}$. We call a regular module in $D^b(kQ)$ \textit{regular sincere} if its composition series contain all regular simples. No indecomposable regular sincere modules or their shifts can appear as summands in any silting object because they are not rigid. (See Corollary X.2.7 of \cite{SS06}).As for the remaining $n(n-1)$ indecomposable regular modules that are actually rigid we can unambiguously label them as $M_{ij}$ if the regular top and regular socle of the object are $M_j$ and $M_i$ respectively. Note that $M_i=M_{ii}$. It is clear that $\tau M_{ij}=M_{i-1,j-1}$ and $\tau^{-1} M_{ij}=M_{i+1,j+1}$.\\
+\indent To prove Lemma \ref{def:C3L1} we need to understand regular components of Auslander-Reiten quivers of $D^b(kQ)$ for tame quivers. Regular components of Auslander-Reiten quivers of tame path algebras are all standard stable tubes with at most three tubes nonhomogeneous (see \cite{DR76} and Chapter X of \cite{SS06}). Note that no object on a homogeneous tube is rigid so no object there can appear in a silting object of $D^b(kQ)$. Hence we only need to discuss the nonhomogeneous tubes.\\
+\indent It is easy to see that in an indecomposable object in a standard stable tube $\mathcal{T}$ of size $n$, $M$ and any of its shifts can not be in the same pre-silting object.\\ 
+\begin{definition}
+If $\{M_i\}_{i\in I}$ are a family of indecomposable objects of $D^b(kQ)$ and $\Pi_{i\in I}M_i[n_i]$ is not pre-silting for any $\{n_i\}_{i\in I}$ We say that $\{M_i\}_{i\in I}$ is \textit{silting-incompatible}. Otherwise we say that it is \textit{silting-compatible}.
+\end{definition}
+\indent From now on in this proof we identify $[n]$ with $\mathbb{Z}/n\mathbb{Z}$ and hence will no longer differentiate between $0$ and $n$ which we usually denote as $n$. It is also clear that it makes sense to define $[a_1, a_2,\cdots, a_k]$ on $[n]$ in the sense of cyclic orders. Ex: $[1,2,3]$ and $[2,3,1]$ hold in $[4]$.\\
+\begin{definition}
+Let $M_i$ be the quasi-simples of the tube such that $\tau M_i=M_{i-1}$. a regular module in $D^b(kQ)$ \textit{regular sincere} if its composition series contain all quasi-simples.
+\end{definition}
+\indent No indecomposable regular sincere modules or their shifts can appear as summands in any silting object because they are not rigid. (See Corollary X.2.7 of \cite{SS06}).As for the remaining $n(n-1)$ indecomposable regular modules that are actually rigid we can unambiguously label them as $M_{ij}$ if the regular top and regular socle of the object are $M_j$ and $M_i$ respectively. Note that $M_i=M_{ii}$. It is clear that $\tau M_{ij}=M_{i-1,j-1}$ and $\tau^{-1} M_{ij}=M_{i+1,j+1}$.\\
 \indent Now let's prove two easy lemmas on what can not appear in a pre-silting object in a regular component of the Auslander-Reiten quiver of $D^b(kQ)$.\\
 \begin{lemma}
 \begin{enumerate}
@@ -26,26 +34,26 @@ For a tame quiver $Q$ there is a uniform bound, depending only on $Q$ and $m$, o
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-\indent For (1) since $Hom(M,N)\neq 0$, $Ext^{i-j}(M[i],N[j])\neq 0$ if $i>j$. Since $Ext^1(N,M)\neq 0$ $Ext^{j-i+1}(N[j],M[i])\neq 0$ if $i\leq j$. Hence $M[i]\oplus N[j]$ is not pre-silting for any arbitrary $i$ and $j$.\\
+\indent For (1) since $Hom(M,N)\neq 0$ if $i>j$ we have $Ext^{i-j}(M[i],N[j])\neq 0$ . Since $Ext^1(N,M)\neq 0$ if $i\leq j$ it is true that $Ext^{j-i+1}(N[j],M[i])\neq 0$ . Hence $M[i]\oplus N[j]$ is not pre-silting for any arbitrary $i$ and $j$.\\
 \indent For (2) for arbitrary $n_1,\cdots n_k$ use the argument above it is easy to see that if $\oplus_{i=1}^kM_i[n_i]$ is pre-silting, then $n_2>n_1$, $n_3>n_2$, $\cdots, n_1>n_k$ which is impossible. Hence $\{M_i\}$  is silting-incompatible.
 \end{proof}
 \begin{lemma}\label{def:C3L3}
 Any pre-silting object in a standard stable tube of size $n$ contains at most $n-1$ summands.
 \end{lemma}
 \indent To prove this lemma we need the following lemma.
-\begin{lemma}
+\begin{lemma}\label{lem:C3L4}
 Any pre-silting object in a standard stable tube of size $n$ can not be regular sincere.
 \end{lemma}
 \begin{proof}
-\indent Assume that a pre-silting object $T=\oplus_{i=1}^k T_i$ in a standard stable tube of size $n$ is regular sincere. Let $T_{l_1},\cdots, T_{l_m}$ be a minimal set of indecomposable summands of $T$ such that their direct sum $T'=\oplus_{i=1}^m T_{l_i}$ is regular sincere. Note that if $M_{ij}$ and $M_{kl}$ are both summands of $T$, $[i,k,l,j]$ holds $M_{kl}$ and $M_{ij}$ can not both be summands of $T'$ due to minimality. If $m=1$ $T'$ is a regular sincere indecomposable regular object which contradicts the fact that $T'$ is pre-silting. If $m>1$ without loss of generality assume that $T_{l_1}=M_{1p}$ for some $p\neq n$. Any indecomposable object with its regular socle $M_i, 1\leq i\leq p$ can not be a summand of $T'$ either due to silting incompatibility or minimality. Hence there has to be a summand of $T'$ with its regular socle $p+1$. Repeat this procedure it's easy to see that $T'=\oplus_{i=1}^m M_{(t_{i-1}+1)t_i}$ with $t_0=t_m=n$. In this case by Lemma 2.3 the object can not be pre-silting.
+\indent Assume that a pre-silting object $T=\oplus_{i=1}^k T_i$ in a standard stable tube of size $n$ is regular sincere. Let $T_{l_1},\cdots, T_{l_m}$ be a minimal set of indecomposable summands of $T$ such that their direct sum $T'=\oplus_{i=1}^m T_{l_i}$ is regular sincere. Note that if $M_{ij}$ and $M_{kl}$ are both summands of $T$, $[i,k,l,j]$ holds $M_{kl}$ and $M_{ij}$ can not both be summands of $T'$ due to minimality. If $m=1$ $T'$ is a regular sincere indecomposable regular object which contradicts the fact that $T'$ is pre-silting. If $m>1$ without loss of generality assume that $T_{l_1}=M_{1p}$ for some $p\neq n$. Any indecomposable object with its quasi-socle $M_i, 1\leq i\leq p$ can not be a summand of $T'$ either due to silting incompatibility or minimality. Hence there has to be a summand of $T'$ with its quasi-socle $p+1$. Repeat this procedure it's easy to see that $T'=\oplus_{i=1}^m M_{(t_{i-1}+1)t_i}$ with $t_0=t_m=n$. In this case by Lemma \ref{lem:C3L4} the object can not be pre-silting.
 \end{proof}
-\indent Now we can prove \ref{def:C3L3}.
+\indent Now we can prove Lemma \ref{def:C3L3}.
 \begin{proof}
 \indent Since any pre-silting object in a standard stable tube of size $n$ can not be regular sincere, without loss of generality it is a pre-silting object in the exact subcategory of $\mathcal{T}$ closed under extensions such that $M_1,\cdots M_{n-1}$ are the only simple objects. It is easy to see using the condition that the tube is standard stable that the category $add(\{M_{ij}\}_{1\leq i < j\leq n-1})$ is isomorphic to the module category of $KA_{n-1}$ with straight orientation and as a result any pre-silting object with all indecomposable summands in it or its shifts has at most $n-1$ summands. 
 \end{proof}
-\indent Finally we can prove \ref{def:C3L1}.
+\indent Finally we can prove Lemma \ref{def:C3L1}.
 \begin{proof}
-\indent Due to \ref{def:C3L3} and \cite{DR76} there are at most $n-2$ regular components in $D^b(kQ)$ when $Q$ is a tame quiver. This is true for each type so this is true for all tame quivers.
+\indent Due to Lemma \ref{def:C3L3} and \cite{DR76} there are at most $n-2$ regular components in $D^b(kQ)$ when $Q$ is a tame quiver. This is true for each type so this is true for all tame quivers.
 \end{proof}
 \section{Proof of Lemma \ref{def:C3L2}}
 \indent To prove \ref{def:C3L2} we need to rephrase an argument in \cite{BDP13} using degrees.
