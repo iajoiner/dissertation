@@ -174,8 +174,11 @@ b_{ij} & \text{in all other cases}
 \begin{definition}
 The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated ice quiver $Q'$ is an $2n\times n$ matrix with the rows corresponding to vertices $\{1,2,\cdots, n, 1', 2',\cdots n'\}$ while the columns corresponds to the vertices $\{1,2,\cdots, n\}$. Here we use the number $n+i$ to represent $i'$. Here again $b_{ij}$ is the number of arrows from $i$ to $j$ minus the number of arrows from $j$ to $i$.
 \end{definition}
-\indent An extended exchange matrix $B'$ has an upper and lower square submatrices, $B$ and $C$ respectively. The lower square matrix $C$ is known as the $C$\textit{-matrix}. Column vectors of an $C$-matrix are known as $c$\textit{-vectors}. A $c$-vector is positive if all its entries are non-negative and at least one is positive. A $c$-vector is negative if all its entries are non-positive and at least one is negative. Due to \cite{GHKK14} a $c$-vector is either positive or negative which is known as \textit{sign coherence}.\\
-\indent A mutation on vertex $k$ is \textit{green} if the $c$-vector $c_k$ before the mutation is negative.  A mutation on vertex $k$ is \textit{red} if the $c$-vector $c_k$ before the mutation is positive. A \textit{maximal green sequence} is a mutation sequence from $C=-I_n$ to a permuted version of $I_n$ We can use a sequence of $c$-vectors to denote a maximal green sequence because we can use the $c$-vector corresponding to vertex $k$ to represent mutation at vertex $k$ which is possible since all $C$-matrices are invertible.\\
+\indent An extended exchange matrix $B'$ has an upper and lower square submatrices, $B$ and $C$ respectively. The lower square matrix $C$ is known as the $c$\textit{-matrix}. Column vectors of an $c$-matrix are known as $c$\textit{-vectors}. A $c$-vector is positive if all its entries are non-negative and at least one is positive. A $c$-vector is negative if all its entries are non-positive and at least one is negative. Here is an important result about $c$-vectors, namely \textit{sign coherence}.\\
+\begin{theorem}
+\cite{GHKK14} a $c$-vector is either positive or negative.
+\end{theorem}
+\indent A mutation on vertex $k$ is \textit{green} if the $c$-vector $c_k$ before the mutation is negative.  A mutation on vertex $k$ is \textit{red} if the $c$-vector $c_k$ before the mutation is positive. A \textit{maximal green sequence} is a mutation sequence from $C=-I_n$ to a permuted version of $I_n$ We can use a sequence of $c$-vectors to denote a maximal green sequence because we can use the $c$-vector corresponding to vertex $k$ to represent mutation at vertex $k$ which is possible since all $c$-matrices are invertible.\\
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
 \indent In this subsection if $Q$ is a cluster quiver then $\hat{Q}, \breve{Q}$ are the framed and coframed quiver associated with cluster quiver $Q$ respectively.\\
@@ -203,8 +206,10 @@ $\begin{tikzcd}
 The \textit{matrix of a permutation}, $\sigma\in S_n$, is defined as the $n\times n$ matrix $P_\sigma=(\delta_{\sigma(i)j})$.\\
 \end{definition}
 \begin{definition}
-(1)For an $m\times n$ matrix $M=(M_1,\cdots, M_n)$ and a permutation $\sigma\in S_n$, if $C=(M_{\sigma(1)},\cdots,M_{\sigma(n)})$ (or equivalently, $(c_{ij})=(m_{i\sigma(j))}$), we denote this as $C=\sigma(M)$.\\
-(2)For an $n\times n$ matrix $A=(a_{ij})$ and a permutation $\sigma\in S_n$, if $D=(d_{ij})=(a_{\sigma(i)\sigma(j)})$, we denote this as $D=\tsig(A)$.\\
+\begin{enumerate}
+\item For an $m\times n$ matrix $M=(M_1,\cdots, M_n)$ and a permutation $\sigma\in S_n$, if $C=(M_{\sigma(1)},\cdots,M_{\sigma(n)})$ (or equivalently, $(c_{ij})=(m_{i\sigma(j))}$), we denote this as $C=\sigma(M)$.
+\item For an $n\times n$ matrix $A=(a_{ij})$ and a permutation $\sigma\in S_n$, if $D=(d_{ij})=(a_{\sigma(i)\sigma(j)})$, we denote this as $D=\tsig(A)$.
+\end{enumerate}
 \end{definition}
 \indent It is easy to see that $C=\sigma(M)$ if and only if $C=M\psiginv$. $D=\tsig(A)$ if and only if $D=\psig A\psiginv$.\\
 \indent Now let's define a new concept, namely \textit{loop sequences} which is essential to the discussion about the permutation in Chapter \ref{C1}.\\
@@ -351,7 +356,7 @@ Let $k$ be an algebraically closed field. Let $\Lambda$ be a hereditary algebra 
 \end{proof}
 \indent In order to prove Theorem \ref{C4T1} we need to first prove a lemma.
 \begin{lemma}\label{C4L}
-\indent If $-c_1, -c_2$ are negative $c$-vectors in $C$-matrix $C'$ in an MGS, $c_1$ and $c_2$ are dimension vectors of indecomposable modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
+\indent If $-c_1, -c_2$ are negative $c$-vectors in $c$-matrix $C'$ in an MGS, $c_1$ and $c_2$ are dimension vectors of indecomposable modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
 \end{lemma}
 \begin{proof}
 Assume that $-c_1$ is the $i$-th column and $-c_2$ is the $j$-th column. Using the definition of left mutations of simple-minded collections if $dim Ext^1(M_1, M_2) > 1$ then the mutation on $-c_2$ would cause $-c_1$ to be transformed into $-c_1-kc_2$ with $k>1$ because which could only happen if there are multiple edges from $i$ to $j$ \cite{KY12}. Due to Lemma \ref{BHIT} this was impossible.\\
@@ -525,14 +530,15 @@ M\arrow[u, bend left = 50]\\
 \begin{theorem}
 \indent \cite{DR76} The Auslander-Reiten quiver of a tame path algebra consists of three parts, the preprojectives, the preinjectives and the regulars.
 \end{theorem}
-\indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras.
-\begin{theorem}
+\indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras from \cite{ASS06} and \cite{SS06}.
+\begin{theorem}\label{Tame}
 \begin{enumerate}
 \item The AR quiver of $kQ$ has one preprojective component which is isomorphic to $\mathbb{N}Q^{op}$
 \item The AR quiver of $kQ$ has one preinjective component which is isomorphic to $-\mathbb{N}Q^{op}$.
 \item All preprojective and preinjective modules in $kQ$ are rigid.
 \item All but finitely many preprojectives and preinjectives are sincere.
-\item There are infinitely many regular components, all of which are standard tubes $\mathbb{Z}A_{\infty}/(\tau^k)$.
+\item There are infinitely many regular components, all of which are standard stable tubes $\mathbb{Z}A_{\infty}/(\tau^k)$.
+\item All such tubes are pairwise orthogonal to each other. That is, if $M,N$ are in different tubes then $Hom (M,N) = Hom (N,M) = 0$.
 \item All but at most three tubes have $k=1$. In this case we consider the component homogeneous.
 \item All elements in a homogeneous tube are non-rigid, hence they and their shifts can not be summands of any silting object.
 \item In a nonhomogeneous component $\mathbb{Z}A_{\infty}/(\tau^k)$ only indecomposables with quasi-length less than $k$ are rigid. In other words there are only finitely many rigid indecomposables in any nonhomogeneous component.

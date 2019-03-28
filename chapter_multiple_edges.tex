@@ -8,7 +8,7 @@
 (Theorem \ref{C4T1B}) MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, $Q'$.\label{C4T1}
 \end{theorem}
 \begin{theorem}
-(Theorem \ref{C4T3B}) Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.\label{C4T3}
+(Theorem \ref{C4T3B}) Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $c$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.\label{C4T3}
 \end{theorem}
 \indent In other words to understand MGSs of an acyclic quiver $Q$ we only need to understand the MGSs of its ME-free version which makes multiple edges largely irrelevant in understanding MGSs of acyclic quivers.\\
 \indent We can obtain the following crucial corollaries in the acyclic case:
@@ -39,10 +39,13 @@ A quiver $Q$ is \textit{MGS-finite} if $Q$ has finitely many maximal green seque
 \cite{BHIT15} (Thm 2)\label{BHIT2} If the quiver $Q$ is mutation equivalent to an acyclic quiver of tame type, then Q has only finitely many maximal green sequences.
 \end{theorem}
 \begin{theorem}
+\cite{BHIT15} (Thm 2.2.4, Rotation Lemma) \label{BHIT3} Let $B$ be a skew-symmetric matrix, let $(k_0, k_1, k_{m?1})$ be a reddening sequence for $B$ with associated permutation $\sigma$ and let $B_0 = \mu_{k_0}B$. Then the last $c$-matrix in the mutation sequence $(k_1, k_2, \cdots k_{m?1}, \sigma^{-1}(k0))$ is $-P_{\sigma}$, i.e. this is a reddening sequence for $B_0$ with the same permutation as the reddening sequence for $B$. Furthermore, this new reddening sequence has exactly $r$ red mutations. In particular, a maximal green sequence for $B$ gives a maximal green sequence for $B_0$.
+\end{theorem}
+\begin{theorem}
 Any quiver $Q$ mutation equivalent to an acyclic quiver of finite or tame type is MGS-finite.
 \end{theorem}
 \begin{proof}
-Due to Theorem \ref{BHIT2} the result is already proven in the mutation-equivalent to tame type case. For the mutation-equivalent to finite type case using the Rotation Lemma in \cite{BHIT15} it is obvious that any MGS in such a quiver must be an $k$-reddening sequence of an acyclic quiver of finite type for a fixed $k$. There are only finitely many such sequences because a $k$-reddening sequence can only repeat a cluster $k+1$ times due to Lemma \ref{C3L4} and in an acyclic quiver of finite type there are only finitely many cluster-tilting objects and hence finitely many clusters.
+Due to Theorem \ref{BHIT2} the result is already proven in the mutation-equivalent to tame type case. For the mutation-equivalent to finite type case using Theorem \ref{BHIT3} it is obvious that any MGS in such a quiver must be an $k$-reddening sequence of an acyclic quiver of finite type for a fixed $k$. There are only finitely many such sequences because a $k$-reddening sequence can only repeat a cluster $k+1$ times due to Lemma \ref{C3L4} and in an acyclic quiver of finite type there are only finitely many cluster-tilting objects and hence finitely many clusters.
 \end{proof}
 \begin{lemma}
 If $Q$ is a quiver that isn't connected, $Q^1$, $Q^2$, $\cdots$ $Q^n$ are its connected components. Each $Q^i$ is MGS-finite if and only if $Q$ is MGS-finite.
@@ -153,14 +156,14 @@ Let $Q$ be an ME-ful quiver. Any MGS of an ME-ful quiver $Q$ must not contain an
 MGSs of an acyclic quiver $Q$ are a subset of the set of $Q$-ME-free MGSs of its ME-free version, namely $Q'$.\label{C4T1B}
 \end{theorem}
 \begin{proof}
-\indent If the statement is incorrect along an MGS of $Q$ pick the first $C$-matrix that isn't shared by $Q'$ assuming that such an MGS exists. \\
+\indent If the statement is incorrect along an MGS of $Q$ pick the first $c$-matrix that isn't shared by $Q'$ assuming that such an MGS exists. \\
 \indent In this case either at least one $c$-vector is $Q$-ME-ful or none is. If some $c$-vector is $Q$-ME-ful it must be formed by extending one $Q$-ME-free exceptional module by another $Q$-ME-free exceptional module in $Q$ (i.e. $dim Ext_{kQ}(A,B) = 1$ because it can not be larger due to Lemma \ref{C4L}. Let's label the indecomposable module formed by the extension $M$. We need $Ext_{kQ}(B,A) = 0$ so that $\langle M,M\rangle_{kQ} = 1$) while in $Q'$  there are no such extensions (i.e. $dim Ext_{kQ'}(A,B) = 0$). However this is impossible because $A, B$ are rigid, $Hom$-orthogonal and indecomposable because $\langle M,M\rangle_{kQ} - \langle M,M\rangle_{kQ'} \leq -2$ which causes $\langle M,M\rangle_{kQ'}$ to be at least 3 which is impossible because $\langle M,M\rangle_{kQ'} = \langle A,A\rangle_{kQ'} + \langle A,B\rangle_{kQ'} + \langle B,A\rangle_{kQ'} + \langle B,B\rangle_{kQ'} = 2 - dim Ext_{kQ'}(A,B) - dim Ext_{kQ'}(B,A)$ is at most 2.\\
 \indent If no $c$-vector is $Q$-ME-ful then in $kQ$, $kQ'$ the relevant $Hom$ and $Ext$ groups shouldn't differ because neither of them involve the multiple edges that are absent in $kQ'$ . As a result that can't happen either.\\
-\indent Hence the $C$-matrices corresponding to $Q, Q'$ in the MGS are all the same. Any MGS of $Q$ must be an MGS of $Q'$ with the same $C$-matrices. Since all the $C$-matrices of the two quivers are the same they have the same associated permutation.\\
+\indent Hence the $c$-matrices corresponding to $Q, Q'$ in the MGS are all the same. Any MGS of $Q$ must be an MGS of $Q'$ with the same $c$-matrices. Since all the $c$-matrices of the two quivers are the same they have the same associated permutation.\\
 \end{proof}
 \indent Now we can prove a stronger result.\\
 \begin{theorem}\label{C4T3B}
-Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $C$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ it is true that the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
+Let $Q$ be an ME-ful acyclic quiver and $Q'$ be its ME-free version. The MGSs of $Q$ are exactly the $Q$-ME-free MGSs $(C_0,C_1,\cdots C_m)$ of $Q'$ such that for any multiple edge from $i$ to $j$ in $Q$ for any $c$-matrix $C_i$ in the MGS such that there exists a negative $c$-vector with support containing $i$ it is true that the mutation on $C_i$ in the MGS isn't done on any negative $c$-vector with support containing $j$.
 \end{theorem}
 \begin{proof}
 Let's compare $\langle M, N \rangle_{kQ}$ and $\langle M, N \rangle_{kQ'}$. They differ if and only if there exists some multiple edge from $i$ to $j$ such that $i$ is in the support of $M$ and $j$ is in the support of $N$. In this case since $Hom_{kQ}(M,N) = Hom_{kQ'}(M,N)  = Ext_{kQ'}(M,N) = 0$ it is true that $dim Ext_{kQ}(M,N) > 0$. Repeating the argument in Theorem \ref{C4T1B} we can show that this is the only possible scenario for a $Q$-ME-free MGSs of $Q'$ to not be identical to an MGS in $Q$.
