@@ -178,6 +178,18 @@ The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated 
 \begin{theorem}
 \cite{GHKK14} a $c$-vector is either positive or negative.
 \end{theorem}
+\indent Moreover $c$-vectors can be completely described due to the following result by Chavez\cite{C15}.\\
+\begin{theorem} \label{CV}
+Let $Q$ be an acyclic quiver. The set of $c$-vectors associated to $Q$ is equal to the set of real Schur roots associated to $Q$ and their opposites.
+\end{theorem}
+\indent Now we need to discuss the special case which we will use repeatedly, namely the case of $A_n$ straight orientation.\\
+\begin{definition}
+Let $Q$ be an acyclic quiver. A representation $(\{V_i\}_{i\in Q_0}, \{\phi_a\}_{a\in Q_1})$ of $Q$ is \textit{thin} if $dim(V_i) \leq 1$ for all $i\in Q_0$.
+\end{definition}
+\indent If $Q$ is $A_n$ straight orientation, namely quivers of the form $1\to 2\to 3\to\cdots\to n$. Note that for quiver $A_n$ all roots are real and Schur hence a real Schur root is just a root. In $A_n$ in particular since all indecomposable representations are thin, the positive roots are $\beta_{ij}=e_j-e_i$ ($0<i<j<n$, $e_0$ is defined as the zero vector). Hence we have the following lemma.\\
+\begin{lemma} \label{CVA}
+Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\beta_{ij}$.
+\end{lemma}
 \indent A mutation on vertex $k$ is \textit{green} if the $c$-vector $c_k$ before the mutation is negative.  A mutation on vertex $k$ is \textit{red} if the $c$-vector $c_k$ before the mutation is positive. A \textit{maximal green sequence} is a mutation sequence from $C=-I_n$ to a permuted version of $I_n$ We can use a sequence of $c$-vectors to denote a maximal green sequence because we can use the $c$-vector corresponding to vertex $k$ to represent mutation at vertex $k$ which is possible since all $c$-matrices are invertible.\\
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
@@ -196,8 +208,8 @@ The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated 
 \indent Here is one of the simplest examples of the concept of the permutation:\\
 $\begin{tikzcd}
 1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
-1' \arrow[d,"\mu_2", shift left=4.5ex]& 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\\
- 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\arrow[u,"(12)", shift left=4.5ex]\\
+1' \arrow[d,"\mu_2", shift left=4.5ex]& 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\arrow[d,"(12)", shift right=4.5ex]\\
+ 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\\
  1'&2'\arrow[u,red]&1'\arrow[u,red]&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[ul,red]\\
 \end{tikzcd}$\\
 \indent It is obvious that the result of $\mu_2\mu_1$ and $\mu_2\mu_1\mu_2$ are not identical, though they can be transformed into each other by a single permutation on vertices.\\
@@ -234,7 +246,14 @@ For any loop sequence $w$ the permutation $\rho$ such that $w(\tilde{B})=\rho(\t
 \subsection{Triangulated categories and bounded derived categories}
 \indent In this subsection we need to use Auslander-Reiten Theory. However I'm not going to talk about the entire Auslander-Reiten theory even though some parts of it are crucial to the understanding of Chapter \ref{C2}. For Auslander-Reiten theory we refer the reader to Chapter IV of \cite{ASS06} and \cite{ARS}.\\
 \indent I'm not going to talk about what triangulated categories and bounded derived categories are in details. For those who want to read about them we recommend Daniel Murfet's notes \cite{MurD1}\cite{MurD2}\cite{MurT1} for introduction and \cite{H88} for its application in the theory of finite dimensional algebras. In particular \cite{H88} is a good source for Auslander-Reiten theory in bounded derived categories which we will use extensively here.\\
-\indent Let's recall some basic facts about triangulated categories that we will use a lot in this paper. In a triangulated category $\catt$ there exists an automorphism $[1]$ known as the \textit{translation functor}. $[n]:=([1])^n$ for any integer $n$. The \textit{cone} or \textit{homotopy cokernel} of a morphism $A\overset{f}{\to}B\in\catt$ is some $C\in\catt$ such that there exists $g,h\in\catt$ such that $\triangwm{A}{f}{B}{g}{C}{h}{A[1]}$ is a distinguished triangle.The \textit{homotopy kernel} of a morphism $A\overset{f}{\to}B\in\catt$ is some $C\in\catt$ such that there exists $g,h\in\catt$ such that $\triangwm{C}{g}{A}{f}{B}{h}{C[1]}$ is a distinguished triangle. Using axioms of triangulated categories any morphism $A\overset{f}{\to}B\in\catt$ has a homotopy kernel and a homotopy cokernel.\\
+\indent Let's recall some basic facts about triangulated categories that we will use a lot in this paper. In a triangulated category $\catt$ there exists an automorphism $[1]$ known as the \textit{translation functor}. $[n]:=([1])^n$ for any integer $n$.\\
+\begin{definition}
+The \textit{cone} or \textit{homotopy cokernel} of a morphism $A\overset{f}{\to}B\in\catt$ is some $C\in\catt$ such that there exists $g,h\in\catt$ such that $\triangwm{A}{f}{B}{g}{C}{h}{A[1]}$ is a distinguished triangle.
+\end{definition}
+\begin{definition}
+The \textit{homotopy kernel} of a morphism $A\overset{f}{\to}B\in\catt$ is some $C\in\catt$ such that there exists $g,h\in\catt$ such that $\triangwm{C}{g}{A}{f}{B}{h}{C[1]}$ is a distinguished triangle.
+\end{definition}
+\indent Using axioms of triangulated categories any morphism $A\overset{f}{\to}B\in\catt$ has a homotopy kernel and a homotopy cokernel.\\
 \indent Let's recall that bounded derived categories $D^b(\Lambda)$ are obtained by identifying homotopic chain maps in the category of chain complexes $C({\Lambda})$ and then formally invert all quasi-isomorphisms through localization. In bounded derived categories of hereditary algebras the indecomposable objects are of the form $M[i]$ where $M$ is an indecomposable module and $i$ is the amount of shifts we perform. In bounded derived categories it is true that $M,N\in mod\Lambda$ $Hom_{D^b(\Lambda)}(M[i],N[j])=\begin{cases}
 Ext_{\Lambda}^{j-i}(M,N) & \text{ if }j\geq i\\
 0 & \text{ if }j<i
@@ -368,7 +387,7 @@ A $t$-\textit{structure} on $D^b(\Lambda)$ is a pair $(D^{\leq 0},D^{\geq 0})$ s
 \begin{enumerate}
 \item For any $M\in D^b(\Lambda)$ there exists $M'\in D^{\leq 0}, M''\in D^{\geq 0}$ such that $M'\to M\to M''\to M'[1]$.
 \item $D^{\leq 0}[1]\subseteq D^{\leq 0}$,  $D^{\geq 0}[1]\supseteq D^{\geq 0}$.
-\item $(D^{\leq 0}[1], D^{\geq 0}) = 0$
+\item $(D^{\leq 0}[1], D^{\geq 0}) = 0$.
 \end{enumerate}
 \end{definition}
 \begin{example}
@@ -376,7 +395,7 @@ Let $\Lambda$ be any finite dimensional algebra. The \textit{standard $t$-struct
 \end{example}
 \indent Now let's define hearts which will be very useful for a crucial proof in Chapter \ref{C3}, namely the proof of Lemma \ref{lem:C3L1}.
 \begin{definition}
-The \textit{heart} of a $t$-structure $(D^{\leq 0},D^{\geq 0})$ is defined as $\mathcal{H} = D^{\leq 0}\cap D^{\geq 0}$
+The \textit{heart} of a $t$-structure $(D^{\leq 0},D^{\geq 0})$ is defined as $\mathcal{H} = D^{\leq 0}\cap D^{\geq 0}$.
 \end{definition}
 \begin{theorem}
 \cite{BBD} Hearts of $t$-structures are Abelian categories. 
@@ -475,7 +494,21 @@ $\begin{tikzcd}
 	&		&  			9& 			& & & &\\
 \end{tikzcd}$
 \subsection{Standard stable tubes}
-\indent In this subsection we are going to discuss \textit{standard stable tubes} because they are crucial to understanding of the proofs in Chapter \ref{C2}.\\
+\indent In this subsection we are going to discuss \textit{standard stable tubes} because they are crucial to understanding of the proofs in Chapter \ref{C2}. Before that we first need several more concepts.\\
+\begin{definition}
+A quiver $Q$ is \textit{locally finite} if for any vertex $x\in Q_0$ the amount of vertices adjacent to $x$ is finite.
+\end{definition}
+\indent It is obvious that any finite quiver is locally finite.
+\begin{definition}
+\cite{ASS06} Let $\Gamma$ be a locally finite quiver without loops and $\tau$ be a bijection whose domain and codomain are both subsets of $\Gamma_0$. $(\Gamma,\tau)$ (and often simply $\Gamma$) is a \textit{translation quiver} if for every $x\in \Gamma_0$ such that $\tau x$ exists and for any $y\in\Gamma_0$ such that there exists at least one arrow from $y$ to $x$ the number of arrows from $y$ to $x$ is equal to the number of arrows from $\tau x$ to $y$.
+\end{definition}
+\begin{definition}
+Let $(\Gamma, \tau)$ be a translation quiver. A point $x\in\Gamma_0$ is a \textit{projective point} if $\tau x$ is undefined. A point $x\in\Gamma_0$ is a \textit{injective point} if $\tau^{-1} x$ is undefined. 
+\end{definition}
+\indent Translation quivers are relevant to Auslander-Reiten theory. Using them we can have another level of abstraction when convenient.\\
+\begin{lemma}
+\cite{ASS06} The Auslander-Reiten quiver $\Gamma(mod \Lambda)$ of an algebra $\Lambda$ is a translation quiver, the translation $\tau$ being defined for all points $[M]$ such that $M$ is not a projective module by $\tau([M]):=[\tau M]$. 
+\end{lemma}
 \begin{definition}
 \cite{SS06} Let $(\catt,\tau)$ be a quiver with vertices of the form $(i,j)$ where $j > 0$ and $i\in [r]$. Here r + 1 is considered to be 1. There is an arrow from $(i,j)\to (i, j + 1)$ for any $i$ and an arrow from $(i,j)$ to $(i - 1, j - 1)$ for any $j>1$. Such a quiver is known as a \textit{stable tube of rank} $r$.
 \end{definition}
@@ -572,16 +605,12 @@ Here is the preinjective component, $\mathcal{Q}$.\\
 \indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to Chapter \ref{C1} and Chapter \ref{C3}. For more details we recommend \cite{GHKK14}\cite{Mul15}\cite{BST17}\cite{BST18A}\cite{BST18B}\cite{IOTW15} and \cite{IT17}.\\
 \subsection{Picture groups}\label{Picgr}
 \indent We also need to use the concept of the picture groups in order to prove the formula in Chapter \ref{C1}. For more details about picture groups we recommend \cite{IT17}.\\
-\indent Let's recall that for a quiver of finite type, any dimension vector of an indecomposable representation is referred to as a \textit{root}. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: \langle x,\beta\rangle=0,\ \langle x,\beta'\rangle\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments} (or \textit{chambers}). The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4}\\
+\indent Let's recall that for a quiver of finite type, any dimension vector of an indecomposable representation is referred to as a \textit{root}. Moreover for any acyclic quiver $Q$ we have its Euler-Ringel form $\langle -,-\rangle_Q$ which we will refer to simply as $\langle -,-\rangle$. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: \langle x,\beta\rangle=0,\ \langle x,\beta'\rangle\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments} (or \textit{chambers}). The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4}\\
 \begin{definition}
 \cite{IT17} A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)=\langle S|R\rangle$ with $S$ in bijection with the set of real Schur roots (the generator for $\beta$ is $x(\beta)$) and $R$ the set of relations $x(\beta_i)x(\beta_j)=\Pi x(\gamma_k)$ with $\gamma_k$ running over all these real Schur roots which are linear combinations $\gamma_k = a_k\beta_i+b_k\beta_j$ with $a_k/b_k$ increasing (going from 0/1 where $\gamma_1=\beta_j$ to 1/0 where $\gamma_k=\beta_i$) for any pair $(\beta_i,\beta_j)$ such that they are Hom-orthogonal and $Ext(\beta_i,\beta_j)=0$.\\
 \end{definition}
-\indent Now we need to restrict the case to $A_n$ straight orientation, namely quivers of the form $1\to 2\to 3\to\cdots\to n$.
-\begin{definition}
-Let $Q$ be an acyclic quiver. A representation $(\{V_i\}_{i\in Q_0}, \{\phi_a\}_{a\in Q_1})$ of $Q$ is \textit{thin} if $dim(V_i) \leq 1$ for all $i\in Q_0$.
-\end{definition}
-\indent In $A_n$ in particular since all indecomposable representations are thin, the roots are $\beta_{ij}=e_j-e_i$ ($0<i<j<n$, $e_0$ is defined as the zero vector). The root $\beta_{ij}$ corresponds to the picture group generator $x_{ij}$ which we will define right now.\\
-\indent Note that for quiver $A_n$ all roots are real and Schur hence a real Schur root is just a root. Also we often simplify the notation of $x(\beta_{ij})$ to $x_{ij}$ which we use interchangeably with $x(\beta_{ij})$. The picture group for $A_n$ straight orientation is $G(A_n)=\{S|R\}$, $S=\{x_{ij}|0\leq i<j\leq n\}$, $R=\{x_{ij}x_{kl}=x_{kl}x_{ij}|[i,j]\cap[k,l]=\emptyset, [i,j]\text{ or }[k,l], $ i,j,k,l \\are distinct.\}$\cup\{x_{jk}x_{ij}=x_{ij}x_{ik}x_{jk}|0\leq i<j<k\leq n\}$.\\
+\indent Now we need to restrict the case to $A_n$ straight orientation. In this case due to Lemma \ref{CVA} the roots are in the form $\pm\beta_{ij}$ where $\beta_{ij}=e_j-e_i$ ($0<i<j<n$, $e_0$ is defined as the zero vector). The root $\beta_{ij}$ corresponds to the picture group generator $x_{ij}$ which we will define right now.\\
+\indent We often simplify the notation of $x(\beta_{ij})$ to $x_{ij}$ which we use interchangeably with $x(\beta_{ij})$. The picture group for $A_n$ straight orientation is $G(A_n)=\{S|R\}$, $S=\{x_{ij}|0\leq i<j\leq n\}$, $R=\{x_{ij}x_{kl}=x_{kl}x_{ij}|[i,j]\cap[k,l]=\emptyset, [i,j]\text{ or }[k,l], $ i,j,k,l \\are distinct.\}$\cup\{x_{jk}x_{ij}=x_{ij}x_{ik}x_{jk}|0\leq i<j<k\leq n\}$.\\
 \indent Igusa and Todorov proved \cite{IT17} that there exists a bijection between the set of maximal green sequences and the set $\mathcal{P}(c)$ of positive expressions of the Coxeter element of the picture group for any acyclic valued quiver of finite type which applies to $A_n$ straight orientation.\\
 \subsection{Alternative definitions of maximal green sequences}
 \indent In the following theorem by Kiyoshi Igusa multiple equivalent definition of maximal green sequences was introduced. The full version of Igusa's results includes more discussions about the wall-and-chamber structure which we will not discuss here. To understand more about the wall-and-chamber structure we suggest that the reader reads \cite{GHKK14}\cite{Mul15}\cite{BST17}\cite{BST18A}\cite{BST18B} and \cite{IOTW15}.
