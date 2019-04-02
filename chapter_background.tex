@@ -117,6 +117,25 @@ Let $Q$ be an acyclic quiver with $n$ vertices. $c\in \nn^n$ is a \textit{real r
 \begin{definition}
 Let $Q$ be an acyclic quiver with $n$ vertices. $c\in \nn^n$ is an \textit{imaginary root} if it is sign coherent and $\langle c, c\rangle_Q \leq 0$.
 \end{definition}
+\indent Now we can define Cartan matrices and provide another characterization of Euler matrices.\\
+\begin{definition}
+Let $Q$ be an acyclic quiver. The \textit{Cartan matrix} of $Q$ is defined as $C:=(c_{ij})$ where $c_{ij}=\#\{\text{paths from }j\text{ to }i\}$.
+\end{definition}
+\begin{example}
+The Cartan matrix $C$ of the quiver $Q:\begin{tikzcd}1\arrow[r] & 2\rightdoublearrow & 3\end{tikzcd}$ is $C=\begin{bmatrix}1 & 0 & 0\\1 & 1 & 0 \\2 & 2 & 1\\\end{bmatrix}$.
+\end{example}
+\indent It is easy to see that $C'E=I$ in the example above. In fact this is something true in general.\\
+\begin{theorem}
+Let $Q$ be an acyclic quiver, $E$ be its Euler matrix and $C$ be its Cartan matrix. It is true that $C'E=I$.
+\end{theorem}
+\begin{proof}
+\indent Since $Q$ is acyclic we can relabel elements of $Q_0$ as $1,2,\cdots, n$ to ensure that for any $i, j$ such that $i\geq j$ there are no arrows from $i$ to $j$. Using the definition of Euler matrices for any $i\neq j$ there are $a_{ij}:=-e_{ij}$ arrows from $i$ to $j$. It is easy to see that $C'$ and $E$ are both upper triangular.\\
+
+\end{proof}
+\indent Now we have the following crucial result about Euler-Ringel form which we will implicitly use extensively in Chapter \ref{C4}.\\
+\begin{theorem}
+\cite{ASS06} \label{HE}(Prop III.3.13) Let $Q$ be an acyclic quiver. Let $kQ$ be its path algebra. Then for any pair $M,N$ of modules in $mod kQ$ we have $\langle dim M, dim N\rangle = Hom(M,N)-Ext^1(M,N)$.
+\end{theorem}
 \section{Mutations, mutation sequences and the associated permutation}
 \indent In this section we will introduce mutations of quivers and matrices, different kinds of mutation sequences including green sequences, maximal green sequences, reddening sequences and loop sequences. Stability conditions will be introduced. We will also define the associated permutation. Results in this section are mostly used in Chapters \ref{C1} and \ref{C4}.\\
 \subsection{Mutation of quivers}
@@ -183,8 +202,11 @@ b_{ij} & \text{in all other cases}
 The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated ice quiver $Q'$ is an $2n\times n$ matrix with the rows corresponding to vertices $\{1,2,\cdots, n, 1', 2',\cdots n'\}$ while the columns corresponds to the vertices $\{1,2,\cdots, n\}$. Here we use the number $n+i$ to represent $i'$. Here again $b_{ij}$ is the number of arrows from $i$ to $j$ minus the number of arrows from $j$ to $i$.
 \end{definition}
 \indent An extended exchange matrix $B'$ has an upper and lower square submatrices, $B$ and $C$ respectively. The lower square matrix $C$ is known as the $c$\textit{-matrix}. Column vectors of an $c$-matrix are known as $c$\textit{-vectors}. A $c$-vector is positive if all its entries are non-negative and at least one is positive. A $c$-vector is negative if all its entries are non-positive and at least one is negative. Here is an important result about $c$-vectors, namely \textit{sign coherence}.\\
+\begin{definition}
+Let $Q$ be an acyclic quiver and $B$ its exchange matrix. A $c$-vector is \textit{reachable} if it is a column vector in some $C$ such that some $\begin{bmatrix}\tilde{B}\\C\end{bmatrix}$ that can be obtained from $\begin{bmatrix}B\\-I_n\end{bmatrix}$ through mutations.
+\end{definition}
 \begin{theorem}
-\cite{GHKK14} a $c$-vector is either positive or negative.
+\cite{GHKK14}\cite{DWZ08}\cite{DWZ10} a reachable $c$-vector is either positive or negative.
 \end{theorem}
 \indent Moreover $c$-vectors can be completely described due to the following result by Chavez\cite{C15}.\\
 \begin{theorem} \label{CV}
@@ -415,18 +437,18 @@ I_1[-1]\arrow[rd]& &P_1\arrow[rd] & & P_3[1]\arrow[rd] & & S_2[1]\arrow[rd] & & 
 \cite{BHIT15} (Cor 3.3.2) \label{BHIT} Let $Q$ be a quiver. Consider any maximal green sequence on any valued quiver $Q$. Then, at each step, the mutation is at a vertex of the mutated quiver $Q_0$ which is not the source of any arrow of infinite type.
 \end{lemma}
 \begin{lemma}
-Let $k$ be an algebraically closed field. Let $\Lambda$ be a hereditary algebra over $k$. Then any $c$-vector $c$ that appears in any MGS is a real Schur root.
+Let $k$ be an algebraically closed field. Let $\Lambda$ be a hereditary algebra over $k$. Then any $c$-vector $c$ that appears in any maximal green sequence is a real Schur root.
 \end{lemma}
 \begin{proof}
-\indent Since the simples of $\Lambda$ are all exceptional if the lemma were incorrect then there must be some $c$-matrix in the MGS, $C$ such that all columns of $C$ are real Schur roots while one green mutation can somehow generate a root that isn't real. Here there can only be two cases, namely some mutation performed on $-v$ caused some $-w$ to be transformed into $-w'=-w-kv$ which isn't real, some mutation performed on $-v$ caused some $+w$ to be transformed into $w'=w-kv$ which isn't real. In the second case $w'$ may be positive or negative.\\
+\indent Since the simples of $\Lambda$ are all exceptional if the lemma were incorrect then there must be some $c$-matrix in the maximal green sequence, $C$ such that all columns of $C$ are real Schur roots while one green mutation can somehow generate a root that isn't real. Here there can only be two cases, namely some mutation performed on $-v$ caused some $-w$ to be transformed into $-w'=-w-kv$ which isn't real, some mutation performed on $-v$ caused some $+w$ to be transformed into $w'=w-kv$ which isn't real. In the second case $w'$ may be positive or negative.\\
 \indent For an arbitrary $c$-vector $v$ let $M_v$ be the brick such that $v$ is the dimension vector of $M_v$. In this case $\langle v,v\rangle=1-dim Ext^1(M_v,M_v)$. Hence $v$ being real is equivalent to $\langle v,v\rangle=1$.\\
 \indent \textbf{Case 1}: Assume that some mutation performed on $-v$ caused some $-w$ to be transformed into $-w'=-w-kv$ which isn't real. $\langle w', w'\rangle = \langle w, w\rangle + k\langle v,w\rangle + k\langle w,v\rangle + k^2\langle v,v\rangle$. Since $Hom(M_v, M_w) = Hom(M_w, M_v) = 0$ due to $M_v$, $M_w$ being two elements in a simple-minded collection and $v, w$ are both real  $\langle w', w'\rangle = k^2+1-k\, dim Ext^1(M_v, M_w) - k\, dim Ext^1(M_w, M_v)$. Using properties of simple-minded collections $dim Ext^1(M_w, M_v)  = k$. Using Lemma \ref{KQ} we can see that $Ext^1(M_v, M_w)  = 0$, Hence $\langle w', w'\rangle = 1$. $w'$ is real.\\
 \indent \textbf{Case 2}: Assume that some mutation performed on $-v$ caused some $w$ to be transformed into $-w'=w-kv$ which isn't real. Using properties of simple-minded collections it is obvious that $Ext^1(M_v, M_w) = Hom(M_v, M_w) = 0$. Regardless of whether $w'$ is positive or negative $\langle w', w'\rangle = \langle w, w\rangle - k\langle v,w\rangle - k\langle w,v\rangle + k^2\langle v,v\rangle = k^2+1 -k\,dim Hom(M_w, M_v) + k\,Ext^1(M_w, M_v)$. Using properties of simple-minded collections $dim Hom(M_w, M_v)  = k$. Using Lemma \ref{KQ} we can see that $Ext^1(M_w, M_v)  = 0$, Hence $\langle w', w'\rangle = 1$. $w'$ is real.\\
-\indent The assumption has been refuted. Any $c$-vector $c$ that appears in any MGS is a real Schur root.
+\indent The assumption has been refuted. Any $c$-vector $c$ that appears in any maximal green sequence is a real Schur root.
 \end{proof}
 \indent In order to prove Theorem \ref{C4T1} we need to first prove a lemma.
 \begin{lemma}\label{C4L}
-\indent If $-c_1, -c_2$ are negative $c$-vectors in $c$-matrix $C'$ in an MGS, $c_1$ and $c_2$ are dimension vectors of indecomposable modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
+\indent If $-c_1, -c_2$ are negative $c$-vectors in $c$-matrix $C'$ in an maximal green sequence, $c_1$ and $c_2$ are dimension vectors of indecomposable modules $M_1$ and $M_2$. If $dim Ext^1(M_1, M_2) > 1$ then the mutation on $C'$ must not be done on $M_2$.
 \end{lemma}
 \begin{proof}
 Assume that $-c_1$ is the $i$-th column and $-c_2$ is the $j$-th column. Using the definition of left mutations of simple-minded collections if $dim Ext^1(M_1, M_2) > 1$ then the mutation on $-c_2$ would cause $-c_1$ to be transformed into $-c_1-kc_2$ with $k>1$ because which could only happen if there are multiple edges from $i$ to $j$ \cite{KY12}. Due to Lemma \ref{BHIT} this was impossible.\\
