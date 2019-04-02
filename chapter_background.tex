@@ -127,13 +127,13 @@ Let $Q$ be an acyclic quiver. The \textit{Cartan matrix} of $Q$ is defined as $C
 \begin{example}
 The Cartan matrix $C$ of the quiver $Q:\begin{tikzcd}1\arrow[r] & 2\rightdoublearrow & 3\end{tikzcd}$ is $C=\begin{bmatrix}1 & 0 & 0\\1 & 1 & 0 \\2 & 2 & 1\\\end{bmatrix}$.
 \end{example}
-\indent It is easy to see that $C'E=I$ in the example above. In fact this is something true in general.\\
+\indent It is easy to see that $C^tE=I$ in the example above. In fact this is something true in general.\\
 \begin{theorem}
-Let $Q$ be an acyclic quiver, $E$ be its Euler matrix and $C$ be its Cartan matrix. It is true that $C'E=I$.
+Let $Q$ be an acyclic quiver, $E$ be its Euler matrix and $C$ be its Cartan matrix. It is true that $C^tE=I$.
 \end{theorem}
 \begin{proof}
-\indent Since $Q$ is acyclic we can relabel elements of $Q_0$ as $1,2,\cdots, n$ to ensure that for any $i, j$ such that $i\geq j$ there are no arrows from $i$ to $j$. Let $C=(c_{ij}), E=(e_{ij})$. Using the definition of Euler matrices for any $i\neq j$ there are $a_{ij}:=-e_{ij}$ arrows from $i$ to $j$. It is easy to see that $C'$ and $E$ are both upper triangular with all diagonal entries equal to $1$. Hence $C'E$ is upper triangular with all diagonal entries equal to $1$.\\
-\indent Now we need to prove that all other entries of $B:=C'E=(b_{ij})$ above the diagonal is $0$. Let $n = |Q_0|$. To show that we only need to prove that $b_{1n}=0$ assuming that $n>1$. $b_{1n}=\Sigma_{i = 1}^nc_{i1}e_{in}=c_{n1}-\Sigma_{i = 1}^{n-1}c_{i1}a_{in}$. We know that $c_{i1}$ is the amount of paths from $1$ to $i$and $a_{in}$ is the amount of arrows from $i$ to $n$. Since any path $w$ from $1$ to $n$ is non-trivial it can be uniquely decomposed as $w=w'l$ where $l$ is the last arrow in it. Here $w'$ can be trivial which means $l$ is an arrow from $1$ to $n$. It is clear that $c_{n1}=\Sigma_{i = 1}^{n-1}c_{i1}a_{in}$. Hence $b_{1n}=0$. Similarly we can show that any entry of $B$ above the diagonal is 0. Hence $B=C'E=I$.
+\indent Since $Q$ is acyclic we can relabel elements of $Q_0$ as $1,2,\cdots, n$ to ensure that for any $i, j$ such that $i\geq j$ there are no arrows from $i$ to $j$. Let $C=(c_{ij}), E=(e_{ij})$. Using the definition of Euler matrices for any $i\neq j$ there are $a_{ij}:=-e_{ij}$ arrows from $i$ to $j$. It is easy to see that $C^t$ and $E$ are both upper triangular with all diagonal entries equal to $1$. Hence $C^tE$ is upper triangular with all diagonal entries equal to $1$.\\
+\indent Now we need to prove that all other entries of $B:=C^tE=(b_{ij})$ above the diagonal is $0$. Let $n = |Q_0|$. To show that we only need to prove that $b_{1n}=0$ assuming that $n>1$. $b_{1n}=\Sigma_{i = 1}^nc_{i1}e_{in}=c_{n1}-\Sigma_{i = 1}^{n-1}c_{i1}a_{in}$. We know that $c_{i1}$ is the amount of paths from $1$ to $i$and $a_{in}$ is the amount of arrows from $i$ to $n$. Since any path $w$ from $1$ to $n$ is non-trivial it can be uniquely decomposed as $w=w'l$ where $l$ is the last arrow in it. Here $w'$ can be trivial which means $l$ is an arrow from $1$ to $n$. It is clear that $c_{n1}=\Sigma_{i = 1}^{n-1}c_{i1}a_{in}$. Hence $b_{1n}=0$. Similarly we can show that any entry of $B$ above the diagonal is 0. Hence $B=C^tE=I$.
 \end{proof}
 \indent Now we have the following crucial result about Euler-Ringel form which we will implicitly use extensively in Chapter \ref{C4}.\\
 \begin{theorem}
@@ -206,7 +206,7 @@ The \textit{extended exchange matrix} $B'$ corresponding to a partially mutated 
 \end{definition}
 \indent An extended exchange matrix $B'$ has an upper and lower square submatrices, $B$ and $C$ respectively. The lower square matrix $C$ is known as the $c$\textit{-matrix}. Column vectors of an $c$-matrix are known as $c$\textit{-vectors}. A $c$-vector is positive if all its entries are non-negative and at least one is positive. A $c$-vector is negative if all its entries are non-positive and at least one is negative. Here is an important result about $c$-vectors, namely \textit{sign coherence}.\\
 \begin{definition}
-Let $Q$ be an acyclic quiver and $B$ its exchange matrix. A $c$-vector is \textit{reachable} if it is a column vector in some $C$ such that some $\begin{bmatrix}\tilde{B}\\C\end{bmatrix}$ that can be obtained from $\begin{bmatrix}B\\-I_n\end{bmatrix}$ through mutations.
+Let $Q$ be an acyclic quiver and $B$ its exchange matrix. A $c$-vector is \textit{reachable} if it is a column vector in some $C$ such that some $\begin{pmatrix}\tilde{B}\\C\end{pmatrix}$ that can be obtained from $\begin{pmatrix}B\\-I_n\end{pmatrix}$ through mutations.
 \end{definition}
 \begin{theorem}
 \cite{GHKK14}\cite{DWZ08}\cite{DWZ10} a reachable $c$-vector is either positive or negative.
@@ -317,14 +317,38 @@ For any loop sequence $w$ the permutation $\rho$ such that $w(\tilde{B})=\rho(\t
 \indent In this subsection we need to use Auslander-Reiten Theory. However I'm not going to talk about the entire Auslander-Reiten theory even though some parts of it are crucial to the understanding of Chapter \ref{C2}. Here we will just introduce two concepts, namely irreducible morphisms and Auslander-Reiten quivers. For more information on Auslander-Reiten theory we refer the reader to Chapter IV of \cite{ASS06}, \cite{ARS} and \cite{H88}.\\
 \indent Moreover we are not going to talk about what triangulated categories and bounded derived categories are in details. For those who want to read about them we recommend Daniel Murfet's notes \cite{MurD1}\cite{MurD2}\cite{MurT1} for introduction and \cite{H88} for its application in the theory of finite dimensional algebras. In particular \cite{H88} is a good source for Auslander-Reiten theory in bounded derived categories which we will use extensively here.\\
 \begin{definition}
-Let $\catc$ be an Abelian or triangulated category, let $M,N$ be objects of $\catc$. A morphism $f: M\to N$ is \textit{irreducible} if for any $L\in\catc$
+Let $\catc$ be an Abelian or triangulated category, let $M,N$ be objects of $\catc$. A morphism $f\in Hom(M,N)$ is \textit{irreducible} if for any $L\in\catc$ for any $g\in Hom(M, L), h\in Hom(N, L)$ such that $f = gh$ then either $h$ is a split monomorphism or $g$ is a split epimorphism. 
 \end{definition}
-\begin{example} Here is the Auslander-Reiten(AR) quiver of $mod kQ$ where $Q$ is the quiver $1\to 2$.
+\indent The reason why we exclude cases where $h$ is a section and $g$ is a retraction is that these cases are simply trivial since it is very easy to decompose $f$ using $M\overset{\begin{pmatrix}1_M\\0\\\end{pmatrix}}{\longrightarrow}M\oplus K\overset{\begin{pmatrix}f &0\\\end{pmatrix}}{\longrightarrow} N$ or $M\overset{\begin{pmatrix}f\\0\\\end{pmatrix}}{\longrightarrow}N\oplus K\overset{\begin{pmatrix}1_N &0\\\end{pmatrix}}{\longrightarrow} N$. Morally speaking an irreducible morphism can be understood as a morphism that can not be decomposed in any nontrivial way.\\
+\begin{example}
+Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_2$ is an irreducible morphism because the morphism does not factor through any other indecomposable module in a nontrivial way.
+\end{example}
+\begin{example}
+Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_1$ is not an irreducible morphism because the morphism does actor through $P_2$ since $P_3\hookrightarrow P_2\hookrightarrow P_1$.
+\end{example}
+\indent In order to define Auslander-Reiten quivers in Abelian categories we need several more concepts.\\
+\begin{definition}
+\cite{ASS06}(Def A.3.3) The (Jacobian) \textit{radical} of an additive $k$-category $\catc$ is the two-sided ideal $rad_{\catc}$ in $\catc$ defined by the formula $rad_{\catc}(X,Y) := \{h\in Hom_{\catc}(X, Y): 1_X-gh\text{ is invertible for any }g\in Hom_{\catc}(Y,X)\}$.
+\end{definition}
+\indent Note that $rad_{\catc}(X, Y)$ is a two-sided ideal. From now on when $\catc$ is clear from the context we often omit it.\\
+\begin{definition}
+Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\catc$, let $n$ be a positive integer, $X=X_0, Y=X_n$. We define $rad^n(X,Y):=\{f\in rad(X,Y):\text{for any }i\in [n]\text{ there exist }X_i\in Ob\catc, f_i\in rad(X_{i-1}, X_{i})\text{ such that }f=f_1\cdots f_n\}$. 
+\end{definition}
+\indent Note that $rad^n(X, Y)$ is a two-sided ideal. Hence we can define the space of irreducible morphisms as the following.\\
+\begin{definition}
+\cite{ASS06}(IV.4) Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\catc$. The \textit{space of irreducible morphisms} $Irr(X,Y)$ is defined as $rad(X,Y)/rad^2(X,Y)$.
+\end{definition}
+\indent Now we can define Auslander-Reiten quivers in Abelian categories.\\
+\begin{definition}
+Let $\catc$ be an Abelian category. The \textit{Auslander-Reiten (AR) quiver} $\Gamma(\catc)$ is the quiver with its vertices indecomposable objects of $\catc$ and its arrows $[M]\to[N]$ vectors of a basis of $Irr(M,N)$ as a $k$-vector space.
+\end{definition}
+\begin{example} Here is the Auslander-Reiten quiver of $mod kQ$ where $Q$ is the quiver $1\to 2$.
 $\begin{tikzcd}
 &P_1\arrow[rd] &\\
 P_2\arrow[ru]& &I_1\\
 \end{tikzcd}$ There is an irreducible morphism from $P_2$ to $P_1$ and an irreducible morphism from $P_1$ to $I_1$. There are only 3 indecomposable objects in $mod kQ$.
 \end{example}
+\indent For triangulated categories the definition is fairly complex. So we refer interested readers to \cite{H88} (I.5.5) and \cite{S09}.
 \subsection{Triangulated categories and bounded derived categories}
 \indent
 \indent Let's recall some basic facts about triangulated categories that we will use a lot in this paper. In a triangulated category $\catt$ there exists an automorphism $[1]$ known as the \textit{translation functor}. $[n]:=([1])^n$ for any integer $n$.\\
