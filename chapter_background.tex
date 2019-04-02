@@ -20,7 +20,14 @@ $\begin{tikzcd}
 \end{tikzcd}$\\
 These three are quivers.
 \end{example}
-\indent Now we need to define subquivers.\\
+\indent Now let's define opposite quivers.\\
+\begin{definition}
+Let $Q = (Q_0, Q_1, s, t)$ be a quiver. The \textit{opposite quiver} $Q^{op}:=(Q^{op}_0, Q^{op}_1, s^{op}, t^{op})$ is a quiver such that $Q^{op}_0 = Q_0$, $Q^{op}_1 = Q_1$ and that for any $x\in Q^{op}_1$ we have $s^{op}(x) = t(x)$ and $t^{op}(x) = s(x)$.
+\end{definition}
+\indent That is, $Q^{op}$ is formed by keeping all the vertices of $Q$ and reversing all its arrows. Now we need to define subquivers.\\
+\begin{example}
+The opposite quiver of $Q: 1\to 2\to 3$ is $Q^{op}:1 \leftarrow 2\leftarrow 3$.
+\end{example}
 \begin{definition}
 A \textit{subquiver} $Q' = (Q'_0,Q'_1, s', t')$ in a quiver $Q = (Q_0,Q_1, s, t)$ is a quiver such that $Q'_0\subseteq Q_0$, $Q'_1\subseteq Q_1$, $s|_{Q'_1} = s'$ and $t|_{Q'_1} = t'$.
 \end{definition}
@@ -210,18 +217,30 @@ Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\b
 \begin{definition}
 \cite{GM14} The \textit{permutation of a reddening sequence} $\mathbf{i}$ is $\rho$ for which $\mu_{i_N}\cdots\mu_{i_1}\hat{Q}=\rho\breve{Q}$.\\
 \end{definition}
-\indent Here is one of the simplest examples of the concept of the permutation:\\
+\indent Here are some simple examples that illustrate the concept of the permutation:\\
 \begin{example}
+Here is a maximal green sequence of $Q:1\to 2$.\\
 $\begin{tikzcd}
 1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
 1' & 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\\
-\end{tikzcd}$
-\end{example}
+\end{tikzcd}$\\
+\indent It is clear that this sequence has permutation $id$.
+\end{example} 
 \begin{example}
+Here is another maximal green sequence of $Q:1\to 2$.\\
 $\begin{tikzcd}
  1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_2", shift right=3.5ex] & 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\\
  1' & 2'& 1'&2'\arrow[u,red]&1'\arrow[u,red]&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[ul,red]\\
 \end{tikzcd}$\\
+\indent It is clear that this sequence has permutation $(12)$.
+\end{example}
+\begin{example}
+Here is a reddening sequence of $Q:1\to 2$ that isn't a maximal green sequence.\\
+$\begin{tikzcd}
+1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2 \arrow[r,"\mu_2", shift right=3.5ex] & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex] & 1\arrow[r] & 2\\
+1' & 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red] & 1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\\
+\end{tikzcd}$\\
+\indent It is clear that this sequence has permutation $id$.
 \end{example}
 \indent It is obvious that the result of $\mu_2\mu_1$ and $\mu_2\mu_1\mu_2$ are not identical, though they can be transformed into each other by a single permutation on vertices.\\
 \indent We can also define the associated permutation of sequences using extended exchange matrices.\\
@@ -256,6 +275,12 @@ For any loop sequence $w$ the permutation $\rho$ such that $w(\tilde{B})=\rho(\t
 \indent In this section we will go over the basics about bounded derived categories, approximations, silting objects, simple-minded collections, torsion classes, $t$-structures and introduce the definition of numerous mutation sequences. This section mostly consists of background for Chapter \ref{C3} and Chapter \ref{C4}.\\
 \subsection{Triangulated categories and bounded derived categories}
 \indent In this subsection we need to use Auslander-Reiten Theory. However I'm not going to talk about the entire Auslander-Reiten theory even though some parts of it are crucial to the understanding of Chapter \ref{C2}. For Auslander-Reiten theory we refer the reader to Chapter IV of \cite{ASS06} and \cite{ARS}.\\
+\begin{example} Here is the Auslander-Reiten(AR) quiver of $mod kQ$ where $Q$ is the quiver $1\to 2$.
+$\begin{tikzcd}
+&P_1\arrow[rd] &\\
+P_2\arrow[ru]& &I_1\\
+\end{tikzcd}$ There is an irreducible morphism from $P_2$ to $P_1$ and an irreducible morphism from $P_1$ to $I_1$. There are only 3 indecomposable objects in $mod kQ$.
+\end{example}
 \indent I'm not going to talk about what triangulated categories and bounded derived categories are in details. For those who want to read about them we recommend Daniel Murfet's notes \cite{MurD1}\cite{MurD2}\cite{MurT1} for introduction and \cite{H88} for its application in the theory of finite dimensional algebras. In particular \cite{H88} is a good source for Auslander-Reiten theory in bounded derived categories which we will use extensively here.\\
 \indent Let's recall some basic facts about triangulated categories that we will use a lot in this paper. In a triangulated category $\catt$ there exists an automorphism $[1]$ known as the \textit{translation functor}. $[n]:=([1])^n$ for any integer $n$.\\
 \begin{definition}
@@ -545,7 +570,7 @@ Let $(\Gamma, \tau)$ be a translation quiver. A point $x\in\Gamma_0$ is a \texti
 \cite{ASS06} The Auslander-Reiten quiver $\Gamma(mod \Lambda)$ of an algebra $\Lambda$ is a translation quiver, the translation $\tau$ being defined for all points $[M]$ such that $M$ is not a projective module by $\tau([M]):=[\tau M]$. 
 \end{lemma}
 \begin{definition}
-\cite{SS06} Let $(\catt,\tau)$ be a quiver with vertices of the form $(i,j)$ where $j > 0$ and $i\in [r]$. Here r + 1 is considered to be 1. There is an arrow from $(i,j)\to (i, j + 1)$ for any $i$ and an arrow from $(i,j)$ to $(i - 1, j - 1)$ for any $j>1$. Such a quiver is known as a \textit{stable tube of rank} $r$.
+Let $Q$ be a quiver. Let $(\catt,\tau)$ be a quiver with vertices of the form $(i,j)$ where $j > 0$ and $i\in [r]$. Here r + 1 is considered to be 1. There is an arrow from $(i,j)\to (i, j + 1)$ for any $i$ and an arrow from $(i,j)$ to $(i - 1, j - 1)$ for any $j>1$. Such a quiver is known as a \textit{stable tube of rank} $r$.
 \end{definition}
 %\indent To those who know what a \textit{translation quiver}
 \begin{definition}
@@ -593,12 +618,21 @@ M\arrow[u, bend left = 50]\\
 \begin{definition}
 \cite{SS06} Let $\catc$ be a component of the AR quiver $\Gamma(mod \Lambda)$ of some $k$-algebra $\Lambda$. $\catc$ is a \textit{standard component} of $\Gamma(mod \Lambda)$ if there exists an equivalence of $k$-categories $k(\catc)\approxeq ind\catc$ where $ind\catc$ is the full $k$-subcategory of $mod \Lambda$ whose objects are representatives of the isomorphism classes of the indecomposable modules in $\catc$.
 \end{definition}
+\begin{example} Here is the AR quiver of $\cata = mod kQ$ where $Q$ is the quiver $1\to 2$ with arrows labelled.
+$\begin{tikzcd}
+&P_1\arrow[rd,"b"] &\\
+P_2\arrow[ru,"a"]& &I_1\\
+\end{tikzcd}$ This AR quiver consists of only one component $\catc$ which is standard. Here is why. The path category has objects $P_2, P_1, I_1$ and morphisms are generated by identity morphisms, $a$ and $b$. Here $\catt(P_2,P_1) = \cata(P_2, P_1)$ and $\catt(P_1,I_1) = \cata(P_1, I_1)$. At the same time $\catt(P_2,I_1)$ is generated by $ba$ while $\cata(P_2,I_1) = 0$. The mesh ideal is generated by $ba$, hence the mesh category is equivalent to $mod kQ$. Hence $\catc$ is a standard component.
+\end{example}
 \subsection{Auslander-Reiten quivers of tame hereditary algebras}
 \indent In this subsection we are going to discuss Auslander-Reiten quivers of basic tame hereditary algebras because information about them is slightly less well known.\\
 \begin{theorem}
 \indent \cite{DR76} The Auslander-Reiten quiver of a tame path algebra consists of three parts, the preprojectives, the preinjectives and the regulars.
 \end{theorem}
 \indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras from \cite{ASS06} and \cite{SS06}.
+\begin{definition}
+\cite{SS06} Let $(\catt,\tau)$ be a quiver with vertices of the form $(i,j)$ where $j > 0$ and $i\in [r]$. Here r + 1 is considered to be 1. There is an arrow from $(i,j)\to (i, j + 1)$ for any $i$ and an arrow from $(i,j)$ to $(i - 1, j - 1)$ for any $j>1$. Such a quiver is known as a \textit{stable tube of rank} $r$.
+\end{definition}
 \begin{theorem}\label{Tame}
 \begin{enumerate}
 \item The AR quiver of $kQ$ has one preprojective component which is isomorphic to $\mathbb{N}Q^{op}$
