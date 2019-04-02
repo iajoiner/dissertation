@@ -8,6 +8,7 @@
 %-mn & \text{if }m<0,n<0\\
 %0 & \text{if } mn\leq 0\end{cases}$\\
 \section{Quivers and path algebras}
+\indent In this section we will introduce the basics about quivers, path algebras, modules, $c$-vectors, Euler matrices and Euler-Ringel forms. Materials in this section will be used extensively in the rest of the dissertation.
 \subsection{Quivers}
 \begin{definition}
 A \textit{quiver} $Q$ is a quadruple $(Q_0,Q_1,s,t)$ with $Q_0$ and $Q_1$ sets and $s,t$: $Q_1\rightarrow Q_0$. An element of $Q_0$ is a \textit{vertex} of $Q$. An element of $Q_1$ is an \textit{arrow} of $Q$. The map $s$ maps each arrow to its source and $t$ maps each arrow to its target.
@@ -110,7 +111,7 @@ Let $Q$ be an acyclic quiver with $n$ vertices. $c\in \nn^n$ is a \textit{real r
 Let $Q$ be an acyclic quiver with $n$ vertices. $c\in \nn^n$ is an \textit{imaginary root} if it is sign coherent and $\langle c, c\rangle_Q \leq 0$.
 \end{definition}
 \section{Mutations, mutation sequences and the associated permutation}
-\indent In this section we will introduce mutations of quivers and matrices, different kinds of mutation sequences including green sequences, maximal green sequences, reddening sequences and loop sequences. We will also define the associated permutation. Results in this section are mostly used in Chapters \ref{C1} and \ref{C4}.\\
+\indent In this section we will introduce mutations of quivers and matrices, different kinds of mutation sequences including green sequences, maximal green sequences, reddening sequences and loop sequences. Stability conditions will be introduced. We will also define the associated permutation. Results in this section are mostly used in Chapters \ref{C1} and \ref{C4}.\\
 \subsection{Mutation of quivers}
 \indent The concept of maximal green sequences has many different equivalent definitions. We will use a simple definition using quiver mutations in this subsection. Later we will introduce other definitions.\\
 \begin{definition}
@@ -191,6 +192,10 @@ Let $Q$ be an acyclic quiver. A representation $(\{V_i\}_{i\in Q_0}, \{\phi_a\}_
 Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\beta_{ij}$.
 \end{lemma}
 \indent A mutation on vertex $k$ is \textit{green} if the $c$-vector $c_k$ before the mutation is negative.  A mutation on vertex $k$ is \textit{red} if the $c$-vector $c_k$ before the mutation is positive. A \textit{maximal green sequence} is a mutation sequence from $C=-I_n$ to a permuted version of $I_n$ We can use a sequence of $c$-vectors to denote a maximal green sequence because we can use the $c$-vector corresponding to vertex $k$ to represent mutation at vertex $k$ which is possible since all $c$-matrices are invertible.\\
+\subsection{Stability conditions}
+\begin{definition}
+\cite{B07}(Def 2.1) A stability function on an abelian category $\catc$ is a group homomorphism $Z : K(A) ? \cc$ such that for all $0\neq E\in\catc$ the complex number $Z(E)$ lies in the strict upper half-plane $H = \{re^{i\pi\phi} : r > 0\text{ and }0 < \phi\leq 1\}\subset\cc$.
+\end{definition}
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
 \indent In this subsection if $Q$ is a cluster quiver then $\hat{Q}, \breve{Q}$ are the framed and coframed quiver associated with cluster quiver $Q$ respectively.\\
@@ -206,12 +211,18 @@ Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\b
 \cite{GM14} The \textit{permutation of a reddening sequence} $\mathbf{i}$ is $\rho$ for which $\mu_{i_N}\cdots\mu_{i_1}\hat{Q}=\rho\breve{Q}$.\\
 \end{definition}
 \indent Here is one of the simplest examples of the concept of the permutation:\\
+\begin{example}
 $\begin{tikzcd}
 1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_1", shift right=3.5ex]  & 1&2\arrow[l]\arrow[d,green]\arrow[r,"\mu_2", shift right=3.5ex]&1\arrow[r] & 2\\
-1' \arrow[d,"\mu_2", shift left=4.5ex]& 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\arrow[d,"(12)", shift right=4.5ex]\\
- 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\\
- 1'&2'\arrow[u,red]&1'\arrow[u,red]&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[ul,red]\\
+1' & 2'&1'\arrow[u,red]& 2'&1'\arrow[u,red] & 2'\arrow[u,red]\\
+\end{tikzcd}$
+\end{example}
+\begin{example}
+$\begin{tikzcd}
+ 1 \arrow[r] \arrow[d,green] & 2\arrow [d,green]\arrow[r,"\mu_2", shift right=3.5ex] & 1\arrow[dr,green]\arrow[d,green]&2\arrow[l]\arrow[r,"\mu_1", shift right=3.5ex]&1\arrow[r]&2\arrow[dl,green]\arrow[r,"\mu_2", shift right=3.5ex]&1&2\arrow[l]\\
+ 1' & 2'& 1'&2'\arrow[u,red]&1'\arrow[u,red]&2'\arrow[ul,red]&1'\arrow[ur,red]&2'\arrow[ul,red]\\
 \end{tikzcd}$\\
+\end{example}
 \indent It is obvious that the result of $\mu_2\mu_1$ and $\mu_2\mu_1\mu_2$ are not identical, though they can be transformed into each other by a single permutation on vertices.\\
 \indent We can also define the associated permutation of sequences using extended exchange matrices.\\
 \begin{definition}
@@ -457,7 +468,7 @@ Moreover such correspondences are preserved under mutations.
 \end{theorem}
 \indent We will not explain the concepts of $K^b(proj \Lambda)$ and triangle equivalences because they are irrelevant to understanding of the problem. We refer interested readers to \cite{H88}. 
 \begin{theorem}
-\cite{H88}(3.3)If $\Lambda$ has finite global dimension $K^b(proj \Lambda)$ is triangle equivalent to $D^b(mod \Lambda)$.
+\cite{H88}(3.3) If $\Lambda$ has finite global dimension $K^b(proj \Lambda)$ is triangle equivalent to $D^b(mod \Lambda)$.
 \end{theorem}
 \indent Since we have maximal green sequences it is reasonable to look at the generalization of this concept, namely $m$-maximal green sequences. In order to do so we need to define the general concept of green and red sequences. In principle any forward mutation is considered green and any backward mutation red.\\
 \begin{definition}
