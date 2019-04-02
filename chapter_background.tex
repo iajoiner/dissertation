@@ -1,6 +1,6 @@
 \chapter{Background}\label{CB}
 \section{Notations and conventions}
-\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. The symbol $[n]$ is defined as the set $\{1,2,\cdots, n\}$ which is consistent with how it is usually used in cluster theory.\\
+\indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. The symbol $[n]$ is defined as the set $\{1,2,\cdots, n\}$ which is consistent with how it is usually used in cluster theory. If $\catc$ is an Abelian category then $K_0(\catc)$ is its Grothendieck group.\\
 \indent When the category we are discussing is clearly $\mathcal{C}$ then $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories of $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are summands of finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
 \indent The definition of green and red (vertices, mutations, sequences) are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
 %\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
@@ -200,9 +200,24 @@ Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\b
 \end{lemma}
 \indent A mutation on vertex $k$ is \textit{green} if the $c$-vector $c_k$ before the mutation is negative.  A mutation on vertex $k$ is \textit{red} if the $c$-vector $c_k$ before the mutation is positive. A \textit{maximal green sequence} is a mutation sequence from $C=-I_n$ to a permuted version of $I_n$ We can use a sequence of $c$-vectors to denote a maximal green sequence because we can use the $c$-vector corresponding to vertex $k$ to represent mutation at vertex $k$ which is possible since all $c$-matrices are invertible.\\
 \subsection{Stability conditions}
+\indent Here is the definition of stability functions.\\
 \begin{definition}
-\cite{B07}(Def 2.1) A stability function on an abelian category $\catc$ is a group homomorphism $Z : K(A) ? \cc$ such that for all $0\neq E\in\catc$ the complex number $Z(E)$ lies in the strict upper half-plane $H = \{re^{i\pi\phi} : r > 0\text{ and }0 < \phi\leq 1\}\subset\cc$.
+\cite{B07}(Def 2.1) A \textit{stability function} on an abelian category $\catc$ is a group homomorphism $Z : K_0(\catc) ? \cc$ such that for all $0\neq E\in\catc$ the complex number $Z(E)$ lies in the strict upper half-plane $H = \{re^{i\pi\phi} : r > 0\text{ and }0 < \phi\leq 1\}\subseteq\cc$.
 \end{definition}
+\indent Now let's define the phase of a nonzero object.\\
+\begin{definition}
+\cite{B07} Let $Z : K_0(\catc)\to\cc$ be a stability function on an Abelian category $\catc$. The \textit{phase} of an object $0\neq E\in\catc$ is defined as $\phi(E):=\dfrac1\pi arg Z(E)$.
+\end{definition}
+\indent Now we can define what it means for a nonzero object in an Abelian category to be semistable and stable.\\
+\begin{definition}
+\cite{B07}(Def 2.2) Let $Z : K_0(\catc)\to\cc$ be a stability function on an Abelian category $\catc$. An object $0\neq E\in\catc$ is said to be \textit{semistable} (with respect to Z) if every
+subobject $0 \neq A\subseteq E$ satisfies $\phi(A) \leq \phi(E)$.
+\end{definition}
+\begin{definition}
+\cite{B07} Let $Z : K_0(\catc)\to\cc$ be a stability function on an Abelian category $\catc$. An object $0\neq E\in\catc$ is said to be \textit{stable} (with respect to Z) if every
+subobject $0 \neq A\subsetneq E$ satisfies $\phi(A) < \phi(E)$.
+\end{definition}
+\indent We will discuss more about stability conditions in Chapter \ref{C3}.
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
 \indent In this subsection if $Q$ is a cluster quiver then $\hat{Q}, \breve{Q}$ are the framed and coframed quiver associated with cluster quiver $Q$ respectively.\\
