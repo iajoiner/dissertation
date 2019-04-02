@@ -1,6 +1,7 @@
 \chapter{Background}\label{CB}
 \section{Notations and conventions}
 \indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. The symbol $[n]$ is defined as the set $\{1,2,\cdots, n\}$ which is consistent with how it is usually used in cluster theory. If $\catc$ is an Abelian category then $K_0(\catc)$ is its Grothendieck group.\\
+\indent If $\catc$ is a category, $M, N, L\in Ob\catc, f\in Hom_{\catc}(M, N), g\in Hom_{\catc}(N, L)$ the composition is written as $gf$. Let $Q$ be a quiver, let $v$ be a path from $i\in Q_0$ to $j\in Q_0$, $w$ be a path from $j$ to $k\in Q_0$ then the composition is written as $vw$ which is the opposite of how we denote morphism compositions.\\
 \indent When the category we are discussing is clearly $\mathcal{C}$ then $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories of $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are summands of finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
 \indent The definition of green and red (vertices, mutations, sequences) are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
 %\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
@@ -312,15 +313,20 @@ For any loop sequence $w$ the permutation $\rho$ such that $w(\tilde{B})=\rho(\t
 \indent In essence for all acyclic quivers, green-to-red sequences in general and maximal green sequences in particular do not have a natural definition of the permutation: The traditional one in essence is the permutation of an associated loop sequence: Take the reddening sequence and then do mutations at sinks only, go over all non-frozen vertices and return to the origin which constitutes the loop sequence we need.\\
 \section{Green sequences in bounded derived categories}
 \indent In this section we will go over the basics about bounded derived categories, approximations, silting objects, simple-minded collections, torsion classes, $t$-structures and introduce the definition of numerous mutation sequences. This section mostly consists of background for Chapter \ref{C3} and Chapter \ref{C4}.\\
-\subsection{Triangulated categories and bounded derived categories}
-\indent In this subsection we need to use Auslander-Reiten Theory. However I'm not going to talk about the entire Auslander-Reiten theory even though some parts of it are crucial to the understanding of Chapter \ref{C2}. For Auslander-Reiten theory we refer the reader to Chapter IV of \cite{ASS06} and \cite{ARS}.\\
+\subsection{Auslander-Reiten quivers}
+\indent In this subsection we need to use Auslander-Reiten Theory. However I'm not going to talk about the entire Auslander-Reiten theory even though some parts of it are crucial to the understanding of Chapter \ref{C2}. Here we will just introduce two concepts, namely irreducible morphisms and Auslander-Reiten quivers. For more information on Auslander-Reiten theory we refer the reader to Chapter IV of \cite{ASS06}, \cite{ARS} and \cite{H88}.\\
+\indent Moreover we are not going to talk about what triangulated categories and bounded derived categories are in details. For those who want to read about them we recommend Daniel Murfet's notes \cite{MurD1}\cite{MurD2}\cite{MurT1} for introduction and \cite{H88} for its application in the theory of finite dimensional algebras. In particular \cite{H88} is a good source for Auslander-Reiten theory in bounded derived categories which we will use extensively here.\\
+\begin{definition}
+Let $\catc$ be an Abelian or triangulated category, let $M,N$ be objects of $\catc$. A morphism $f: M\to N$ is \textit{irreducible} if for any $L\in\catc$
+\end{definition}
 \begin{example} Here is the Auslander-Reiten(AR) quiver of $mod kQ$ where $Q$ is the quiver $1\to 2$.
 $\begin{tikzcd}
 &P_1\arrow[rd] &\\
 P_2\arrow[ru]& &I_1\\
 \end{tikzcd}$ There is an irreducible morphism from $P_2$ to $P_1$ and an irreducible morphism from $P_1$ to $I_1$. There are only 3 indecomposable objects in $mod kQ$.
 \end{example}
-\indent I'm not going to talk about what triangulated categories and bounded derived categories are in details. For those who want to read about them we recommend Daniel Murfet's notes \cite{MurD1}\cite{MurD2}\cite{MurT1} for introduction and \cite{H88} for its application in the theory of finite dimensional algebras. In particular \cite{H88} is a good source for Auslander-Reiten theory in bounded derived categories which we will use extensively here.\\
+\subsection{Triangulated categories and bounded derived categories}
+\indent
 \indent Let's recall some basic facts about triangulated categories that we will use a lot in this paper. In a triangulated category $\catt$ there exists an automorphism $[1]$ known as the \textit{translation functor}. $[n]:=([1])^n$ for any integer $n$.\\
 \begin{definition}
 The \textit{cone} or \textit{homotopy cokernel} of a morphism $A\overset{f}{\to}B\in\catt$ is some $C\in\catt$ such that there exists $g,h\in\catt$ such that $\triangwm{A}{f}{B}{g}{C}{h}{A[1]}$ is a distinguished triangle.
