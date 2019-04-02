@@ -202,7 +202,7 @@ Any $c$-vector associated to $A_n$ straight orientation is in the form of $\pm\b
 \subsection{Stability conditions}
 \indent Here is the definition of stability functions.\\
 \begin{definition}
-\cite{B07}(Def 2.1) A \textit{stability function} on an abelian category $\catc$ is a group homomorphism $Z : K_0(\catc) ? \cc$ such that for all $0\neq E\in\catc$ the complex number $Z(E)$ lies in the strict upper half-plane $H = \{re^{i\pi\phi} : r > 0\text{ and }0 < \phi\leq 1\}\subseteq\cc$.
+\cite{B07}(Def 2.1) A \textit{stability function} on an abelian category $\catc$ is a group homomorphism $Z : K_0(\catc)\to\cc$ such that for all $0\neq E\in\catc$ the complex number $Z(E)$ lies in the strict upper half-plane $H = \{re^{i\pi\phi} : r > 0\text{ and }0 < \phi\leq 1\}\subseteq\cc$.
 \end{definition}
 \indent Now let's define the phase of a nonzero object.\\
 \begin{definition}
@@ -644,10 +644,18 @@ P_2\arrow[ru,"a"]& &I_1\\
 \begin{theorem}
 \indent \cite{DR76} The Auslander-Reiten quiver of a tame path algebra consists of three parts, the preprojectives, the preinjectives and the regulars.
 \end{theorem}
-\indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras from \cite{ASS06} and \cite{SS06}.
+\indent Before we can describe Auslander-Reiten quivers of tame path algebras we have to define several special translation quivers.\\
 \begin{definition}
-\cite{SS06} Let $(\catt,\tau)$ be a quiver with vertices of the form $(i,j)$ where $j > 0$ and $i\in [r]$. Here r + 1 is considered to be 1. There is an arrow from $(i,j)\to (i, j + 1)$ for any $i$ and an arrow from $(i,j)$ to $(i - 1, j - 1)$ for any $j>1$. Such a quiver is known as a \textit{stable tube of rank} $r$.
+$\nn Q$ is defined as the quiver with vertices of the form $(i,j)$ where $j\in Q_0$ and $i\in\nn$. For any $i$ for any arrow from $j$ to $k$ there is an arrow from $(i,j)\to (i,k)$ and an arrow from $(i + 1,k)$ to $(i,j)$.
 \end{definition}
+\begin{definition}
+$-\nn Q$ is defined as the quiver with vertices of the form $(i,j)$ where $j\in Q_0$ and $i\in -\nn$. For any $i$ for any arrow from $j$ to $k$ there is an arrow from $(i,j)\to (i,k)$ and an arrow from $(i,k)$ to $(i - 1,j)$.
+\end{definition}
+\begin{definition}
+$\zz Q$ is defined as the quiver with vertices of the form $(i,j)$ where $j\in Q_0$ and $i\in\zz$. For any $i$ for any arrow from $j$ to $k$ there is an arrow from $(i,j)\to (i,k)$ and an arrow from $(i,k)$ to $(i - 1,j)$.
+\end{definition}
+\indent Note that the number of arrows from $i$ to $j$ in $Q$ is the same as the amount of arrows from $(a,i)$ to $(a,j)$ which is the same as the amount of arrows from $(a,j)$ to $(a-1,i)$ in $\zz Q$.\\
+\indent Here are some basic properties of preprojective and preinjective components of AR quivers of basic tame hereditary algebras from \cite{ASS06} and \cite{SS06}.
 \begin{theorem}\label{Tame}
 \begin{enumerate}
 \item The AR quiver of $kQ$ has one preprojective component which is isomorphic to $\mathbb{N}Q^{op}$
