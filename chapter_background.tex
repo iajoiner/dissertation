@@ -403,13 +403,22 @@ The \textit{heart} of a $t$-structure $(D^{\leq 0},D^{\geq 0})$ is defined as $\
 \begin{example}
 Let $\Lambda$ be any finite dimensional algebra. The heart of the standard $t$-structure is $mod \Lambda$ itself which is of course Abelian.
 \end{example}
+\begin{definition}
+\cite{EGNO}(Def 1.5.3) Given an object $X\in\catc$, then a Jordan-H\"older sequence or composition series for $X$ is a finite filtration, i.e. a finite sequence of subobject inclusions into $X$, starting with the zero objects $0=X_0\hookrightarrow X_1\hookrightarrow\cdots\hookrightarrow X_{n-1}\hookrightarrow X_n=X$ such that at each stage $i$ the quotient $X_i/X_{i-1}$ (i.e. the coimage of the monomorphism $X_{i-1}\hookrightarrow X_i$) is a simple object of $\catc$. If a Jordan-H\"older sequence for $X$ exists at all, then $X$ is said to be of finite length.
+\end{definition}
+\begin{definition}
+An Abelian category is a \textit{length category} if all its objects have finite length.
+\end{definition}
+\begin{example}
+Let $Q$ be the quiver $1\to 2$. The Abelian category $mod kQ$ is a length category because all its objects are finite direct sums of $P_2, I_1$ and $P_1$. $P_2$ and $I_1$ are simple and hence have length 1. $P_1$ has length 2. Hence any object in $mod kQ$ has finite length.
+\end{example}
 \indent Now let's introduce truncation functors associated with $t$-structures. 
 \begin{lemma}
 \cite{BBD}  Let $\catd$ be a triangulated category. Let $(D^{\leq 0},D^{\geq 0})$ be a $t$-structure on $\catd$. The inclusion ${\mathcal{D}^{\geq n} \rightarrow \mathcal{D}}$ has a left adjoint ${\tau_{\geq n}}$. Similarly, the inclusion ${\mathcal{D}^{\leq n} \rightarrow \mathcal{D}}$ has a right adjoint ${\tau_{\leq n}}$. These are called \textit{truncation functors}.
 \end{lemma}
-%\begin{definition}
-%\cite{B07} A $t$-structure $(D^{\leq 0},D^{\geq 0})$ of the triangulated category $\catd$ is \textit{bounded} if $\catd = \cup_{i,j} D^{\leq i}\cap D^{\geq j}$.
-%\end{definition}
+\begin{definition}
+\cite{B07} A $t$-structure $(D^{\leq 0},D^{\geq 0})$ of the triangulated category $\catd$ is \textit{bounded} if $\catd = \cup_{i,j} D^{\leq i}\cap D^{\geq j}$.
+\end{definition}
 %\begin{example}
 %Let $\Lambda$ be any finite dimensional algebra. The standard $t$-structure is clearly bounded since $D^b(\Lambda) = \cup_i D^{\leq i}\cap D^{\geq i}$.
 %\end{example}
@@ -435,6 +444,21 @@ Let $\Lambda$ be any finite dimensional algebra. The heart of the standard $t$-s
 %\end{definition}
 \indent For more information about mutations of $t$-structures we recommend \cite{AI10}, \cite{BY13}, \cite{KQ15} and \cite{KY12}.
 \subsection{Green sequences}
+\indent The concepts we mentioned are related to each other due to the following result:
+\begin{theorem}
+\cite{KY12}(Thm 6.1, 7.12) Let $\Lambda$ be a finite-dimensional algebra over a field $k$. There are one-to-one
+correspondences between
+\begin{enumerate}
+\item Equivalence classes of silting objects in $K^b(proj \Lambda)$.
+\item Equivalence classes of simple-minded collections in $D^b(mod \Lambda)$.
+\item Bounded $t$-structures of $D^b(mod \Lambda)$ with length heart.
+\end{enumerate}
+Moreover such correspondences are preserved under mutations.
+\end{theorem}
+\indent We will not explain the concepts of $K^b(proj \Lambda)$ and triangle equivalences because they are irrelevant to understanding of the problem. We refer interested readers to \cite{H88}. 
+\begin{theorem}
+\cite{H88}(3.3)If $\Lambda$ has finite global dimension $K^b(proj \Lambda)$ is triangle equivalent to $D^b(mod \Lambda)$.
+\end{theorem}
 \indent Since we have maximal green sequences it is reasonable to look at the generalization of this concept, namely $m$-maximal green sequences. In order to do so we need to define the general concept of green and red sequences. In principle any forward mutation is considered green and any backward mutation red.\\
 \begin{definition}
 \begin{enumerate}
