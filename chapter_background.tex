@@ -350,7 +350,7 @@ Let $\catc$ be an Abelian or triangulated category, let $M,N$ be objects of $\ca
 Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_2$ is an irreducible morphism because the morphism does not factor through any other indecomposable module in a nontrivial way.
 \end{example}
 \begin{example}
-Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_1$ is not an irreducible morphism because the morphism does actor through $P_2$ since $P_3\hookrightarrow P_2\hookrightarrow P_1$.
+Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_1$ is not an irreducible morphism because the morphism does factor through $P_2$ since $P_3\hookrightarrow P_2\hookrightarrow P_1$.
 \end{example}
 \indent In order to define Auslander-Reiten quivers in Abelian categories we need several more concepts.\\
 \begin{definition}
@@ -777,10 +777,24 @@ Here is the preinjective component, $\mathcal{Q}$.\\
 \indent In this section we will discuss miscellaneous topics on the wall-and-chamber structures, namely picture groups and alternative definitions of maximal green sequences. This section is mostly relevant to Chapter \ref{C1} and Chapter \ref{C3}. For more details we recommend \cite{GHKK14}\cite{Mul15}\cite{BST17}\cite{BST18A}\cite{BST18B}\cite{IOTW15} and \cite{IT17}.\\
 \subsection{Picture groups}\label{Picgr}
 \indent We also need to use the concept of the picture groups in order to prove the formula in Chapter \ref{C1}. For more details about picture groups we recommend \cite{IT17}.\\
-\indent Let's recall that for a quiver of finite type, any dimension vector of an indecomposable representation is referred to as a \textit{root}. Moreover for any acyclic quiver $Q$ we have its Euler-Ringel form $\langle -,-\rangle_Q$ which we will refer to simply as $\langle -,-\rangle$. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: \langle x,\beta\rangle=0,\ \langle x,\beta'\rangle\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments} (or \textit{chambers}). The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4}\\
+\indent Let's recall that for a quiver of finite type, any dimension vector of an indecomposable representation is referred to as a \textit{root}. Let $(-,-)$ be the standard Euclidean product. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: (x,\beta)=0,\ (x,\beta')\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments} (or \textit{chambers}). The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4}\\
+\begin{tikzpicture}
+\draw [->] (-3,0) -- (3,0);
+\node at (3.3,0) {$x$};
+\node at (2,0.3) {$D(P_2)$};
+\draw [->] (0,-3) -- (0,3);
+\node at (0,3.3) {$y$};
+\node at (-0.6,1.3) {$D(I_1)$};
+\draw [-] (0,0) -- (3,-3);
+\node at (1.2,-1.9) {$D(P_1)$};
+\end{tikzpicture}
 %\begin{tikzpicture}
-%\draw plot [smooth] coordinates {(-2,-1)  (0,0) (1, 0.5)};
+%\draw (0,0) arc (90:130:2.5);
+%\draw (0,0) arc (30:120:2.5);
 %\end{tikzpicture}
+\begin{example}
+\indent The figure above is the wall-and-chamber structure of $Q:1\to 2$. $D(P_1), D(P_2)$\\$D(I_1)$ are the walls and there are 5 chambers. Note that $D(P_1)$ is only half of the line $x + y = 0$.
+\end{example}
 \begin{definition}
 \cite{IT17} A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)=\langle S|R\rangle$ with $S$ in bijection with the set of real Schur roots (the generator for $\beta$ is $x(\beta)$) and $R$ the set of relations $x(\beta_i)x(\beta_j)=\Pi x(\gamma_k)$ with $\gamma_k$ running over all these real Schur roots which are linear combinations $\gamma_k = a_k\beta_i+b_k\beta_j$ with $a_k/b_k$ increasing (going from 0/1 where $\gamma_1=\beta_j$ to 1/0 where $\gamma_k=\beta_i$) for any pair $(\beta_i,\beta_j)$ such that they are Hom-orthogonal and $Ext(\beta_i,\beta_j)=0$.\\
 \end{definition}
@@ -825,7 +839,7 @@ In the $Q:1\to 2$ example $\{P_2, P_1, I_1\}$ is a finite HN system because any 
 \cite{I17} Let $\Lambda$ be a finite dimensional hereditary algebra over a field $K$. Let $\beta_1,\cdots,\beta_m\in \mathbb{N}^n$ be any finite sequence of nonzero, nonnegative integer vectors. Then the following are equivalent.\label{thm:3}
 \begin{enumerate}
 %\item[(a)] There is a nonlinear stability function $Z_t:K_0\Lambda\to \mathbb{C}$ which is green and has exactly $m$ semistable pairs $(M_i,t_i)$ with $t_1<t_2<\cdots<t_m$ so that $\dim M_i=\beta_i$ for all $i$.%(making all pairs stable) 
-%\item[(b)] There is a generic green path $\gamma:\mathbb{R}\to\mathbb{R}^n$ which crosses the walls $D(M_i)$, $i=1,\cdots,m$ in that order, and no other walls, so that $\dim M_i=\beta_i$ for all $i$.
+%\item[(a)] There is a generic green path $\gamma:\mathbb{R}\to\mathbb{R}^n$ which crosses the walls $D(M_i)$, $i=1,\cdots,m$ in that order, and no other walls, so that $\dim M_i=\beta_i$ for all $i$.
 \item[(a)] There exist $\Lambda$-modules $M_m,\cdots,M_1$ with $\dim M_i=\beta_i$ which form a finite Harder-Narasimhan system for $\Lambda$. 
 \item[(b)] There exist a finite sequence of Schurian $\Lambda$-modules $\{M_1,\cdots,M_m\}$ with $\dim M_i=\beta_i$ such that $\{M_1,\cdots,M_m\}$ is a \textit{maximal backward Hom-orthogonal sequence}.
 \item[(c)] There is a maximal green sequence for $\Lambda$ of length $m$ whose $i$th mutation is at the $c$-vector $\beta_i$. 
