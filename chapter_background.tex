@@ -1,7 +1,7 @@
 \chapter{Background}\label{CB}
 \section{Notations and conventions}
 \indent In this paper $k$ is an algebraically closed field, all algebras will be finitely dimensional $k$-algebras. All modules are assumed to be right modules. The symbol $[n]$ is defined as the set $\{1,2,\cdots, n\}$ which is consistent with how it is usually used in cluster theory. If $\catc$ is an Abelian category then $K_0(\catc)$ is its Grothendieck group.\\
-\indent If $\catc$ is a category, $M, N, L\in Ob\catc, f\in Hom_{\catc}(M, N), g\in Hom_{\catc}(N, L)$ the composition is written as $gf$. Let $Q$ be a quiver, let $v$ be a path from $i\in Q_0$ to $j\in Q_0$, $w$ be a path from $j$ to $k\in Q_0$ then the composition is written as $vw$ which is the opposite of how we denote morphism compositions.\\
+\indent If $\catc$ is a category, $M, N, L\in Ob\,\catc, f\in Hom_{\catc}(M, N), g\in Hom_{\catc}(N, L)$ the composition is written as $gf$. Let $Q$ be a quiver, let $v$ be a path from $i\in Q_0$ to $j\in Q_0$, $w$ be a path from $j$ to $k\in Q_0$ then the composition is written as $vw$ which is the opposite of how we denote morphism compositions.\\
 \indent When the category we are discussing is clearly $\mathcal{C}$ then $(M,N)$ will be an abbreviation of $Hom_{\mathcal{C}}(M,N)$. $(M[>0],N)$ is the union of $(M[k],N)$ for all $k>0$. If $\mathcal{P}, \mathcal{Q}$ are subcategories of $D^b(\Lambda)$ then $(\mathcal{P}, \mathcal{Q}):=\bigcup\limits_{M\in\mathcal{P}}\bigcup\limits_{N\in\mathcal{Q}}(M,N)$ and $(\mathcal{P}[>0], \mathcal{Q}):=\bigcup\limits_{k>0}(\mathcal{P}[k], \mathcal{Q})$. Let $S$ be a set of objects in an additive category $\catc$. $add(S)$ is defined as the set of all elements of $\catc$ such that they are summands of finite direct sums of objects in $S$. $\mathcal{E}(X)$ is the extension closure of $X$.\\
 \indent The definition of green and red (vertices, mutations, sequences) are consistent with that of \cite{Kel11} and \cite{BDP13}. It is the exact opposite definition of green and red in \cite{BHIT15}.\\
 %\indent If $m,n\in\mathbb{R}$ then $sp(m,n):=\begin{cases}
@@ -16,10 +16,10 @@ A \textit{quiver} $Q$ is a quadruple $(Q_0,Q_1,s,t)$ with $Q_0$ and $Q_1$ sets a
 \end{definition}
 \indent Intuitively we can think of elements of $Q_1$ as oriented edges. Any arrow has a unique source and a unique target both of which are vertices. This is how we obtain the $s$ and $t$ maps. Unless necessary we generally omit the $s$ and $t$ and denote a quiver by $Q = (Q_0, Q_1)$.\\
 \begin{example}
+The following diagrams are all quivers.\\
 $\begin{tikzcd} 
 1 \arrow[r] & 2 & 1 & 2 \arrow[l, shift right]\arrow[l, shift left]\arrow[r] & 3 & 1\arrow[r] & 2\arrow[r] & 3\\
-\end{tikzcd}$\\
-These three are quivers.
+\end{tikzcd}$
 \end{example}
 \indent Now let's define opposite quivers.\\
 \begin{definition}
@@ -265,10 +265,10 @@ subobject $0 \neq A\subsetneq E$ satisfies $\phi(A) < \phi(E)$.
 \node at (5.15,2.3) {$P_1$};
 \end{tikzpicture}
 \begin{example}
-\indent Here are two stability functions of $mod kQ$ where $Q$ is the quiver $1\to 2$. In the picture on the left $P_2$, $I_1$ and $P_1$ are all stable. $P_2$ and $I_1$ are stable because they are simples. As for $P_1$ it is stable because its submodule $\P_2$ satisfies $\phi(P_2)<\phi(P_1)$.\\
-In the picture on the right $P_2$ and $I_1$ are all stable. $P_2$ and $I_1$ are still stable because they are simples. As for $P_1$ it is unstable because its submodule $\P_2$ satisfies $\phi(P_2)\geq \phi(P_1)$.\\
+\indent Here are two stability functions of $mod kQ$ where $Q$ is the quiver $1\to 2$. From the picture on the left we can see that $P_2$, $I_1$ and $P_1$ are all stable. $P_2$ and $I_1$ are stable because they are simples. As for $P_1$ it is stable because its submodule $P_2$ satisfies $\phi(P_2)<\phi(P_1)$.\\
+From the picture on the right we can observe that $P_2$ and $I_1$ are all stable. $P_2$ and $I_1$ are still stable because they are simples. As for $P_1$ it is unstable because its submodule $P_2$ satisfies $\phi(P_2)\geq \phi(P_1)$.\\
 \end{example}
-\indent We will discuss more about stability conditions in Chapter \ref{C3}.
+\indent We will discuss stability conditions more in Chapter \ref{C3}.
 \subsection{Permutations}
 \indent All reddening sequences have associated permutations. When comparing the quivers obtained from transforming the same framed quiver using two different reddening sequences, it is easy to see that they are just one permutation away from each other: If you do a correct permutation of vertices (that means both rows and columns together) you can transform one such matrix into another. In particular any quiver obtained by using a reddening sequence to transform a framed quiver is one permutation away from the coframed quiver.\\
 \indent In this subsection if $Q$ is a cluster quiver then $\hat{Q}, \breve{Q}$ are the framed and coframed quiver associated with cluster quiver $Q$ respectively.\\
@@ -358,11 +358,11 @@ Let $Q$ be the quiver $1\to 2\to 3$. The inclusion $P_3\hookrightarrow P_1$ is n
 \end{definition}
 \indent Note that $rad_{\catc}(X, Y)$ is a two-sided ideal. From now on when $\catc$ is clear from the context we often omit it.\\
 \begin{definition}
-Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\catc$, let $n$ be a positive integer, $X=X_0, Y=X_n$. We define $rad^n(X,Y):=\{f\in rad(X,Y):\text{for any }i\in [n]\text{ there exist }X_i\in Ob\catc, f_i\in rad(X_{i-1}, X_{i})\text{ such that }f=f_1\cdots f_n\}$. 
+Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\,\catc$, let $n$ be a positive integer, $X=X_0, Y=X_n$. We define $rad^n(X,Y):=\{f\in rad(X,Y):\text{for any }i\in [n]\text{ there exist }X_i\in Ob\,\catc, f_i\in rad(X_{i-1}, X_{i})\text{ such that }f=f_1\cdots f_n\}$. 
 \end{definition}
 \indent Note that $rad^n(X, Y)$ is a two-sided ideal. Hence we can define the space of irreducible morphisms as the following.\\
 \begin{definition}
-\cite{ASS06}(IV.4) Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\catc$. The \textit{space of irreducible morphisms} $Irr(X,Y)$ is defined as $rad(X,Y)/rad^2(X,Y)$.
+\cite{ASS06}(IV.4) Let $\catc$ be an additive $k$-category. Let $X, Y\in Ob\,\catc$. The \textit{space of irreducible morphisms} $Irr(X,Y)$ is defined as $rad(X,Y)/rad^2(X,Y)$.
 \end{definition}
 \indent Now we can define Auslander-Reiten quivers in Abelian categories.\\
 \begin{definition}
@@ -400,7 +400,7 @@ Let $Q$ be $\begin{tikzcd}1\arrow[r] & 2 \arrow[r] & 3\end{tikzcd}$. Here is the
 \subsection{Approximations}
 \indent According to \cite{KY12} there are bijections between silting objects, $t$-structures, co-$t$-structures and simple-minded collections in a wide range of cases and such bijections respect mutations. In \cite{BY13} more bijections are mentioned. Here we only need to cover three of them, namely silting objects, simple-minded collections and $t$-structures. To understand their mutations we must first introduce the concept of approximations.\\
 \begin{definition}
-Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\,\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
 \begin{enumerate}
 \item $f$ is a \textit{left-$\mathcal{X}$ approximation} if for any $N'\in Ob\mathcal{X}$ and for any $q\in Hom_{\catc}(M,N')$ we have $q$ factors through $f$.
 \item $f$ is \textit{left minimal} if for any $g\in End_{\catc} N$ such that $g\circ f = f$ the morphism $g$ is an isomorphism.
@@ -412,7 +412,7 @@ M\arrow[r,"f"]\arrow[rd,"q"] & N\arrow[dashed,d,"l"]\\
  & N'\\
 \end{tikzcd}
 \begin{definition}
-Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
+Let $\catc$ be a category and $\mathcal{X}$ be one of its subcategories. Let $M\in Ob\,\catc, N\in Ob\mathcal{X}$ and $f\in Hom_{\catc}(M,N)$.
 \begin{enumerate}
 \item $f$ is a \textit{right-$\mathcal{X}$ approximation} if for any $M'\in Ob\mathcal{X}$ and for any $q\in Hom_{\catc}(M',N)$ we have $q$ factors through $f$.
 \item $f$ is \textit{right minimal} if for any $g\in End_{\catc} M$ such that $f\circ g = f$ the morphism $g$ is an isomorphism.
@@ -778,6 +778,9 @@ Here is the preinjective component, $\mathcal{Q}$.\\
 \subsection{Picture groups}\label{Picgr}
 \indent We also need to use the concept of the picture groups in order to prove the formula in Chapter \ref{C1}. For more details about picture groups we recommend \cite{IT17}.\\
 \indent Let's recall that for a quiver of finite type, any dimension vector of an indecomposable representation is referred to as a \textit{root}. Moreover for any acyclic quiver $Q$ we have its Euler-Ringel form $\langle -,-\rangle_Q$ which we will refer to simply as $\langle -,-\rangle$. Let $D(\beta)\subseteq\mathbb{R}^n$, $D(\beta)= \{x\in\mathbb{R}^n: \langle x,\beta\rangle=0,\ \langle x,\beta'\rangle\leq 0\text{ when }\beta'\subseteq\beta\}$. Here $\beta'\subseteq\beta$ means the unique indecomposable representation of dimension vector $\beta'$ is a subrepresentation of the unique indecomposable representation of dimension vector $\beta$. $D(\beta)$ for all these roots divide $\mathbb{R}^n$ into \textit{compartments} (or \textit{chambers}). The boundary of each compartment is the union of some $D(\beta)$ which we call \textit{walls}.\cite{IT17}\cite{IOTW4}\\
+%\begin{tikzpicture}
+%\draw plot [smooth] coordinates {(-2,-1)  (0,0) (1, 0.5)};
+%\end{tikzpicture}
 \begin{definition}
 \cite{IT17} A \textit{picture group} of a cluster quiver of finite type $Q$ is a group $G(Q)=\langle S|R\rangle$ with $S$ in bijection with the set of real Schur roots (the generator for $\beta$ is $x(\beta)$) and $R$ the set of relations $x(\beta_i)x(\beta_j)=\Pi x(\gamma_k)$ with $\gamma_k$ running over all these real Schur roots which are linear combinations $\gamma_k = a_k\beta_i+b_k\beta_j$ with $a_k/b_k$ increasing (going from 0/1 where $\gamma_1=\beta_j$ to 1/0 where $\gamma_k=\beta_i$) for any pair $(\beta_i,\beta_j)$ such that they are Hom-orthogonal and $Ext(\beta_i,\beta_j)=0$.\\
 \end{definition}
